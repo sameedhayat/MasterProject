@@ -447,7 +447,17 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         	return ret;
         }
-        
+        public HashMap<String,List<Double>> sourceDoc2Vec(DocModel vec) {
+        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
+        	for(Integer s :getSourceNodes()) {
+        		if(getAbstract(s).isEmpty()) {
+    				continue;
+    			}
+        		List<Double> sourceD2vVector = vec.inferVector(getAbstract(s));
+        		hm.put(getURI(s), sourceD2vVector);
+        	}
+        	return hm;
+        }
         
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {
         	List<Pair<Double, Double>> ret = new ArrayList<Pair<Double,Double>>();

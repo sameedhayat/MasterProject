@@ -1,29 +1,17 @@
 package org.eclipse.rdf4j.recommender.paradigm.hybrid;
 
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import org.javatuples.Pair;
-import org.javatuples.Quintet;
-import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
-import org.deeplearning4j.models.word2vec.Word2Vec;
-import org.eclipse.rdf4j.recommender.datamanager.model.RatedResource;
+
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.repository.SailRecommenderRepository;
 import org.eclipse.rdf4j.recommender.storage.index.graph.impl.JungGraphIndexBasedStorage;
-import org.eclipse.rdf4j.recommender.util.CsvWriterAppend;
 import org.eclipse.rdf4j.recommender.util.TestRepositoryInstantiator;
-import org.junit.Assert;
 import org.junit.Test;
 
 import nlp.word2vec.DocModel;
-import nlp.word2vec.Word2VecModel;
 
 public class HybridRecWithLikesTest {
 	
@@ -47,6 +35,7 @@ public class HybridRecWithLikesTest {
 	@Test
     public void loadModelAndCalculateSimilarity() throws RecommenderException, FileNotFoundException {
             System.out.println("Loading rep");
+            
             SailRecommenderRepository recRepository = 
                     TestRepositoryInstantiator.createHybridRecommenderDataset();
 
@@ -55,7 +44,18 @@ public class HybridRecWithLikesTest {
             
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
+            System.out.print(graphStorage.getSourceNodes());
+            String inputPath = "input_abstract.csv";
+            DocModel docModel = new DocModel();
+            docModel.trainDoc2VecModel(inputPath);
+           // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
             
+            HashMap<String,List<Double>> hm = graphStorage.sourceDoc2Vec(docModel);
+            
+            
+
+            
+            /*
             //get all the users indexes
             Set<Integer> allUserIndexes = graphStorage.getAllUserIndexes();
 //            int sourceId = graphStorage.getIndexOf("http://example.org/data#u96328");
@@ -87,7 +87,7 @@ public class HybridRecWithLikesTest {
 //          }
             
 //           graphStorage.RDFToVecRating(sourceId, targetId, vec);                           
-    }  
+    */}  
 	
 	
 //	@Test

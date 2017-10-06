@@ -5,10 +5,28 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.javatuples.Quintet;
 
 public class CsvWriterAppend {
+	
+	public static void csvHashMap(String path,HashMap<String,List<Double>> hm) {
+		String eol = System.getProperty("line.separator");
+		try (Writer writer = new FileWriter(path)) {
+            for (Map.Entry<String,List<Double>> entry : hm.entrySet()) {
+              writer.append(entry.getKey())
+                    .append(',')
+                    .append(convertListToString(entry.getValue()))
+                    .append(eol);
+            }
+          } catch (IOException ex) {
+            ex.printStackTrace(System.err);
+          }
+	}
 	public static void appendCsv(String path, List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> data) {
 				
 				File f = new File(path);
