@@ -1,0 +1,3 @@
+Results for Recommender 1 :
+Average Mean Reciprocal Rank value : 0.4
+Average Mean Absolute Error value : 1.6225026445699329

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.eclipse.rdf4j</groupId>
+		<artifactId>rdf4j</artifactId>
+		<version>2.1</version>
+	</parent>
+
+	<artifactId>rdf4j-core</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>util</module>
+		<module>model</module>
+		<module>rio</module>
+		<module>queryresultio</module>
+		<module>query</module>
+		<module>queryalgebra</module>
+		<module>queryparser</module>
+		<module>queryrender</module>
+		<module>sail</module>
+		<module>repository</module>
+		<module>spin</module>
+		<module>config</module>
+		<module>console</module>
+                <module>recommender</module>
+                <module>recommendereval</module>
+		<module>http</module>
+		<module>runtime</module>
+		<module>runtime-osgi</module>
+		<module>assembly</module> <!-- this module should always be last in the list -->
+	</modules>
+	 <properties>
+        <!-- Change the nd4j.backend property to nd4j-cuda-7.5-platform or nd4j-cuda-8.0-platform to use CUDA GPUs -->
+        <nd4j.backend>nd4j-native-platform</nd4j.backend>
+        <!-- <nd4j.backend>nd4j-cuda-8.0-platform</nd4j.backend> -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <shadedClassifier>bin</shadedClassifier>
+
+
+        <java.version>1.8</java.version>
+        <nd4j.version>0.9.1</nd4j.version>
+        <dl4j.version>0.9.1</dl4j.version>
+        <datavec.version>0.9.1</datavec.version>
+        <arbiter.version>0.9.1</arbiter.version>
+        <rl4j.version>0.9.1</rl4j.version>
+
+        <!-- For Spark examples: change the _1 to _2 to switch between Spark 1 and Spark 2 -->
+        <dl4j.spark.version>0.9.1_spark_1</dl4j.spark.version>
+        <datavec.spark.version>0.9.1_spark_1</datavec.spark.version>
+
+        <!-- Scala binary version: DL4J's Spark and UI functionality are released with both Scala 2.10 and 2.11 support -->
+        <scala.binary.version>2.11</scala.binary.version>
+
+        <guava.version>19.0</guava.version>
+        <logback.version>1.1.7</logback.version>
+        <jfreechart.version>1.0.13</jfreechart.version>
+        <jcommon.version>1.0.23</jcommon.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
+        <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
+        <maven.minimum.version>3.3.1</maven.minimum.version>
+        <javafx.version>2.2.3</javafx.version>
+        <javafx.runtime.lib.jar>${env.JAVAFX_HOME}/jfxrt.jar</javafx.runtime.lib.jar>
+        <aws.sdk.version>1.11.109</aws.sdk.version>
+        <jackson.version>2.6.6</jackson.version>
+        <scala.plugin.version>3.2.2</scala.plugin.version>
+    </properties>
+	<name>RDF4J Core</name>
+	<description>Core modules for RDF4J</description>
+
+	<profiles>
+		<profile>
+			<id>assembly</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<encoding>utf8</encoding>
+							<source>1.8</source>
+							<quiet>true</quiet>
+							<additionalparam>${javadoc.opts}</additionalparam>
+						</configuration>
+						<executions>				
+							<execution>
+								<id>create-aggregate-javadoc</id>
+								<inherited>false</inherited>
+								<phase>package</phase>
+								<goals>
+									<goal>aggregate-jar</goal>
+								</goals>
+
+								<configuration>
+									<doctitle>RDF4J ${project.version} API</doctitle>
+									<windowtitle>RDF4J ${project.version} API</windowtitle>
+									<groups>
+										<group>
+											<title>Repository API</title>
+											<packages>org.eclipse.rdf4j.repository*</packages>
+										</group>
+										<group>
+											<title>RDF Model API</title>
+											<packages>org.eclipse.rdf4j.model*</packages>
+										</group>
+
+										<group>
+											<title>Storage And Inference Layer (SAIL) API</title>
+											<packages>org.eclipse.rdf4j.sail*</packages>
+										</group>
+										<group>
+											<title>Rio: RDF Parsers and Writers </title>
+											<packages>org.eclipse.rdf4j.rio*</packages>
+										</group>
+
+										<group>
+											<title>Query API and query engines</title>
+											<packages>org.eclipse.rdf4j.query:org.eclipse.rdf4j.query.impl:org.eclipse.rdf4j.query.algebra*:org.eclipse.rdf4j.query.parser*</packages>
+
+										</group>
+										<group>
+											<title>Query Result Parsers and Writers</title>
+											<packages>org.eclipse.rdf4j.query.resultio*</packages>
+										</group>
+
+										<group>
+											<title>RDF4J Web Client</title>
+											<packages>org.eclipse.rdf4j.http.webclient*</packages>
+										</group>
+
+										<group>
+											<title>HTTP Protocol for Client/Server Communication</title>
+											<packages>org.eclipse.rdf4j.http*</packages>
+										</group>
+									</groups>
+
+									<links>
+										<link>http://docs.oracle.com/javase/8/docs/api/</link>
+									</links>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

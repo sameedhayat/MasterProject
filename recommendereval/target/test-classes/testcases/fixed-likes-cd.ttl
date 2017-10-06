@@ -1,0 +1,90 @@
+@prefix fixed: <http://example.org/fixed#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+#
+#USER USER1 Target domain
+#
+fixed:User1 fixed:likes fixed:Item1 .
+fixed:User1 fixed:likes fixed:Item4 .
+fixed:User1 fixed:likes fixed:Item5 .
+fixed:User1 fixed:likes fixed:Item6 .
+#
+#USER USER1 Source domain
+#
+fixed:User1 fixed:likes fixed:Item11 .
+fixed:User1 fixed:likes fixed:Item12 .
+fixed:User1 fixed:likes fixed:Item13 .
+fixed:User1 fixed:likes fixed:Item14 .
+fixed:User1 fixed:likes fixed:Item15 .
+fixed:User1 fixed:likes fixed:Item16 .
+#
+#USER USER2 Target domain
+#
+fixed:User2 fixed:likes fixed:Item1 .
+fixed:User2 fixed:likes fixed:Item3 .
+fixed:User2 fixed:likes fixed:Item5 .
+#
+#USER USER2 Source domain
+#
+fixed:User2 fixed:likes fixed:Item11 .
+fixed:User2 fixed:likes fixed:Item13 .
+fixed:User2 fixed:likes fixed:Item15 .
+#
+#USER USER3 Target domain
+#
+fixed:User3 fixed:likes fixed:Item1 .
+fixed:User3 fixed:likes fixed:Item2 .
+fixed:User3 fixed:likes fixed:Item4 .
+fixed:User3 fixed:likes fixed:Item5 .
+#
+#USER USER3 Source domain
+#
+# NONE
+#
+#USER USER4
+#
+fixed:User4 fixed:likes fixed:Item2 .
+fixed:User4 fixed:likes fixed:Item3 .
+#
+#USER USER4 Source domain
+#
+fixed:User4 fixed:likes fixed:Item14 .
+#
+#Target domain
+fixed:Item1 rdf:type fixed:Target .
+fixed:Item2 rdf:type fixed:Target .
+fixed:Item3 rdf:type fixed:Target .
+fixed:Item4 rdf:type fixed:Target .
+fixed:Item5 rdf:type fixed:Target .
+fixed:Item6 rdf:type fixed:Target .
+#Source domain
+fixed:Item11 rdf:type fixed:Source .
+fixed:Item12 rdf:type fixed:Source .
+fixed:Item13 rdf:type fixed:Source .
+fixed:Item14 rdf:type fixed:Source .
+fixed:Item15 rdf:type fixed:Source .
+fixed:Item16 rdf:type fixed:Source .
+
+#ITEM_1 -> GENRE_1
+fixed:Item1 fixed:hasGenre fixed:Genre1 .
+#ITEM_1 -> GENRE_2
+fixed:Item1 fixed:hasGenre fixed:Genre2 .
+#ITEM_2 -> GENRE_1
+fixed:Item2 fixed:hasGenre fixed:Genre1 .
+#ITEM_2 -> GENRE_3
+fixed:Item2 fixed:hasGenre fixed:Genre3 .
+#ITEM_3 -> GENRE_3
+fixed:Item3 fixed:hasGenre fixed:Genre3 .
+#ITEM_4 -> GENRE_2
+fixed:Item4 fixed:hasGenre fixed:Genre2 .
+#ITEM_4 -> GENRE_3
+fixed:Item4 fixed:hasGenre fixed:Genre3 .
+#ITEM_5 -> GENRE_3
+fixed:Item5 fixed:hasGenre fixed:Genre3 .
+#ITEM_5 -> GENRE_4
+fixed:Item5 fixed:hasGenre fixed:Genre4.
+#ITEM_6 -> GENRE_1
+fixed:Item6 fixed:hasGenre fixed:Genre1 .
+#ITEM_6 -> GENRE_2
+fixed:Item6 fixed:hasGenre fixed:Genre2.
+#ITEM_6 -> GENRE_3
+fixed:Item6 fixed:hasGenre fixed:Genre3 .

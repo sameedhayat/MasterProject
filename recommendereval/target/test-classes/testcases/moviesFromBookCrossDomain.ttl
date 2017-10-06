@@ -1,0 +1,286 @@
+@prefix movies: <http://example.org/movies#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+#
+#USER ALICE
+#
+movies:Alice movies:hasRated movies:Rating1 .
+movies:Alice movies:hasRated movies:Rating2 .
+movies:Alice movies:hasRated movies:Rating3 .
+movies:Alice movies:hasRated movies:Rating4 .
+#ALICE -> MOVIE_1
+movies:Rating1 movies:ratedMovie movies:Item1 .
+movies:Rating1 movies:hasRating "5.0" .
+#ALICE -> MOVIE_2
+movies:Rating2 movies:ratedMovie movies:Item2 .
+movies:Rating2 movies:hasRating "3.0" .
+#ALICE -> MOVIE_3
+movies:Rating3 movies:ratedMovie movies:Item3 .
+movies:Rating3 movies:hasRating "4.0" .
+#ALICE -> MOVIE_4
+movies:Rating4 movies:ratedMovie movies:Item4 .
+movies:Rating4 movies:hasRating "4.0" .
+#
+#USER USER1
+#
+movies:User1 movies:hasRated movies:Rating6 .
+movies:User1 movies:hasRated movies:Rating7 .
+movies:User1 movies:hasRated movies:Rating8 .
+movies:User1 movies:hasRated movies:Rating9 .
+movies:User1 movies:hasRated movies:Rating10 .
+#USER1 -> MOVIE_1
+movies:Rating6 movies:ratedMovie movies:Item1 .
+movies:Rating6 movies:hasRating "3.0" .
+#USER1 -> MOVIE_2
+movies:Rating7 movies:ratedMovie movies:Item2 .
+movies:Rating7 movies:hasRating "1.0" .
+#USER1 -> MOVIE_3
+movies:Rating8 movies:ratedMovie movies:Item3 .
+movies:Rating8 movies:hasRating "2.0" .
+#USER1 -> MOVIE_4
+movies:Rating9 movies:ratedMovie movies:Item4 .
+movies:Rating9 movies:hasRating "3.0" .
+#USER1 -> MOVIE_5
+movies:Rating10 movies:ratedMovie movies:Item5 .
+movies:Rating10 movies:hasRating "3.0" .
+#
+#USER USER2
+#
+movies:User2 movies:hasRated movies:Rating11 .
+movies:User2 movies:hasRated movies:Rating12 .
+movies:User2 movies:hasRated movies:Rating13 .
+movies:User2 movies:hasRated movies:Rating14 .
+movies:User2 movies:hasRated movies:Rating15 .
+#USER2 -> MOVIE_1
+movies:Rating11 movies:ratedMovie movies:Item1 .
+movies:Rating11 movies:hasRating "4.0" .
+#USER2 -> MOVIE_2
+movies:Rating12 movies:ratedMovie movies:Item2 .
+movies:Rating12 movies:hasRating "3.0" .
+#USER2 -> MOVIE_3
+movies:Rating13 movies:ratedMovie movies:Item3 .
+movies:Rating13 movies:hasRating "4.0" .
+#USER2 -> MOVIE_4
+movies:Rating14 movies:ratedMovie movies:Item4 .
+movies:Rating14 movies:hasRating "3.0" .
+#USER2 -> MOVIE_5
+movies:Rating15 movies:ratedMovie movies:Item5 .
+movies:Rating15 movies:hasRating "5.0" .
+#
+#USER USER3
+#
+movies:User3 movies:hasRated movies:Rating16 .
+movies:User3 movies:hasRated movies:Rating17 .
+movies:User3 movies:hasRated movies:Rating18 .
+movies:User3 movies:hasRated movies:Rating19 .
+movies:User3 movies:hasRated movies:Rating20 .
+#USER3 -> MOVIE_1
+movies:Rating16 movies:ratedMovie movies:Item1 .
+movies:Rating16 movies:hasRating "3.0" .
+#USER3 -> MOVIE_2
+movies:Rating17 movies:ratedMovie movies:Item2 .
+movies:Rating17 movies:hasRating "3.0" .
+#USER3 -> MOVIE_3
+movies:Rating18 movies:ratedMovie movies:Item3 .
+movies:Rating18 movies:hasRating "1.0" .
+#USER3 -> MOVIE_4
+movies:Rating19 movies:ratedMovie movies:Item4 .
+movies:Rating19 movies:hasRating "5.0" .
+#USER3 -> MOVIE_5
+movies:Rating20 movies:ratedMovie movies:Item5 .
+movies:Rating20 movies:hasRating "4.0" .
+#
+#USER USER4
+#
+movies:User4 movies:hasRated movies:Rating21 .
+movies:User4 movies:hasRated movies:Rating22 .
+movies:User4 movies:hasRated movies:Rating23 .
+movies:User4 movies:hasRated movies:Rating24 .
+movies:User4 movies:hasRated movies:Rating25 .
+#USER4 -> MOVIE_1
+movies:Rating21 movies:ratedMovie movies:Item1 .
+movies:Rating21 movies:hasRating "1.0" .
+#USER4 -> MOVIE_2
+movies:Rating22 movies:ratedMovie movies:Item2 .
+movies:Rating22 movies:hasRating "5.0" .
+#USER4 -> MOVIE_3
+movies:Rating23 movies:ratedMovie movies:Item3 .
+movies:Rating23 movies:hasRating "5.0" .
+#USER4 -> MOVIE_4
+movies:Rating24 movies:ratedMovie movies:Item4 .
+movies:Rating24 movies:hasRating "2.0" .
+#USER4 -> MOVIE_5
+movies:Rating25 movies:ratedMovie movies:Item5 .
+movies:Rating25 movies:hasRating "1.0" .
+
+#
+#USER ALICE
+#
+movies:Alice movies:hasRated movies:Rating26 .
+movies:Alice movies:hasRated movies:Rating27 .
+movies:Alice movies:hasRated movies:Rating28 .
+movies:Alice movies:hasRated movies:Rating29 .
+#ALICE -> MOVIE_6
+movies:Rating26 movies:ratedMovie movies:Item6 .
+movies:Rating26 movies:hasRating "5.0" .
+#ALICE -> MOVIE_7
+movies:Rating27 movies:ratedMovie movies:Item7 .
+movies:Rating27 movies:hasRating "3.0" .
+#ALICE -> MOVIE_8
+movies:Rating28 movies:ratedMovie movies:Item8 .
+movies:Rating28 movies:hasRating "4.0" .
+#ALICE -> MOVIE_9
+movies:Rating29 movies:ratedMovie movies:Item9 .
+movies:Rating29 movies:hasRating "4.0" .
+#
+#USER USER1
+#
+movies:User1 movies:hasRated movies:Rating31 .
+movies:User1 movies:hasRated movies:Rating32 .
+movies:User1 movies:hasRated movies:Rating33 .
+movies:User1 movies:hasRated movies:Rating34 .
+movies:User1 movies:hasRated movies:Rating35 .
+#USER1 -> MOVIE_6
+movies:Rating31 movies:ratedMovie movies:Item6 .
+movies:Rating31 movies:hasRating "3.0" .
+#USER1 -> MOVIE_7
+movies:Rating32 movies:ratedMovie movies:Item7 .
+movies:Rating32 movies:hasRating "1.0" .
+#USER1 -> MOVIE_8
+movies:Rating33 movies:ratedMovie movies:Item8 .
+movies:Rating33 movies:hasRating "2.0" .
+#USER1 -> MOVIE_9
+movies:Rating34 movies:ratedMovie movies:Item9 .
+movies:Rating34 movies:hasRating "3.0" .
+#USER1 -> MOVIE_10
+movies:Rating35 movies:ratedMovie movies:Item10 .
+movies:Rating35 movies:hasRating "3.0" .
+#
+#USER USER2
+#
+movies:User2 movies:hasRated movies:Rating36 .
+movies:User2 movies:hasRated movies:Rating37 .
+movies:User2 movies:hasRated movies:Rating38 .
+movies:User2 movies:hasRated movies:Rating39 .
+movies:User2 movies:hasRated movies:Rating40 .
+#USER2 -> MOVIE_6
+movies:Rating36 movies:ratedMovie movies:Item6 .
+movies:Rating36 movies:hasRating "4.0" .
+#USER2 -> MOVIE_7
+movies:Rating37 movies:ratedMovie movies:Item7 .
+movies:Rating37 movies:hasRating "3.0" .
+#USER2 -> MOVIE_8
+movies:Rating38 movies:ratedMovie movies:Item8 .
+movies:Rating38 movies:hasRating "4.0" .
+#USER2 -> MOVIE_9
+movies:Rating39 movies:ratedMovie movies:Item9 .
+movies:Rating39 movies:hasRating "3.0" .
+#USER2 -> MOVIE_10
+movies:Rating40 movies:ratedMovie movies:Item10 .
+movies:Rating40 movies:hasRating "5.0" .
+#
+#USER USER3
+#
+movies:User3 movies:hasRated movies:Rating41 .
+movies:User3 movies:hasRated movies:Rating42 .
+movies:User3 movies:hasRated movies:Rating43 .
+movies:User3 movies:hasRated movies:Rating44 .
+movies:User3 movies:hasRated movies:Rating45 .
+#USER3 -> MOVIE_6
+movies:Rating41 movies:ratedMovie movies:Item6 .
+movies:Rating41 movies:hasRating "3.0" .
+#USER3 -> MOVIE_7
+movies:Rating42 movies:ratedMovie movies:Item7 .
+movies:Rating42 movies:hasRating "3.0" .
+#USER3 -> MOVIE_8
+movies:Rating43 movies:ratedMovie movies:Item8 .
+movies:Rating43 movies:hasRating "1.0" .
+#USER3 -> MOVIE_9
+movies:Rating44 movies:ratedMovie movies:Item9 .
+movies:Rating44 movies:hasRating "5.0" .
+#USER3 -> MOVIE_10
+movies:Rating45 movies:ratedMovie movies:Item10 .
+movies:Rating45 movies:hasRating "4.0" .
+#
+#USER USER4
+#
+movies:User4 movies:hasRated movies:Rating46 .
+movies:User4 movies:hasRated movies:Rating47 .
+movies:User4 movies:hasRated movies:Rating48 .
+movies:User4 movies:hasRated movies:Rating49 .
+movies:User4 movies:hasRated movies:Rating50 .
+#USER4 -> MOVIE_6
+movies:Rating46 movies:ratedMovie movies:Item6 .
+movies:Rating46 movies:hasRating "1.0" .
+#USER4 -> MOVIE_7
+movies:Rating47 movies:ratedMovie movies:Item7 .
+movies:Rating47 movies:hasRating "5.0" .
+#USER4 -> MOVIE_8
+movies:Rating48 movies:ratedMovie movies:Item8 .
+movies:Rating48 movies:hasRating "5.0" .
+#USER4 -> MOVIE_9
+movies:Rating49 movies:ratedMovie movies:Item9 .
+movies:Rating49 movies:hasRating "2.0" .
+#USER4 -> MOVIE_10
+movies:Rating50 movies:ratedMovie movies:Item10 .
+movies:Rating50 movies:hasRating "1.0" .
+
+
+#MOVIE_1 -> GENRE_1
+movies:Item1 movies:hasGenre movies:Genre1 .
+#MOVIE_1 -> GENRE_2
+movies:Item1 movies:hasGenre movies:Genre2 .
+#MOVIE_2 -> GENRE_2
+movies:Item2 movies:hasGenre movies:Genre2 .
+#MOVIE_2 -> GENRE_5
+movies:Item2 movies:hasGenre movies:Genre5 .
+#MOVIE_3 -> GENRE_3
+movies:Item3 movies:hasGenre movies:Genre3 .
+#MOVIE_4 -> GENRE_4
+movies:Item4 movies:hasGenre movies:Genre4 .
+#MOVIE_4 -> GENRE_1
+movies:Item4 movies:hasGenre movies:Genre1 .
+#MOVIE_4 -> GENRE_6
+movies:Item4 movies:hasGenre movies:Genre6 .
+#MOVIE_5 -> GENRE_1
+movies:Item5 movies:hasGenre movies:Genre1 .
+#MOVIE_5 -> GENRE_6
+movies:Item5 movies:hasGenre movies:Genre6 .
+
+
+#MOVIE_6 -> GENRE_1
+movies:Item6 movies:hasGenre movies:Genre1 .
+#MOVIE_6 -> GENRE_2
+movies:Item6 movies:hasGenre movies:Genre2 .
+#MOVIE_7 -> GENRE_2
+movies:Item7 movies:hasGenre movies:Genre2 .
+#MOVIE_7 -> GENRE_5
+movies:Item7 movies:hasGenre movies:Genre5 .
+#MOVIE_8 -> GENRE_3
+movies:Item8 movies:hasGenre movies:Genre3 .
+#MOVIE_9 -> GENRE_4
+movies:Item9 movies:hasGenre movies:Genre4 .
+#MOVIE_9 -> GENRE_1
+movies:Item9 movies:hasGenre movies:Genre1 .
+#MOVIE_9 -> GENRE_6
+movies:Item9 movies:hasGenre movies:Genre6 .
+#MOVIE_10 -> GENRE_1
+movies:Item10 movies:hasGenre movies:Genre1 .
+#MOVIE_10 -> GENRE_6
+movies:Item10 movies:hasGenre movies:Genre6 .
+
+
+
+# ITEM -> DOMAIN
+movies:Item1 rdf:type movies:Hollywood .
+movies:Item2 rdf:type movies:Hollywood .
+movies:Item3 rdf:type movies:Hollywood .
+movies:Item4 rdf:type movies:Hollywood .
+movies:Item5 rdf:type movies:Hollywood .
+
+movies:Item6 rdf:type movies:European .
+movies:Item7 rdf:type movies:European .
+movies:Item8 rdf:type movies:European .
+movies:Item9 rdf:type movies:European .
+movies:Item10 rdf:type movies:European .
+

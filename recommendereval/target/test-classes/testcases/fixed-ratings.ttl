@@ -1,0 +1,137 @@
+@prefix fixed: <http://example.org/fixed#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+#
+#USER USER1
+#
+fixed:User1 fixed:hasRated fixed:Rating6 .
+fixed:User1 fixed:hasRated fixed:Rating7 .
+fixed:User1 fixed:hasRated fixed:Rating8 .
+fixed:User1 fixed:hasRated fixed:Rating9 .
+fixed:User1 fixed:hasRated fixed:Rating10 .
+fixed:User1 fixed:hasRated fixed:Rating26 .
+#USER1 -> MOVIE_1
+fixed:Rating6 fixed:ratedMovie fixed:Item1 .
+fixed:Rating6 fixed:hasRating "3.0" .
+#USER1 -> MOVIE_2
+fixed:Rating7 fixed:ratedMovie fixed:Item2 .
+fixed:Rating7 fixed:hasRating "1.0" .
+#USER1 -> MOVIE_3
+fixed:Rating8 fixed:ratedMovie fixed:Item3 .
+fixed:Rating8 fixed:hasRating "2.0" .
+#USER1 -> MOVIE_4
+fixed:Rating9 fixed:ratedMovie fixed:Item4 .
+fixed:Rating9 fixed:hasRating "3.0" .
+#USER1 -> MOVIE_5
+fixed:Rating10 fixed:ratedMovie fixed:Item5 .
+fixed:Rating10 fixed:hasRating "3.0" .
+#USER1 -> MOVIE_6
+fixed:Rating26 fixed:ratedMovie fixed:Item6 .
+fixed:Rating26 fixed:hasRating "4.0" .
+#
+#USER USER2
+#
+fixed:User2 fixed:hasRated fixed:Rating11 .
+fixed:User2 fixed:hasRated fixed:Rating12 .
+fixed:User2 fixed:hasRated fixed:Rating13 .
+fixed:User2 fixed:hasRated fixed:Rating14 .
+fixed:User2 fixed:hasRated fixed:Rating15 .
+fixed:User2 fixed:hasRated fixed:Rating27 .
+#USER2 -> MOVIE_1
+fixed:Rating11 fixed:ratedMovie fixed:Item1 .
+fixed:Rating11 fixed:hasRating "4.0" .
+#USER2 -> MOVIE_2
+fixed:Rating12 fixed:ratedMovie fixed:Item2 .
+fixed:Rating12 fixed:hasRating "3.0" .
+#USER2 -> MOVIE_3
+fixed:Rating13 fixed:ratedMovie fixed:Item3 .
+fixed:Rating13 fixed:hasRating "4.0" .
+#USER2 -> MOVIE_4
+fixed:Rating14 fixed:ratedMovie fixed:Item4 .
+fixed:Rating14 fixed:hasRating "3.0" .
+#USER2 -> MOVIE_5
+fixed:Rating15 fixed:ratedMovie fixed:Item5 .
+fixed:Rating15 fixed:hasRating "5.0" .
+#USER2 -> MOVIE_6
+fixed:Rating27 fixed:ratedMovie fixed:Item6 .
+fixed:Rating27 fixed:hasRating "3.0" .
+#
+#USER USER3
+#
+fixed:User3 fixed:hasRated fixed:Rating16 .
+fixed:User3 fixed:hasRated fixed:Rating17 .
+fixed:User3 fixed:hasRated fixed:Rating18 .
+fixed:User3 fixed:hasRated fixed:Rating19 .
+fixed:User3 fixed:hasRated fixed:Rating20 .
+fixed:User3 fixed:hasRated fixed:Rating28 .
+#USER3 -> MOVIE_1
+fixed:Rating16 fixed:ratedMovie fixed:Item1 .
+fixed:Rating16 fixed:hasRating "3.0" .
+#USER3 -> MOVIE_2
+fixed:Rating17 fixed:ratedMovie fixed:Item2 .
+fixed:Rating17 fixed:hasRating "3.0" .
+#USER3 -> MOVIE_3
+fixed:Rating18 fixed:ratedMovie fixed:Item3 .
+fixed:Rating18 fixed:hasRating "1.0" .
+#USER3 -> MOVIE_4
+fixed:Rating19 fixed:ratedMovie fixed:Item4 .
+fixed:Rating19 fixed:hasRating "5.0" .
+#USER3 -> MOVIE_5
+fixed:Rating20 fixed:ratedMovie fixed:Item5 .
+fixed:Rating20 fixed:hasRating "4.0" .
+#USER3 -> MOVIE_6
+fixed:Rating28 fixed:ratedMovie fixed:Item6 .
+fixed:Rating28 fixed:hasRating "2.0" .
+#
+#USER USER4
+#
+fixed:User4 fixed:hasRated fixed:Rating21 .
+fixed:User4 fixed:hasRated fixed:Rating22 .
+fixed:User4 fixed:hasRated fixed:Rating23 .
+fixed:User4 fixed:hasRated fixed:Rating24 .
+fixed:User4 fixed:hasRated fixed:Rating25 .
+fixed:User4 fixed:hasRated fixed:Rating29 .
+#USER4 -> MOVIE_1
+fixed:Rating21 fixed:ratedMovie fixed:Item1 .
+fixed:Rating21 fixed:hasRating "1.0" .
+#USER4 -> MOVIE_2
+fixed:Rating22 fixed:ratedMovie fixed:Item2 .
+fixed:Rating22 fixed:hasRating "5.0" .
+#USER4 -> MOVIE_3
+fixed:Rating23 fixed:ratedMovie fixed:Item3 .
+fixed:Rating23 fixed:hasRating "5.0" .
+#USER4 -> MOVIE_4
+fixed:Rating24 fixed:ratedMovie fixed:Item4 .
+fixed:Rating24 fixed:hasRating "2.0" .
+#USER4 -> MOVIE_5
+fixed:Rating25 fixed:ratedMovie fixed:Item5 .
+fixed:Rating25 fixed:hasRating "1.0" .
+#USER4 -> MOVIE_6
+fixed:Rating29 fixed:ratedMovie fixed:Item6 .
+fixed:Rating29 fixed:hasRating "1.0" .
+
+
+#MOVIE_1 -> GENRE_1
+fixed:Item1 fixed:hasGenre fixed:Genre1 .
+#MOVIE_1 -> GENRE_2
+fixed:Item1 fixed:hasGenre fixed:Genre2 .
+#MOVIE_2 -> GENRE_1
+fixed:Item2 fixed:hasGenre fixed:Genre1 .
+#MOVIE_2 -> GENRE_3
+fixed:Item2 fixed:hasGenre fixed:Genre3 .
+#MOVIE_3 -> GENRE_3
+fixed:Item3 fixed:hasGenre fixed:Genre3 .
+#MOVIE_4 -> GENRE_2
+fixed:Item4 fixed:hasGenre fixed:Genre2 .
+#MOVIE_4 -> GENRE_3
+fixed:Item4 fixed:hasGenre fixed:Genre3 .
+#MOVIE_5 -> GENRE_3
+fixed:Item5 fixed:hasGenre fixed:Genre3 .
+#MOVIE_5 -> GENRE_4
+fixed:Item5 fixed:hasGenre fixed:Genre4.
+#MOVIE_6 -> GENRE_1
+fixed:Item6 fixed:hasGenre fixed:Genre1 .
+#MOVIE_6 -> GENRE_2
+fixed:Item6 fixed:hasGenre fixed:Genre2.
+#MOVIE_6 -> GENRE_3
+fixed:Item6 fixed:hasGenre fixed:Genre3 .
+

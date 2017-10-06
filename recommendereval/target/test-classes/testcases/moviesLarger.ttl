@@ -1,0 +1,2002 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating1> .
+<http://example.org/movies#Rating1> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating1> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating2> .
+<http://example.org/movies#Rating2> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating2> <http://example.org/movies#hasRating> "5" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating3> .
+<http://example.org/movies#Rating3> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item49> .
+<http://example.org/movies#Rating3> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating4> .
+<http://example.org/movies#Rating4> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item17> .
+<http://example.org/movies#Rating4> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating5> .
+<http://example.org/movies#Rating5> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item32> .
+<http://example.org/movies#Rating5> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating6> .
+<http://example.org/movies#Rating6> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating6> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating7> .
+<http://example.org/movies#Rating7> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item58> .
+<http://example.org/movies#Rating7> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating8> .
+<http://example.org/movies#Rating8> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item88> .
+<http://example.org/movies#Rating8> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating9> .
+<http://example.org/movies#Rating9> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item47> .
+<http://example.org/movies#Rating9> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating10> .
+<http://example.org/movies#Rating10> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item67> .
+<http://example.org/movies#Rating10> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating11> .
+<http://example.org/movies#Rating11> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating11> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating12> .
+<http://example.org/movies#Rating12> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item39> .
+<http://example.org/movies#Rating12> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating13> .
+<http://example.org/movies#Rating13> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item71> .
+<http://example.org/movies#Rating13> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating14> .
+<http://example.org/movies#Rating14> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating14> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating15> .
+<http://example.org/movies#Rating15> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item90> .
+<http://example.org/movies#Rating15> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating16> .
+<http://example.org/movies#Rating16> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item12> .
+<http://example.org/movies#Rating16> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating17> .
+<http://example.org/movies#Rating17> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating17> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating18> .
+<http://example.org/movies#Rating18> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item14> .
+<http://example.org/movies#Rating18> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating19> .
+<http://example.org/movies#Rating19> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item95> .
+<http://example.org/movies#Rating19> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating20> .
+<http://example.org/movies#Rating20> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item19> .
+<http://example.org/movies#Rating20> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating21> .
+<http://example.org/movies#Rating21> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item3> .
+<http://example.org/movies#Rating21> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating22> .
+<http://example.org/movies#Rating22> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item75> .
+<http://example.org/movies#Rating22> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating23> .
+<http://example.org/movies#Rating23> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item46> .
+<http://example.org/movies#Rating23> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating24> .
+<http://example.org/movies#Rating24> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating24> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating25> .
+<http://example.org/movies#Rating25> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item7> .
+<http://example.org/movies#Rating25> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating26> .
+<http://example.org/movies#Rating26> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item45> .
+<http://example.org/movies#Rating26> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating27> .
+<http://example.org/movies#Rating27> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating27> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating28> .
+<http://example.org/movies#Rating28> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating28> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating29> .
+<http://example.org/movies#Rating29> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item60> .
+<http://example.org/movies#Rating29> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating30> .
+<http://example.org/movies#Rating30> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item21> .
+<http://example.org/movies#Rating30> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating31> .
+<http://example.org/movies#Rating31> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item96> .
+<http://example.org/movies#Rating31> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating32> .
+<http://example.org/movies#Rating32> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item40> .
+<http://example.org/movies#Rating32> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating33> .
+<http://example.org/movies#Rating33> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item72> .
+<http://example.org/movies#Rating33> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating34> .
+<http://example.org/movies#Rating34> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item9> .
+<http://example.org/movies#Rating34> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating35> .
+<http://example.org/movies#Rating35> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating35> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating36> .
+<http://example.org/movies#Rating36> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item57> .
+<http://example.org/movies#Rating36> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating37> .
+<http://example.org/movies#Rating37> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating37> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating38> .
+<http://example.org/movies#Rating38> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item20> .
+<http://example.org/movies#Rating38> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating39> .
+<http://example.org/movies#Rating39> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item54> .
+<http://example.org/movies#Rating39> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating40> .
+<http://example.org/movies#Rating40> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating40> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating41> .
+<http://example.org/movies#Rating41> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item29> .
+<http://example.org/movies#Rating41> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating42> .
+<http://example.org/movies#Rating42> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating42> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating43> .
+<http://example.org/movies#Rating43> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item93> .
+<http://example.org/movies#Rating43> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating44> .
+<http://example.org/movies#Rating44> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item55> .
+<http://example.org/movies#Rating44> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating45> .
+<http://example.org/movies#Rating45> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item76> .
+<http://example.org/movies#Rating45> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating46> .
+<http://example.org/movies#Rating46> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item22> .
+<http://example.org/movies#Rating46> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating47> .
+<http://example.org/movies#Rating47> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item100> .
+<http://example.org/movies#Rating47> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating48> .
+<http://example.org/movies#Rating48> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item99> .
+<http://example.org/movies#Rating48> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating49> .
+<http://example.org/movies#Rating49> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item24> .
+<http://example.org/movies#Rating49> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User1> <http://example.org/movies#hasRated> <http://example.org/movies#Rating50> .
+<http://example.org/movies#Rating50> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item44> .
+<http://example.org/movies#Rating50> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating51> .
+<http://example.org/movies#Rating51> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating51> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating52> .
+<http://example.org/movies#Rating52> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item25> .
+<http://example.org/movies#Rating52> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating53> .
+<http://example.org/movies#Rating53> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item90> .
+<http://example.org/movies#Rating53> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating54> .
+<http://example.org/movies#Rating54> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item85> .
+<http://example.org/movies#Rating54> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating55> .
+<http://example.org/movies#Rating55> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item48> .
+<http://example.org/movies#Rating55> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating56> .
+<http://example.org/movies#Rating56> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item47> .
+<http://example.org/movies#Rating56> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating57> .
+<http://example.org/movies#Rating57> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item61> .
+<http://example.org/movies#Rating57> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating58> .
+<http://example.org/movies#Rating58> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating58> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating59> .
+<http://example.org/movies#Rating59> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item49> .
+<http://example.org/movies#Rating59> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating60> .
+<http://example.org/movies#Rating60> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item54> .
+<http://example.org/movies#Rating60> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating61> .
+<http://example.org/movies#Rating61> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item78> .
+<http://example.org/movies#Rating61> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating62> .
+<http://example.org/movies#Rating62> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item14> .
+<http://example.org/movies#Rating62> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating63> .
+<http://example.org/movies#Rating63> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item28> .
+<http://example.org/movies#Rating63> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating64> .
+<http://example.org/movies#Rating64> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item9> .
+<http://example.org/movies#Rating64> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating65> .
+<http://example.org/movies#Rating65> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating65> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating66> .
+<http://example.org/movies#Rating66> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item15> .
+<http://example.org/movies#Rating66> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating67> .
+<http://example.org/movies#Rating67> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item44> .
+<http://example.org/movies#Rating67> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating68> .
+<http://example.org/movies#Rating68> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item64> .
+<http://example.org/movies#Rating68> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating69> .
+<http://example.org/movies#Rating69> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item32> .
+<http://example.org/movies#Rating69> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating70> .
+<http://example.org/movies#Rating70> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item33> .
+<http://example.org/movies#Rating70> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating71> .
+<http://example.org/movies#Rating71> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating71> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating72> .
+<http://example.org/movies#Rating72> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item59> .
+<http://example.org/movies#Rating72> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating73> .
+<http://example.org/movies#Rating73> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item94> .
+<http://example.org/movies#Rating73> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating74> .
+<http://example.org/movies#Rating74> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item95> .
+<http://example.org/movies#Rating74> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating75> .
+<http://example.org/movies#Rating75> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item18> .
+<http://example.org/movies#Rating75> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating76> .
+<http://example.org/movies#Rating76> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item72> .
+<http://example.org/movies#Rating76> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating77> .
+<http://example.org/movies#Rating77> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating77> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating78> .
+<http://example.org/movies#Rating78> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item38> .
+<http://example.org/movies#Rating78> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating79> .
+<http://example.org/movies#Rating79> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item65> .
+<http://example.org/movies#Rating79> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating80> .
+<http://example.org/movies#Rating80> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item71> .
+<http://example.org/movies#Rating80> <http://example.org/movies#hasRating> "5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating81> .
+<http://example.org/movies#Rating81> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item34> .
+<http://example.org/movies#Rating81> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating82> .
+<http://example.org/movies#Rating82> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item53> .
+<http://example.org/movies#Rating82> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating83> .
+<http://example.org/movies#Rating83> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item20> .
+<http://example.org/movies#Rating83> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating84> .
+<http://example.org/movies#Rating84> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item58> .
+<http://example.org/movies#Rating84> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating85> .
+<http://example.org/movies#Rating85> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item52> .
+<http://example.org/movies#Rating85> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating86> .
+<http://example.org/movies#Rating86> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating86> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating87> .
+<http://example.org/movies#Rating87> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating87> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating88> .
+<http://example.org/movies#Rating88> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating88> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating89> .
+<http://example.org/movies#Rating89> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating89> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating90> .
+<http://example.org/movies#Rating90> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item87> .
+<http://example.org/movies#Rating90> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating91> .
+<http://example.org/movies#Rating91> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item31> .
+<http://example.org/movies#Rating91> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating92> .
+<http://example.org/movies#Rating92> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item98> .
+<http://example.org/movies#Rating92> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating93> .
+<http://example.org/movies#Rating93> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item36> .
+<http://example.org/movies#Rating93> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating94> .
+<http://example.org/movies#Rating94> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating94> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating95> .
+<http://example.org/movies#Rating95> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item45> .
+<http://example.org/movies#Rating95> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating96> .
+<http://example.org/movies#Rating96> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating96> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating97> .
+<http://example.org/movies#Rating97> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item21> .
+<http://example.org/movies#Rating97> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating98> .
+<http://example.org/movies#Rating98> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item80> .
+<http://example.org/movies#Rating98> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating99> .
+<http://example.org/movies#Rating99> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item40> .
+<http://example.org/movies#Rating99> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User2> <http://example.org/movies#hasRated> <http://example.org/movies#Rating100> .
+<http://example.org/movies#Rating100> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item96> .
+<http://example.org/movies#Rating100> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating101> .
+<http://example.org/movies#Rating101> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item13> .
+<http://example.org/movies#Rating101> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating102> .
+<http://example.org/movies#Rating102> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item58> .
+<http://example.org/movies#Rating102> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating103> .
+<http://example.org/movies#Rating103> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item65> .
+<http://example.org/movies#Rating103> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating104> .
+<http://example.org/movies#Rating104> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item14> .
+<http://example.org/movies#Rating104> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating105> .
+<http://example.org/movies#Rating105> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item41> .
+<http://example.org/movies#Rating105> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating106> .
+<http://example.org/movies#Rating106> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item15> .
+<http://example.org/movies#Rating106> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating107> .
+<http://example.org/movies#Rating107> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item30> .
+<http://example.org/movies#Rating107> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating108> .
+<http://example.org/movies#Rating108> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item11> .
+<http://example.org/movies#Rating108> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating109> .
+<http://example.org/movies#Rating109> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating109> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating110> .
+<http://example.org/movies#Rating110> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item34> .
+<http://example.org/movies#Rating110> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating111> .
+<http://example.org/movies#Rating111> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item7> .
+<http://example.org/movies#Rating111> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating112> .
+<http://example.org/movies#Rating112> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item59> .
+<http://example.org/movies#Rating112> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating113> .
+<http://example.org/movies#Rating113> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item75> .
+<http://example.org/movies#Rating113> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating114> .
+<http://example.org/movies#Rating114> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating114> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating115> .
+<http://example.org/movies#Rating115> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating115> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating116> .
+<http://example.org/movies#Rating116> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item2> .
+<http://example.org/movies#Rating116> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating117> .
+<http://example.org/movies#Rating117> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item69> .
+<http://example.org/movies#Rating117> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating118> .
+<http://example.org/movies#Rating118> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item44> .
+<http://example.org/movies#Rating118> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating119> .
+<http://example.org/movies#Rating119> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item97> .
+<http://example.org/movies#Rating119> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating120> .
+<http://example.org/movies#Rating120> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating120> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating121> .
+<http://example.org/movies#Rating121> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating121> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating122> .
+<http://example.org/movies#Rating122> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item26> .
+<http://example.org/movies#Rating122> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating123> .
+<http://example.org/movies#Rating123> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item47> .
+<http://example.org/movies#Rating123> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating124> .
+<http://example.org/movies#Rating124> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item64> .
+<http://example.org/movies#Rating124> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating125> .
+<http://example.org/movies#Rating125> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating125> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating126> .
+<http://example.org/movies#Rating126> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item84> .
+<http://example.org/movies#Rating126> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating127> .
+<http://example.org/movies#Rating127> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating127> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating128> .
+<http://example.org/movies#Rating128> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item33> .
+<http://example.org/movies#Rating128> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating129> .
+<http://example.org/movies#Rating129> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item48> .
+<http://example.org/movies#Rating129> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating130> .
+<http://example.org/movies#Rating130> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item17> .
+<http://example.org/movies#Rating130> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating131> .
+<http://example.org/movies#Rating131> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item36> .
+<http://example.org/movies#Rating131> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating132> .
+<http://example.org/movies#Rating132> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item29> .
+<http://example.org/movies#Rating132> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating133> .
+<http://example.org/movies#Rating133> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item88> .
+<http://example.org/movies#Rating133> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating134> .
+<http://example.org/movies#Rating134> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item63> .
+<http://example.org/movies#Rating134> <http://example.org/movies#hasRating> "1" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating135> .
+<http://example.org/movies#Rating135> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item56> .
+<http://example.org/movies#Rating135> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating136> .
+<http://example.org/movies#Rating136> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating136> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating137> .
+<http://example.org/movies#Rating137> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item96> .
+<http://example.org/movies#Rating137> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating138> .
+<http://example.org/movies#Rating138> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item91> .
+<http://example.org/movies#Rating138> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating139> .
+<http://example.org/movies#Rating139> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item100> .
+<http://example.org/movies#Rating139> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating140> .
+<http://example.org/movies#Rating140> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item86> .
+<http://example.org/movies#Rating140> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating141> .
+<http://example.org/movies#Rating141> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item39> .
+<http://example.org/movies#Rating141> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating142> .
+<http://example.org/movies#Rating142> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item93> .
+<http://example.org/movies#Rating142> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating143> .
+<http://example.org/movies#Rating143> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item61> .
+<http://example.org/movies#Rating143> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating144> .
+<http://example.org/movies#Rating144> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating144> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating145> .
+<http://example.org/movies#Rating145> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating145> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating146> .
+<http://example.org/movies#Rating146> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item38> .
+<http://example.org/movies#Rating146> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating147> .
+<http://example.org/movies#Rating147> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item71> .
+<http://example.org/movies#Rating147> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating148> .
+<http://example.org/movies#Rating148> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item62> .
+<http://example.org/movies#Rating148> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating149> .
+<http://example.org/movies#Rating149> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item24> .
+<http://example.org/movies#Rating149> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User3> <http://example.org/movies#hasRated> <http://example.org/movies#Rating150> .
+<http://example.org/movies#Rating150> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item28> .
+<http://example.org/movies#Rating150> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating151> .
+<http://example.org/movies#Rating151> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item43> .
+<http://example.org/movies#Rating151> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating152> .
+<http://example.org/movies#Rating152> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item81> .
+<http://example.org/movies#Rating152> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating153> .
+<http://example.org/movies#Rating153> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item88> .
+<http://example.org/movies#Rating153> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating154> .
+<http://example.org/movies#Rating154> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item12> .
+<http://example.org/movies#Rating154> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating155> .
+<http://example.org/movies#Rating155> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item15> .
+<http://example.org/movies#Rating155> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating156> .
+<http://example.org/movies#Rating156> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item29> .
+<http://example.org/movies#Rating156> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating157> .
+<http://example.org/movies#Rating157> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item2> .
+<http://example.org/movies#Rating157> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating158> .
+<http://example.org/movies#Rating158> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item19> .
+<http://example.org/movies#Rating158> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating159> .
+<http://example.org/movies#Rating159> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item93> .
+<http://example.org/movies#Rating159> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating160> .
+<http://example.org/movies#Rating160> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating160> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating161> .
+<http://example.org/movies#Rating161> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item78> .
+<http://example.org/movies#Rating161> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating162> .
+<http://example.org/movies#Rating162> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item84> .
+<http://example.org/movies#Rating162> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating163> .
+<http://example.org/movies#Rating163> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item13> .
+<http://example.org/movies#Rating163> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating164> .
+<http://example.org/movies#Rating164> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item28> .
+<http://example.org/movies#Rating164> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating165> .
+<http://example.org/movies#Rating165> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item61> .
+<http://example.org/movies#Rating165> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating166> .
+<http://example.org/movies#Rating166> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item24> .
+<http://example.org/movies#Rating166> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating167> .
+<http://example.org/movies#Rating167> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item60> .
+<http://example.org/movies#Rating167> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating168> .
+<http://example.org/movies#Rating168> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item95> .
+<http://example.org/movies#Rating168> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating169> .
+<http://example.org/movies#Rating169> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item6> .
+<http://example.org/movies#Rating169> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating170> .
+<http://example.org/movies#Rating170> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating170> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating171> .
+<http://example.org/movies#Rating171> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item55> .
+<http://example.org/movies#Rating171> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating172> .
+<http://example.org/movies#Rating172> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating172> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating173> .
+<http://example.org/movies#Rating173> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item72> .
+<http://example.org/movies#Rating173> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating174> .
+<http://example.org/movies#Rating174> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item40> .
+<http://example.org/movies#Rating174> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating175> .
+<http://example.org/movies#Rating175> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item53> .
+<http://example.org/movies#Rating175> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating176> .
+<http://example.org/movies#Rating176> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item62> .
+<http://example.org/movies#Rating176> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating177> .
+<http://example.org/movies#Rating177> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating177> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating178> .
+<http://example.org/movies#Rating178> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item76> .
+<http://example.org/movies#Rating178> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating179> .
+<http://example.org/movies#Rating179> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item39> .
+<http://example.org/movies#Rating179> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating180> .
+<http://example.org/movies#Rating180> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item57> .
+<http://example.org/movies#Rating180> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating181> .
+<http://example.org/movies#Rating181> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item23> .
+<http://example.org/movies#Rating181> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating182> .
+<http://example.org/movies#Rating182> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item21> .
+<http://example.org/movies#Rating182> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating183> .
+<http://example.org/movies#Rating183> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item25> .
+<http://example.org/movies#Rating183> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating184> .
+<http://example.org/movies#Rating184> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item73> .
+<http://example.org/movies#Rating184> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating185> .
+<http://example.org/movies#Rating185> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item46> .
+<http://example.org/movies#Rating185> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating186> .
+<http://example.org/movies#Rating186> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item51> .
+<http://example.org/movies#Rating186> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating187> .
+<http://example.org/movies#Rating187> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item45> .
+<http://example.org/movies#Rating187> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating188> .
+<http://example.org/movies#Rating188> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item90> .
+<http://example.org/movies#Rating188> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating189> .
+<http://example.org/movies#Rating189> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item14> .
+<http://example.org/movies#Rating189> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating190> .
+<http://example.org/movies#Rating190> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating190> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating191> .
+<http://example.org/movies#Rating191> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item49> .
+<http://example.org/movies#Rating191> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating192> .
+<http://example.org/movies#Rating192> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating192> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating193> .
+<http://example.org/movies#Rating193> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item11> .
+<http://example.org/movies#Rating193> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating194> .
+<http://example.org/movies#Rating194> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating194> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating195> .
+<http://example.org/movies#Rating195> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating195> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating196> .
+<http://example.org/movies#Rating196> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item47> .
+<http://example.org/movies#Rating196> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating197> .
+<http://example.org/movies#Rating197> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item69> .
+<http://example.org/movies#Rating197> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating198> .
+<http://example.org/movies#Rating198> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item56> .
+<http://example.org/movies#Rating198> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating199> .
+<http://example.org/movies#Rating199> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item18> .
+<http://example.org/movies#Rating199> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User4> <http://example.org/movies#hasRated> <http://example.org/movies#Rating200> .
+<http://example.org/movies#Rating200> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item92> .
+<http://example.org/movies#Rating200> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating201> .
+<http://example.org/movies#Rating201> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item22> .
+<http://example.org/movies#Rating201> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating202> .
+<http://example.org/movies#Rating202> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item65> .
+<http://example.org/movies#Rating202> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating203> .
+<http://example.org/movies#Rating203> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item69> .
+<http://example.org/movies#Rating203> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating204> .
+<http://example.org/movies#Rating204> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item61> .
+<http://example.org/movies#Rating204> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating205> .
+<http://example.org/movies#Rating205> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item94> .
+<http://example.org/movies#Rating205> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating206> .
+<http://example.org/movies#Rating206> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item95> .
+<http://example.org/movies#Rating206> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating207> .
+<http://example.org/movies#Rating207> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item6> .
+<http://example.org/movies#Rating207> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating208> .
+<http://example.org/movies#Rating208> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item28> .
+<http://example.org/movies#Rating208> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating209> .
+<http://example.org/movies#Rating209> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item3> .
+<http://example.org/movies#Rating209> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating210> .
+<http://example.org/movies#Rating210> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item86> .
+<http://example.org/movies#Rating210> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating211> .
+<http://example.org/movies#Rating211> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating211> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating212> .
+<http://example.org/movies#Rating212> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item91> .
+<http://example.org/movies#Rating212> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating213> .
+<http://example.org/movies#Rating213> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item59> .
+<http://example.org/movies#Rating213> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating214> .
+<http://example.org/movies#Rating214> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item84> .
+<http://example.org/movies#Rating214> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating215> .
+<http://example.org/movies#Rating215> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating215> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating216> .
+<http://example.org/movies#Rating216> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating216> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating217> .
+<http://example.org/movies#Rating217> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item62> .
+<http://example.org/movies#Rating217> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating218> .
+<http://example.org/movies#Rating218> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item18> .
+<http://example.org/movies#Rating218> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating219> .
+<http://example.org/movies#Rating219> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item54> .
+<http://example.org/movies#Rating219> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating220> .
+<http://example.org/movies#Rating220> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item39> .
+<http://example.org/movies#Rating220> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating221> .
+<http://example.org/movies#Rating221> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating221> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating222> .
+<http://example.org/movies#Rating222> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item57> .
+<http://example.org/movies#Rating222> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating223> .
+<http://example.org/movies#Rating223> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item25> .
+<http://example.org/movies#Rating223> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating224> .
+<http://example.org/movies#Rating224> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item26> .
+<http://example.org/movies#Rating224> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating225> .
+<http://example.org/movies#Rating225> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item96> .
+<http://example.org/movies#Rating225> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating226> .
+<http://example.org/movies#Rating226> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item52> .
+<http://example.org/movies#Rating226> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating227> .
+<http://example.org/movies#Rating227> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item99> .
+<http://example.org/movies#Rating227> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating228> .
+<http://example.org/movies#Rating228> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item56> .
+<http://example.org/movies#Rating228> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating229> .
+<http://example.org/movies#Rating229> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item75> .
+<http://example.org/movies#Rating229> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating230> .
+<http://example.org/movies#Rating230> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating230> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating231> .
+<http://example.org/movies#Rating231> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item34> .
+<http://example.org/movies#Rating231> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating232> .
+<http://example.org/movies#Rating232> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item31> .
+<http://example.org/movies#Rating232> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating233> .
+<http://example.org/movies#Rating233> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item4> .
+<http://example.org/movies#Rating233> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating234> .
+<http://example.org/movies#Rating234> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item100> .
+<http://example.org/movies#Rating234> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating235> .
+<http://example.org/movies#Rating235> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item67> .
+<http://example.org/movies#Rating235> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating236> .
+<http://example.org/movies#Rating236> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item40> .
+<http://example.org/movies#Rating236> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating237> .
+<http://example.org/movies#Rating237> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item7> .
+<http://example.org/movies#Rating237> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating238> .
+<http://example.org/movies#Rating238> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating238> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating239> .
+<http://example.org/movies#Rating239> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating239> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating240> .
+<http://example.org/movies#Rating240> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item63> .
+<http://example.org/movies#Rating240> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating241> .
+<http://example.org/movies#Rating241> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item68> .
+<http://example.org/movies#Rating241> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating242> .
+<http://example.org/movies#Rating242> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item58> .
+<http://example.org/movies#Rating242> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating243> .
+<http://example.org/movies#Rating243> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating243> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating244> .
+<http://example.org/movies#Rating244> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item19> .
+<http://example.org/movies#Rating244> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating245> .
+<http://example.org/movies#Rating245> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item29> .
+<http://example.org/movies#Rating245> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating246> .
+<http://example.org/movies#Rating246> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating246> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating247> .
+<http://example.org/movies#Rating247> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item97> .
+<http://example.org/movies#Rating247> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating248> .
+<http://example.org/movies#Rating248> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item51> .
+<http://example.org/movies#Rating248> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating249> .
+<http://example.org/movies#Rating249> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item87> .
+<http://example.org/movies#Rating249> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User5> <http://example.org/movies#hasRated> <http://example.org/movies#Rating250> .
+<http://example.org/movies#Rating250> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item70> .
+<http://example.org/movies#Rating250> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating251> .
+<http://example.org/movies#Rating251> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item41> .
+<http://example.org/movies#Rating251> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating252> .
+<http://example.org/movies#Rating252> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item57> .
+<http://example.org/movies#Rating252> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating253> .
+<http://example.org/movies#Rating253> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating253> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating254> .
+<http://example.org/movies#Rating254> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item28> .
+<http://example.org/movies#Rating254> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating255> .
+<http://example.org/movies#Rating255> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item78> .
+<http://example.org/movies#Rating255> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating256> .
+<http://example.org/movies#Rating256> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating256> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating257> .
+<http://example.org/movies#Rating257> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item93> .
+<http://example.org/movies#Rating257> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating258> .
+<http://example.org/movies#Rating258> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item18> .
+<http://example.org/movies#Rating258> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating259> .
+<http://example.org/movies#Rating259> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item69> .
+<http://example.org/movies#Rating259> <http://example.org/movies#hasRating> "1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating260> .
+<http://example.org/movies#Rating260> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item31> .
+<http://example.org/movies#Rating260> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating261> .
+<http://example.org/movies#Rating261> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item11> .
+<http://example.org/movies#Rating261> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating262> .
+<http://example.org/movies#Rating262> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item80> .
+<http://example.org/movies#Rating262> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating263> .
+<http://example.org/movies#Rating263> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item21> .
+<http://example.org/movies#Rating263> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating264> .
+<http://example.org/movies#Rating264> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item71> .
+<http://example.org/movies#Rating264> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating265> .
+<http://example.org/movies#Rating265> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item92> .
+<http://example.org/movies#Rating265> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating266> .
+<http://example.org/movies#Rating266> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item64> .
+<http://example.org/movies#Rating266> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating267> .
+<http://example.org/movies#Rating267> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating267> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating268> .
+<http://example.org/movies#Rating268> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item34> .
+<http://example.org/movies#Rating268> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating269> .
+<http://example.org/movies#Rating269> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item54> .
+<http://example.org/movies#Rating269> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating270> .
+<http://example.org/movies#Rating270> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item68> .
+<http://example.org/movies#Rating270> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating271> .
+<http://example.org/movies#Rating271> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item47> .
+<http://example.org/movies#Rating271> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating272> .
+<http://example.org/movies#Rating272> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating272> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating273> .
+<http://example.org/movies#Rating273> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item58> .
+<http://example.org/movies#Rating273> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating274> .
+<http://example.org/movies#Rating274> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item25> .
+<http://example.org/movies#Rating274> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating275> .
+<http://example.org/movies#Rating275> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item40> .
+<http://example.org/movies#Rating275> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating276> .
+<http://example.org/movies#Rating276> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item73> .
+<http://example.org/movies#Rating276> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating277> .
+<http://example.org/movies#Rating277> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item84> .
+<http://example.org/movies#Rating277> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating278> .
+<http://example.org/movies#Rating278> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item94> .
+<http://example.org/movies#Rating278> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating279> .
+<http://example.org/movies#Rating279> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item86> .
+<http://example.org/movies#Rating279> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating280> .
+<http://example.org/movies#Rating280> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item44> .
+<http://example.org/movies#Rating280> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating281> .
+<http://example.org/movies#Rating281> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item98> .
+<http://example.org/movies#Rating281> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating282> .
+<http://example.org/movies#Rating282> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item22> .
+<http://example.org/movies#Rating282> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating283> .
+<http://example.org/movies#Rating283> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item6> .
+<http://example.org/movies#Rating283> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating284> .
+<http://example.org/movies#Rating284> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item91> .
+<http://example.org/movies#Rating284> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating285> .
+<http://example.org/movies#Rating285> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item32> .
+<http://example.org/movies#Rating285> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating286> .
+<http://example.org/movies#Rating286> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item16> .
+<http://example.org/movies#Rating286> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating287> .
+<http://example.org/movies#Rating287> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item39> .
+<http://example.org/movies#Rating287> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating288> .
+<http://example.org/movies#Rating288> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item2> .
+<http://example.org/movies#Rating288> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating289> .
+<http://example.org/movies#Rating289> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating289> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating290> .
+<http://example.org/movies#Rating290> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item87> .
+<http://example.org/movies#Rating290> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating291> .
+<http://example.org/movies#Rating291> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item13> .
+<http://example.org/movies#Rating291> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating292> .
+<http://example.org/movies#Rating292> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item100> .
+<http://example.org/movies#Rating292> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating293> .
+<http://example.org/movies#Rating293> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating293> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating294> .
+<http://example.org/movies#Rating294> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item61> .
+<http://example.org/movies#Rating294> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating295> .
+<http://example.org/movies#Rating295> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item97> .
+<http://example.org/movies#Rating295> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating296> .
+<http://example.org/movies#Rating296> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating296> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating297> .
+<http://example.org/movies#Rating297> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item4> .
+<http://example.org/movies#Rating297> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating298> .
+<http://example.org/movies#Rating298> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item49> .
+<http://example.org/movies#Rating298> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating299> .
+<http://example.org/movies#Rating299> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item48> .
+<http://example.org/movies#Rating299> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User6> <http://example.org/movies#hasRated> <http://example.org/movies#Rating300> .
+<http://example.org/movies#Rating300> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating300> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating301> .
+<http://example.org/movies#Rating301> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item92> .
+<http://example.org/movies#Rating301> <http://example.org/movies#hasRating> "1" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating302> .
+<http://example.org/movies#Rating302> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item36> .
+<http://example.org/movies#Rating302> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating303> .
+<http://example.org/movies#Rating303> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item85> .
+<http://example.org/movies#Rating303> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating304> .
+<http://example.org/movies#Rating304> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item91> .
+<http://example.org/movies#Rating304> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating305> .
+<http://example.org/movies#Rating305> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item41> .
+<http://example.org/movies#Rating305> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating306> .
+<http://example.org/movies#Rating306> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating306> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating307> .
+<http://example.org/movies#Rating307> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item67> .
+<http://example.org/movies#Rating307> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating308> .
+<http://example.org/movies#Rating308> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating308> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating309> .
+<http://example.org/movies#Rating309> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item12> .
+<http://example.org/movies#Rating309> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating310> .
+<http://example.org/movies#Rating310> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item11> .
+<http://example.org/movies#Rating310> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating311> .
+<http://example.org/movies#Rating311> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item3> .
+<http://example.org/movies#Rating311> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating312> .
+<http://example.org/movies#Rating312> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item53> .
+<http://example.org/movies#Rating312> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating313> .
+<http://example.org/movies#Rating313> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item15> .
+<http://example.org/movies#Rating313> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating314> .
+<http://example.org/movies#Rating314> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item38> .
+<http://example.org/movies#Rating314> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating315> .
+<http://example.org/movies#Rating315> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item57> .
+<http://example.org/movies#Rating315> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating316> .
+<http://example.org/movies#Rating316> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating316> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating317> .
+<http://example.org/movies#Rating317> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating317> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating318> .
+<http://example.org/movies#Rating318> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating318> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating319> .
+<http://example.org/movies#Rating319> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item73> .
+<http://example.org/movies#Rating319> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating320> .
+<http://example.org/movies#Rating320> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item93> .
+<http://example.org/movies#Rating320> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating321> .
+<http://example.org/movies#Rating321> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item70> .
+<http://example.org/movies#Rating321> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating322> .
+<http://example.org/movies#Rating322> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item30> .
+<http://example.org/movies#Rating322> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating323> .
+<http://example.org/movies#Rating323> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item81> .
+<http://example.org/movies#Rating323> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating324> .
+<http://example.org/movies#Rating324> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating324> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating325> .
+<http://example.org/movies#Rating325> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating325> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating326> .
+<http://example.org/movies#Rating326> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item21> .
+<http://example.org/movies#Rating326> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating327> .
+<http://example.org/movies#Rating327> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item31> .
+<http://example.org/movies#Rating327> <http://example.org/movies#hasRating> "5" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating328> .
+<http://example.org/movies#Rating328> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating328> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating329> .
+<http://example.org/movies#Rating329> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item78> .
+<http://example.org/movies#Rating329> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating330> .
+<http://example.org/movies#Rating330> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item65> .
+<http://example.org/movies#Rating330> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating331> .
+<http://example.org/movies#Rating331> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item69> .
+<http://example.org/movies#Rating331> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating332> .
+<http://example.org/movies#Rating332> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item17> .
+<http://example.org/movies#Rating332> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating333> .
+<http://example.org/movies#Rating333> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item23> .
+<http://example.org/movies#Rating333> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating334> .
+<http://example.org/movies#Rating334> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item7> .
+<http://example.org/movies#Rating334> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating335> .
+<http://example.org/movies#Rating335> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item46> .
+<http://example.org/movies#Rating335> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating336> .
+<http://example.org/movies#Rating336> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating336> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating337> .
+<http://example.org/movies#Rating337> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item76> .
+<http://example.org/movies#Rating337> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating338> .
+<http://example.org/movies#Rating338> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating338> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating339> .
+<http://example.org/movies#Rating339> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating339> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating340> .
+<http://example.org/movies#Rating340> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item52> .
+<http://example.org/movies#Rating340> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating341> .
+<http://example.org/movies#Rating341> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating341> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating342> .
+<http://example.org/movies#Rating342> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item97> .
+<http://example.org/movies#Rating342> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating343> .
+<http://example.org/movies#Rating343> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item18> .
+<http://example.org/movies#Rating343> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating344> .
+<http://example.org/movies#Rating344> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating344> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating345> .
+<http://example.org/movies#Rating345> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item94> .
+<http://example.org/movies#Rating345> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating346> .
+<http://example.org/movies#Rating346> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item72> .
+<http://example.org/movies#Rating346> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating347> .
+<http://example.org/movies#Rating347> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item13> .
+<http://example.org/movies#Rating347> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating348> .
+<http://example.org/movies#Rating348> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item45> .
+<http://example.org/movies#Rating348> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating349> .
+<http://example.org/movies#Rating349> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item26> .
+<http://example.org/movies#Rating349> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User7> <http://example.org/movies#hasRated> <http://example.org/movies#Rating350> .
+<http://example.org/movies#Rating350> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item25> .
+<http://example.org/movies#Rating350> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating351> .
+<http://example.org/movies#Rating351> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item43> .
+<http://example.org/movies#Rating351> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating352> .
+<http://example.org/movies#Rating352> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item7> .
+<http://example.org/movies#Rating352> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating353> .
+<http://example.org/movies#Rating353> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item2> .
+<http://example.org/movies#Rating353> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating354> .
+<http://example.org/movies#Rating354> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item96> .
+<http://example.org/movies#Rating354> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating355> .
+<http://example.org/movies#Rating355> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item48> .
+<http://example.org/movies#Rating355> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating356> .
+<http://example.org/movies#Rating356> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item90> .
+<http://example.org/movies#Rating356> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating357> .
+<http://example.org/movies#Rating357> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item40> .
+<http://example.org/movies#Rating357> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating358> .
+<http://example.org/movies#Rating358> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item63> .
+<http://example.org/movies#Rating358> <http://example.org/movies#hasRating> "4.2" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating359> .
+<http://example.org/movies#Rating359> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item11> .
+<http://example.org/movies#Rating359> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating360> .
+<http://example.org/movies#Rating360> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item95> .
+<http://example.org/movies#Rating360> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating361> .
+<http://example.org/movies#Rating361> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating361> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating362> .
+<http://example.org/movies#Rating362> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating362> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating363> .
+<http://example.org/movies#Rating363> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item72> .
+<http://example.org/movies#Rating363> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating364> .
+<http://example.org/movies#Rating364> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating364> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating365> .
+<http://example.org/movies#Rating365> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item34> .
+<http://example.org/movies#Rating365> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating366> .
+<http://example.org/movies#Rating366> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item49> .
+<http://example.org/movies#Rating366> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating367> .
+<http://example.org/movies#Rating367> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item33> .
+<http://example.org/movies#Rating367> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating368> .
+<http://example.org/movies#Rating368> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item67> .
+<http://example.org/movies#Rating368> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating369> .
+<http://example.org/movies#Rating369> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating369> <http://example.org/movies#hasRating> "3.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating370> .
+<http://example.org/movies#Rating370> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item55> .
+<http://example.org/movies#Rating370> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating371> .
+<http://example.org/movies#Rating371> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item6> .
+<http://example.org/movies#Rating371> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating372> .
+<http://example.org/movies#Rating372> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item100> .
+<http://example.org/movies#Rating372> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating373> .
+<http://example.org/movies#Rating373> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item84> .
+<http://example.org/movies#Rating373> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating374> .
+<http://example.org/movies#Rating374> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item51> .
+<http://example.org/movies#Rating374> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating375> .
+<http://example.org/movies#Rating375> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating375> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating376> .
+<http://example.org/movies#Rating376> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item25> .
+<http://example.org/movies#Rating376> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating377> .
+<http://example.org/movies#Rating377> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item54> .
+<http://example.org/movies#Rating377> <http://example.org/movies#hasRating> "1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating378> .
+<http://example.org/movies#Rating378> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item14> .
+<http://example.org/movies#Rating378> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating379> .
+<http://example.org/movies#Rating379> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item64> .
+<http://example.org/movies#Rating379> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating380> .
+<http://example.org/movies#Rating380> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item99> .
+<http://example.org/movies#Rating380> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating381> .
+<http://example.org/movies#Rating381> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item44> .
+<http://example.org/movies#Rating381> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating382> .
+<http://example.org/movies#Rating382> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item92> .
+<http://example.org/movies#Rating382> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating383> .
+<http://example.org/movies#Rating383> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item12> .
+<http://example.org/movies#Rating383> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating384> .
+<http://example.org/movies#Rating384> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item20> .
+<http://example.org/movies#Rating384> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating385> .
+<http://example.org/movies#Rating385> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating385> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating386> .
+<http://example.org/movies#Rating386> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item87> .
+<http://example.org/movies#Rating386> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating387> .
+<http://example.org/movies#Rating387> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating387> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating388> .
+<http://example.org/movies#Rating388> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item36> .
+<http://example.org/movies#Rating388> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating389> .
+<http://example.org/movies#Rating389> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item85> .
+<http://example.org/movies#Rating389> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating390> .
+<http://example.org/movies#Rating390> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item10> .
+<http://example.org/movies#Rating390> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating391> .
+<http://example.org/movies#Rating391> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item59> .
+<http://example.org/movies#Rating391> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating392> .
+<http://example.org/movies#Rating392> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item61> .
+<http://example.org/movies#Rating392> <http://example.org/movies#hasRating> "1.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating393> .
+<http://example.org/movies#Rating393> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating393> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating394> .
+<http://example.org/movies#Rating394> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item46> .
+<http://example.org/movies#Rating394> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating395> .
+<http://example.org/movies#Rating395> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating395> <http://example.org/movies#hasRating> "2.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating396> .
+<http://example.org/movies#Rating396> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating396> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating397> .
+<http://example.org/movies#Rating397> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating397> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating398> .
+<http://example.org/movies#Rating398> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item58> .
+<http://example.org/movies#Rating398> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating399> .
+<http://example.org/movies#Rating399> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item15> .
+<http://example.org/movies#Rating399> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User8> <http://example.org/movies#hasRated> <http://example.org/movies#Rating400> .
+<http://example.org/movies#Rating400> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item4> .
+<http://example.org/movies#Rating400> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating401> .
+<http://example.org/movies#Rating401> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item73> .
+<http://example.org/movies#Rating401> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating402> .
+<http://example.org/movies#Rating402> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating402> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating403> .
+<http://example.org/movies#Rating403> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item39> .
+<http://example.org/movies#Rating403> <http://example.org/movies#hasRating> "2.4" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating404> .
+<http://example.org/movies#Rating404> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item51> .
+<http://example.org/movies#Rating404> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating405> .
+<http://example.org/movies#Rating405> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item65> .
+<http://example.org/movies#Rating405> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating406> .
+<http://example.org/movies#Rating406> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item60> .
+<http://example.org/movies#Rating406> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating407> .
+<http://example.org/movies#Rating407> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item13> .
+<http://example.org/movies#Rating407> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating408> .
+<http://example.org/movies#Rating408> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item48> .
+<http://example.org/movies#Rating408> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating409> .
+<http://example.org/movies#Rating409> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item69> .
+<http://example.org/movies#Rating409> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating410> .
+<http://example.org/movies#Rating410> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item3> .
+<http://example.org/movies#Rating410> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating411> .
+<http://example.org/movies#Rating411> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item16> .
+<http://example.org/movies#Rating411> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating412> .
+<http://example.org/movies#Rating412> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item55> .
+<http://example.org/movies#Rating412> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating413> .
+<http://example.org/movies#Rating413> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item17> .
+<http://example.org/movies#Rating413> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating414> .
+<http://example.org/movies#Rating414> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item62> .
+<http://example.org/movies#Rating414> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating415> .
+<http://example.org/movies#Rating415> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item45> .
+<http://example.org/movies#Rating415> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating416> .
+<http://example.org/movies#Rating416> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating416> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating417> .
+<http://example.org/movies#Rating417> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating417> <http://example.org/movies#hasRating> "4.3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating418> .
+<http://example.org/movies#Rating418> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item19> .
+<http://example.org/movies#Rating418> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating419> .
+<http://example.org/movies#Rating419> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating419> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating420> .
+<http://example.org/movies#Rating420> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item41> .
+<http://example.org/movies#Rating420> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating421> .
+<http://example.org/movies#Rating421> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item63> .
+<http://example.org/movies#Rating421> <http://example.org/movies#hasRating> "3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating422> .
+<http://example.org/movies#Rating422> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating422> <http://example.org/movies#hasRating> "3.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating423> .
+<http://example.org/movies#Rating423> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item31> .
+<http://example.org/movies#Rating423> <http://example.org/movies#hasRating> "2.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating424> .
+<http://example.org/movies#Rating424> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item43> .
+<http://example.org/movies#Rating424> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating425> .
+<http://example.org/movies#Rating425> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item2> .
+<http://example.org/movies#Rating425> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating426> .
+<http://example.org/movies#Rating426> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item52> .
+<http://example.org/movies#Rating426> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating427> .
+<http://example.org/movies#Rating427> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item81> .
+<http://example.org/movies#Rating427> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating428> .
+<http://example.org/movies#Rating428> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating428> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating429> .
+<http://example.org/movies#Rating429> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item99> .
+<http://example.org/movies#Rating429> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating430> .
+<http://example.org/movies#Rating430> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item67> .
+<http://example.org/movies#Rating430> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating431> .
+<http://example.org/movies#Rating431> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item46> .
+<http://example.org/movies#Rating431> <http://example.org/movies#hasRating> "2.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating432> .
+<http://example.org/movies#Rating432> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating432> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating433> .
+<http://example.org/movies#Rating433> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item97> .
+<http://example.org/movies#Rating433> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating434> .
+<http://example.org/movies#Rating434> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating434> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating435> .
+<http://example.org/movies#Rating435> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item72> .
+<http://example.org/movies#Rating435> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating436> .
+<http://example.org/movies#Rating436> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item59> .
+<http://example.org/movies#Rating436> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating437> .
+<http://example.org/movies#Rating437> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item91> .
+<http://example.org/movies#Rating437> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating438> .
+<http://example.org/movies#Rating438> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item23> .
+<http://example.org/movies#Rating438> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating439> .
+<http://example.org/movies#Rating439> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item94> .
+<http://example.org/movies#Rating439> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating440> .
+<http://example.org/movies#Rating440> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item7> .
+<http://example.org/movies#Rating440> <http://example.org/movies#hasRating> "2.3" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating441> .
+<http://example.org/movies#Rating441> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item68> .
+<http://example.org/movies#Rating441> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating442> .
+<http://example.org/movies#Rating442> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating442> <http://example.org/movies#hasRating> "4.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating443> .
+<http://example.org/movies#Rating443> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating443> <http://example.org/movies#hasRating> "1.9" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating444> .
+<http://example.org/movies#Rating444> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item30> .
+<http://example.org/movies#Rating444> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating445> .
+<http://example.org/movies#Rating445> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item93> .
+<http://example.org/movies#Rating445> <http://example.org/movies#hasRating> "4.6" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating446> .
+<http://example.org/movies#Rating446> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating446> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating447> .
+<http://example.org/movies#Rating447> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item57> .
+<http://example.org/movies#Rating447> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating448> .
+<http://example.org/movies#Rating448> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item70> .
+<http://example.org/movies#Rating448> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating449> .
+<http://example.org/movies#Rating449> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item86> .
+<http://example.org/movies#Rating449> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User9> <http://example.org/movies#hasRated> <http://example.org/movies#Rating450> .
+<http://example.org/movies#Rating450> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item47> .
+<http://example.org/movies#Rating450> <http://example.org/movies#hasRating> "1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating451> .
+<http://example.org/movies#Rating451> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item32> .
+<http://example.org/movies#Rating451> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating452> .
+<http://example.org/movies#Rating452> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item79> .
+<http://example.org/movies#Rating452> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating453> .
+<http://example.org/movies#Rating453> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item76> .
+<http://example.org/movies#Rating453> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating454> .
+<http://example.org/movies#Rating454> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item74> .
+<http://example.org/movies#Rating454> <http://example.org/movies#hasRating> "2.2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating455> .
+<http://example.org/movies#Rating455> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item18> .
+<http://example.org/movies#Rating455> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating456> .
+<http://example.org/movies#Rating456> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item99> .
+<http://example.org/movies#Rating456> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating457> .
+<http://example.org/movies#Rating457> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item82> .
+<http://example.org/movies#Rating457> <http://example.org/movies#hasRating> "3.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating458> .
+<http://example.org/movies#Rating458> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item41> .
+<http://example.org/movies#Rating458> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating459> .
+<http://example.org/movies#Rating459> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item54> .
+<http://example.org/movies#Rating459> <http://example.org/movies#hasRating> "5" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating460> .
+<http://example.org/movies#Rating460> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item28> .
+<http://example.org/movies#Rating460> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating461> .
+<http://example.org/movies#Rating461> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item49> .
+<http://example.org/movies#Rating461> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating462> .
+<http://example.org/movies#Rating462> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item34> .
+<http://example.org/movies#Rating462> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating463> .
+<http://example.org/movies#Rating463> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item81> .
+<http://example.org/movies#Rating463> <http://example.org/movies#hasRating> "1.2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating464> .
+<http://example.org/movies#Rating464> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item35> .
+<http://example.org/movies#Rating464> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating465> .
+<http://example.org/movies#Rating465> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item94> .
+<http://example.org/movies#Rating465> <http://example.org/movies#hasRating> "3.4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating466> .
+<http://example.org/movies#Rating466> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item42> .
+<http://example.org/movies#Rating466> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating467> .
+<http://example.org/movies#Rating467> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item10> .
+<http://example.org/movies#Rating467> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating468> .
+<http://example.org/movies#Rating468> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item52> .
+<http://example.org/movies#Rating468> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating469> .
+<http://example.org/movies#Rating469> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item56> .
+<http://example.org/movies#Rating469> <http://example.org/movies#hasRating> "2.6" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating470> .
+<http://example.org/movies#Rating470> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item46> .
+<http://example.org/movies#Rating470> <http://example.org/movies#hasRating> "1.8" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating471> .
+<http://example.org/movies#Rating471> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item48> .
+<http://example.org/movies#Rating471> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating472> .
+<http://example.org/movies#Rating472> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item65> .
+<http://example.org/movies#Rating472> <http://example.org/movies#hasRating> "3.9" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating473> .
+<http://example.org/movies#Rating473> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item75> .
+<http://example.org/movies#Rating473> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating474> .
+<http://example.org/movies#Rating474> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item68> .
+<http://example.org/movies#Rating474> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating475> .
+<http://example.org/movies#Rating475> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item9> .
+<http://example.org/movies#Rating475> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating476> .
+<http://example.org/movies#Rating476> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item6> .
+<http://example.org/movies#Rating476> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating477> .
+<http://example.org/movies#Rating477> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item8> .
+<http://example.org/movies#Rating477> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating478> .
+<http://example.org/movies#Rating478> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item91> .
+<http://example.org/movies#Rating478> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating479> .
+<http://example.org/movies#Rating479> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item15> .
+<http://example.org/movies#Rating479> <http://example.org/movies#hasRating> "3.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating480> .
+<http://example.org/movies#Rating480> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item83> .
+<http://example.org/movies#Rating480> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating481> .
+<http://example.org/movies#Rating481> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item77> .
+<http://example.org/movies#Rating481> <http://example.org/movies#hasRating> "4.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating482> .
+<http://example.org/movies#Rating482> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item43> .
+<http://example.org/movies#Rating482> <http://example.org/movies#hasRating> "4.8" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating483> .
+<http://example.org/movies#Rating483> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item66> .
+<http://example.org/movies#Rating483> <http://example.org/movies#hasRating> "1.5" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating484> .
+<http://example.org/movies#Rating484> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item62> .
+<http://example.org/movies#Rating484> <http://example.org/movies#hasRating> "1.1" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating485> .
+<http://example.org/movies#Rating485> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item89> .
+<http://example.org/movies#Rating485> <http://example.org/movies#hasRating> "1.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating486> .
+<http://example.org/movies#Rating486> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item50> .
+<http://example.org/movies#Rating486> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating487> .
+<http://example.org/movies#Rating487> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item3> .
+<http://example.org/movies#Rating487> <http://example.org/movies#hasRating> "2.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating488> .
+<http://example.org/movies#Rating488> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item55> .
+<http://example.org/movies#Rating488> <http://example.org/movies#hasRating> "3.3" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating489> .
+<http://example.org/movies#Rating489> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item59> .
+<http://example.org/movies#Rating489> <http://example.org/movies#hasRating> "1.3" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating490> .
+<http://example.org/movies#Rating490> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item88> .
+<http://example.org/movies#Rating490> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating491> .
+<http://example.org/movies#Rating491> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item100> .
+<http://example.org/movies#Rating491> <http://example.org/movies#hasRating> "3.2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating492> .
+<http://example.org/movies#Rating492> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item13> .
+<http://example.org/movies#Rating492> <http://example.org/movies#hasRating> "4.7" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating493> .
+<http://example.org/movies#Rating493> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item27> .
+<http://example.org/movies#Rating493> <http://example.org/movies#hasRating> "2" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating494> .
+<http://example.org/movies#Rating494> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item71> .
+<http://example.org/movies#Rating494> <http://example.org/movies#hasRating> "1.4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating495> .
+<http://example.org/movies#Rating495> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item67> .
+<http://example.org/movies#Rating495> <http://example.org/movies#hasRating> "3.8" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating496> .
+<http://example.org/movies#Rating496> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item37> .
+<http://example.org/movies#Rating496> <http://example.org/movies#hasRating> "4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating497> .
+<http://example.org/movies#Rating497> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item1> .
+<http://example.org/movies#Rating497> <http://example.org/movies#hasRating> "2.9" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating498> .
+<http://example.org/movies#Rating498> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item4> .
+<http://example.org/movies#Rating498> <http://example.org/movies#hasRating> "4.4" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating499> .
+<http://example.org/movies#Rating499> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item5> .
+<http://example.org/movies#Rating499> <http://example.org/movies#hasRating> "4.5" .
+
+<http://example.org/movies#User10> <http://example.org/movies#hasRated> <http://example.org/movies#Rating500> .
+<http://example.org/movies#Rating500> <http://example.org/movies#ratedMovie> <http://example.org/movies#Item33> .
+<http://example.org/movies#Rating500> <http://example.org/movies#hasRating> "1.9" .
+

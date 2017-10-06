@@ -1,0 +1,10 @@
+# Eclipse
+/recommender/.classpath
+/recommender/.project
+/recommender/.settings/
+
+/recommender/log/
+/recommender/src/test/resources/testcases/*
+/recommender/target/
+/recommender/*.txt
+/recommender/*.csv

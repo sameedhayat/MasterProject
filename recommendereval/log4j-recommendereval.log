@@ -1,0 +1,811 @@
+2016-07-03 16:12:22 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:22 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 16:12:22 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:22 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:561 - All of the users have number of ratings more than fold size.
+2016-07-03 16:12:23 INFO  CrossKFoldEvaluator:562 - 
+2016-07-03 16:12:24 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 16:12:24 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 16:12:24 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 16:12:24 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 16:12:24 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 16:12:24 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:565 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User2
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User3
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:14:33 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:565 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User2
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User3
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:14:54 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:17:14 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:17:14 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:17:14 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:17:14 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:17:15 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:17:15 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:17:15 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:17:15 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:561 - All of the users have number of ratings more than fold size.
+2016-07-03 17:20:07 INFO  CrossKFoldEvaluator:562 - 
+2016-07-03 17:20:08 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:20:08 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:20:08 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:20:08 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:20:08 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:20:08 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:565 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User2
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User3
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:25:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:565 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User2
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User3
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:25:27 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:561 - All of the users have number of ratings more than fold size.
+2016-07-03 17:32:42 INFO  CrossKFoldEvaluator:562 - 
+2016-07-03 17:32:43 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:32:43 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:32:43 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:32:43 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:32:43 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:32:43 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:02 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:561 - All of the users have number of ratings more than fold size.
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:562 - 
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:03 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:561 - All of the users have number of ratings more than fold size.
+2016-07-03 17:33:18 INFO  CrossKFoldEvaluator:562 - 
+2016-07-03 17:33:19 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:19 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 17:33:19 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 17:33:19 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 17:33:19 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:19 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 17:33:25 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:565 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#Alice
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:561 - All of the users have number of ratings more than fold size.
+2016-07-03 18:01:29 INFO  CrossKFoldEvaluator:562 - 
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:299 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:565 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User1
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User4
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:567 - http://example.org/movies#User5
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:569 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:01:30 INFO  CrossKFoldEvaluator:570 - 
+2016-07-03 18:38:14 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:38:15 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:38:15 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:12 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:12 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:12 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:21 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:21 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:21 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:29 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:29 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:39:29 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:40:35 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:40:36 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:40:36 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:564 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User2
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User3
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:41:19 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:41:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:41:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:41:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:01 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:561 - 
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:02 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:569 - 
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-03 18:42:09 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:04 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:05 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:05 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:564 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User2
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User3
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:17 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:18 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:18 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:18 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:25:18 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:18 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:23 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-04 12:25:24 INFO  CrossKFoldEvaluator:561 - 
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:25 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:25:36 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:34 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:35 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:35 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:564 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User2
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User3
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:39 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:44 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:561 - 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:45 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:44:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:564 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User2
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User3
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:32 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:37 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:38 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:38 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:51 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:561 - 
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:45:52 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:06 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:47 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:561 - 
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:46:48 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-04 12:48:49 INFO  CrossKFoldEvaluator:561 - 
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:48:50 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:564 - 5 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User2
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User3
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:54:54 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:03 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:03 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:03 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:29 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:560 - All of the users have number of ratings more than fold size.
+2016-07-04 12:55:30 INFO  CrossKFoldEvaluator:561 - 
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:564 - 3 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User1
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User4
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#User5
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:31 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:569 - 
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:305 - Number of users for the user selection is greater than(or equals to) the size of the users list. No users will be removed.
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:564 - 1 number of users have number of ratings less than fold size. The list of users: 
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:566 - http://example.org/movies#Alice
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:568 - These users are ignored and not included into Cross K Fold Validation calculation.
+2016-07-04 12:55:41 INFO  CrossKFoldEvaluator:569 - 

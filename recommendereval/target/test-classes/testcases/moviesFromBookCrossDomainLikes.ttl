@@ -1,0 +1,144 @@
+@prefix movies: <http://example.org/movies#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+#
+#USER ALICE
+#
+movies:Alice movies:hasLiked movies:Item1 .
+movies:Alice movies:hasLiked movies:Item2 .
+movies:Alice movies:hasLiked movies:Item3 .
+movies:Alice movies:hasLiked movies:Item4 .
+
+#
+#USER USER1
+#
+movies:User1 movies:hasLiked movies:Item1 .
+movies:User1 movies:hasLiked movies:Item2 .
+movies:User1 movies:hasLiked movies:Item3 .
+movies:User1 movies:hasLiked movies:Item4 .
+movies:User1 movies:hasLiked movies:Item5 .
+
+#
+#USER USER2
+#
+movies:User2 movies:hasLiked movies:Item1 .
+movies:User2 movies:hasLiked movies:Item2 .
+movies:User2 movies:hasLiked movies:Item3 .
+movies:User2 movies:hasLiked movies:Item4 .
+movies:User2 movies:hasLiked movies:Item5 .
+
+#
+#USER USER3
+#
+movies:User3 movies:hasLiked movies:Item1 .
+movies:User3 movies:hasLiked movies:Item2 .
+movies:User3 movies:hasLiked movies:Item3 .
+movies:User3 movies:hasLiked movies:Item4 .
+movies:User3 movies:hasLiked movies:Item5 .
+
+#
+#USER USER4
+#
+movies:User4 movies:hasLiked movies:Item1 .
+movies:User4 movies:hasLiked movies:Item2 .
+movies:User4 movies:hasLiked movies:Item3 .
+movies:User4 movies:hasLiked movies:Item4 .
+movies:User4 movies:hasLiked movies:Item5 .
+
+#
+#USER ALICE
+#
+movies:Alice movies:hasLiked movies:Item6 .
+movies:Alice movies:hasLiked movies:Item7 .
+movies:Alice movies:hasLiked movies:Item8 .
+movies:Alice movies:hasLiked movies:Item9 .
+
+#
+#USER USER1
+#
+movies:User1 movies:hasLiked movies:Item6 .
+movies:User1 movies:hasLiked movies:Item7 .
+movies:User1 movies:hasLiked movies:Item8 .
+movies:User1 movies:hasLiked movies:Item9 .
+movies:User1 movies:hasLiked movies:Item10 .
+
+#
+#USER USER2
+#
+movies:User2 movies:hasLiked movies:Item6 .
+movies:User2 movies:hasLiked movies:Item7 .
+movies:User2 movies:hasLiked movies:Item8 .
+movies:User2 movies:hasLiked movies:Item9 .
+movies:User2 movies:hasLiked movies:Item10 .
+
+#
+#USER USER3
+#
+movies:User3 movies:hasLiked movies:Item6 .
+movies:User3 movies:hasLiked movies:Item7 .
+movies:User3 movies:hasLiked movies:Item8 .
+movies:User3 movies:hasLiked movies:Item9 .
+movies:User3 movies:hasLiked movies:Item10 .
+
+#
+#USER USER4
+#
+movies:User4 movies:hasLiked movies:Item6 .
+movies:User4 movies:hasLiked movies:Item7 .
+movies:User4 movies:hasLiked movies:Item8 .
+movies:User4 movies:hasLiked movies:Item9 .
+movies:User4 movies:hasLiked movies:Item10 .
+
+
+#MOVIE_1 -> GENRE_1
+movies:Item1 movies:hasGenre movies:Genre1 .
+#MOVIE_1 -> GENRE_2
+movies:Item1 movies:hasGenre movies:Genre2 .
+#MOVIE_2 -> GENRE_2
+movies:Item2 movies:hasGenre movies:Genre2 .
+#MOVIE_2 -> GENRE_5
+movies:Item2 movies:hasGenre movies:Genre5 .
+#MOVIE_3 -> GENRE_3
+movies:Item3 movies:hasGenre movies:Genre3 .
+#MOVIE_4 -> GENRE_4
+movies:Item4 movies:hasGenre movies:Genre4 .
+#MOVIE_4 -> GENRE_1
+movies:Item4 movies:hasGenre movies:Genre1 .
+#MOVIE_4 -> GENRE_6
+movies:Item4 movies:hasGenre movies:Genre6 .
+#MOVIE_5 -> GENRE_1
+movies:Item5 movies:hasGenre movies:Genre1 .
+#MOVIE_5 -> GENRE_6
+movies:Item5 movies:hasGenre movies:Genre6 .
+#MOVIE_6 -> GENRE_1
+movies:Item6 movies:hasGenre movies:Genre1 .
+#MOVIE_6 -> GENRE_2
+movies:Item6 movies:hasGenre movies:Genre2 .
+#MOVIE_7 -> GENRE_2
+movies:Item7 movies:hasGenre movies:Genre2 .
+#MOVIE_7 -> GENRE_5
+movies:Item7 movies:hasGenre movies:Genre5 .
+#MOVIE_8 -> GENRE_3
+movies:Item8 movies:hasGenre movies:Genre3 .
+#MOVIE_9 -> GENRE_4
+movies:Item9 movies:hasGenre movies:Genre4 .
+#MOVIE_9 -> GENRE_1
+movies:Item9 movies:hasGenre movies:Genre1 .
+#MOVIE_9 -> GENRE_6
+movies:Item9 movies:hasGenre movies:Genre6 .
+#MOVIE_10 -> GENRE_1
+movies:Item10 movies:hasGenre movies:Genre1 .
+#MOVIE_10 -> GENRE_6
+movies:Item10 movies:hasGenre movies:Genre6 .
+
+# ITEM -> DOMAIN
+movies:Item1 rdf:type movies:Hollywood .
+movies:Item2 rdf:type movies:Hollywood .
+movies:Item3 rdf:type movies:Hollywood .
+movies:Item4 rdf:type movies:Hollywood .
+movies:Item5 rdf:type movies:Hollywood .
+
+movies:Item6  rdf:type movies:European .
+movies:Item7  rdf:type movies:European .
+movies:Item8  rdf:type movies:European .
+movies:Item9  rdf:type movies:European .
+movies:Item10 rdf:type movies:European .

@@ -1,0 +1,105 @@
+package nlp.word2vec;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
+import org.deeplearning4j.models.word2vec.Word2Vec;
+import org.deeplearning4j.text.sentenceiterator.BasicLineIterator;
+import org.deeplearning4j.text.sentenceiterator.SentenceIterator;
+import org.deeplearning4j.text.tokenization.tokenizer.preprocessor.CommonPreprocessor;
+import org.deeplearning4j.text.tokenization.tokenizerfactory.DefaultTokenizerFactory;
+import org.deeplearning4j.text.tokenization.tokenizerfactory.TokenizerFactory;
+
+public class Word2VecModel {
+	public Word2Vec vec;    
+	/**
+     * Sets the size of the neighborhood (collaborative methods).
+     * @param size 
+	 * @throws FileNotFoundException 
+     */
+    public void trainWord2VecModel(String inputPath) throws FileNotFoundException {
+    	
+        File file = new File(inputPath);
+        
+        // Strip white space before and after for each line
+        SentenceIterator iter = new BasicLineIterator(file);
+        // Split on white spaces in the line to get words
+        TokenizerFactory t = new DefaultTokenizerFactory();
+
+        /*
+            CommonPreprocessor will apply the following regex to each token: [\d\.:,"'\(\)\[\]|/?!;]+
+            So, effectively all numbers, punctuation symbols and some special symbols are stripped off.
+            Additionally it forces lower case for all tokens.
+         */
+        t.setTokenPreProcessor(new CommonPreprocessor());
+
+        Word2Vec vec = new Word2Vec.Builder()
+                .minWordFrequency(5)
+                .iterations(1)
+                .layerSize(100)
+                .seed(42)
+                .windowSize(5)
+                .iterate(iter)
+                .tokenizerFactory(t)
+                .build();
+
+        vec.fit();
+
+    }
+    
+    public void readWord2VecModel(String inputPath) throws FileNotFoundException {
+    	File file = new File(inputPath);
+        vec = WordVectorSerializer.readWord2VecModel(file);
+    }
+    
+   
+    
+    public List<Double> inferVector(String uri_text) {
+	List<Double> ret = new ArrayList<Double>();
+    	try{
+		double[] infvec = vec.getWordVector(uri_text);
+    		for(int i=0; i<infvec.length; i++) {
+    			ret.add(infvec[i]);
+    		}
+	}catch(Exception e){
+		System.out.println("Null Exception");
+	}
+    	return ret;
+    }
+    
+    public List<Double> averageList(ArrayList<List<Double>> l){
+    	int size = l.size();
+    	List<Double> avg = l.get(0);
+    	for(int i=1; i< l.size(); i++) {
+    		for(int j=1; j< avg.size(); j++) {
+    			avg.set(j, avg.get(j) + l.get(i).get(j));
+    		}
+    	}
+    	
+    	for(int i=1; i< avg.size(); i++) {
+    		avg.set(i, avg.get(i)/ size);
+    	}
+    	return avg;
+    }
+    
+//    public double cosineSimilarity(String uri_text1, String uri_text2) {
+//    	System.out.println(uri_text1);
+//    	System.out.println(uri_text2);
+//    	
+//    	double[] vectorA = inferVector(uri_text1);
+//    	double[] vectorB = inferVector(uri_text2);
+//        
+//    	double dotProduct = 0.0;
+//        double normA = 0.0;
+//        double normB = 0.0;
+//        for (int i = 0; i < vectorA.length; i++) {
+//            dotProduct += vectorA[i] * vectorB[i];
+//            normA += Math.pow(vectorA[i], 2);
+//            normB += Math.pow(vectorB[i], 2);
+//        }   
+//        return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+//    }
+}
