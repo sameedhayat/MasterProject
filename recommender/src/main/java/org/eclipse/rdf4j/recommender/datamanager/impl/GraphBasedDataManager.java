@@ -5,7 +5,10 @@
  */
 package org.eclipse.rdf4j.recommender.datamanager.impl;
 
+import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,7 +32,11 @@ import org.eclipse.rdf4j.recommender.parameter.RecParadigm;
 import org.eclipse.rdf4j.recommender.parameter.RecPriorsDistribution;
 import org.eclipse.rdf4j.recommender.storage.GraphBasedStorage;
 import org.eclipse.rdf4j.recommender.storage.index.graph.impl.JungGraphIndexBasedStorage;
+import org.eclipse.rdf4j.recommender.util.CsvWriterAppend;
 import org.eclipse.rdf4j.repository.RepositoryException;
+
+import nlp.word2vec.DocModel;
+import nlp.word2vec.Word2VecModel;
 
 
 public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
@@ -200,6 +207,29 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                         break;
                         }
                         
+                        //Compute Rdf2Vec or read precomputed embeddings from the csv file
+                        if (((HybridRecConfig)getRecConfig()).getComputeRdf2Vec() == true) {
+                        	String modelPath = ((HybridRecConfig)getRecConfig()).getRdf2VecInputPath();;
+                        	Word2VecModel vec = new Word2VecModel();
+                            vec.readWord2VecModel(modelPath);
+                            ((GraphBasedStorage)getStorage()).computeRdf2VecEmbeddings(vec);
+                        } else {
+                        	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();;
+                        	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
+                        }
+                        
+                        //Compute Doc2Vec or read precomputed embeddings from the csv file
+                        if (((HybridRecConfig)getRecConfig()).getComputeDoc2Vec() == true) {
+                        	String inputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecInputPath();
+                            DocModel vec = new DocModel();
+                            vec.trainDoc2VecModel(inputPath);
+                            ((GraphBasedStorage)getStorage()).computeDoc2VecEmbeddings(vec);
+                        } else {
+                        	String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();;
+                        	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
+                        }
+                            
+                        
                         if (getRecConfig().getRecParadigm() == RecParadigm.CROSS_DOMAIN_K_STEP_MARKOV_CENTRALITY ||
                                         getRecConfig().getRecParadigm() == RecParadigm.CROSS_DOMAIN_PAGERANK_WITH_PRIORS  || 
                                         getRecConfig().getRecParadigm() == RecParadigm.CROSS_DOMAIN_REWORD ||
@@ -268,7 +298,10 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                         throw new RecommenderException(ex);
                 } catch (QueryEvaluationException ex) {
                         throw new RecommenderException(ex);
-                }
+                } catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
         }
         
         @Override

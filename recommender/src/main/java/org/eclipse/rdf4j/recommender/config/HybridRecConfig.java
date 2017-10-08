@@ -14,7 +14,27 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	
 	
 	private RecGraphOrientation graphOrientation = RecGraphOrientation.DIRECTED; //default
-	        
+	
+	//Path to doc2vec model file
+	private String doc2VecInputPath = "";
+	
+	//Path to rdf2vec model file
+	private String rdf2VecInputPath = "";
+	
+	//Path to doc2vec csv file
+	private String doc2VecOutputPath = "";
+		
+	//Path to rdf2vec csv file
+	private String rdf2VecOutputPath = "";
+		
+	
+	//Whether to compute Doc2Vec or its precomputed
+	private Boolean computeDoc2Vec = false;
+	
+	//Whether to compute Rdf2Vec or its precomputed
+	private Boolean computeRdf2Vec = false;
+	
+	      
 	        public HybridRecConfig (String configName) {
 	            super(configName);
 	        }
@@ -31,7 +51,59 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        public void setGraphOrientation(RecGraphOrientation graphOrientation) {
 	                this.graphOrientation = graphOrientation;
 	        }    
-	       
+	        
+	    	public String getDoc2VecOutputPath() {
+                return doc2VecOutputPath;
+	        }
+	    	public String getRdf2VecOutputPath() {
+                return rdf2VecOutputPath;
+	        }
+	    	
+	    	public String getDoc2VecInputPath() {
+                return doc2VecInputPath;
+	        }
+	    	public String getRdf2VecInputPath() {
+                return rdf2VecInputPath;
+	        }
+	    	
+	    	public Boolean getComputeDoc2Vec() {
+                return computeDoc2Vec;
+	        }
+	    	public Boolean getComputeRdf2Vec() {
+                return computeRdf2Vec;
+	        }
+	        
+	        //Path to doc2vec csv file
+	    	public void doc2VecOutputPath(String path) {
+                this.doc2VecOutputPath = path;
+	        }
+	        
+	        //Path to rdf2vec csv file
+	        public void rdf2VecOutputPath(String path) {
+                this.rdf2VecOutputPath = path;
+	        }
+	        
+	        //Path to doc2vec model file
+	    	public void doc2VecInputPath(String path) {
+                this.doc2VecInputPath = path;
+	        }
+	        
+	        //Path to rdf2vec model file
+	        public void rdf2VecInputPath(String path) {
+                this.rdf2VecInputPath = path;
+	        }
+	        
+	        
+	        //Whether to compute Doc2Vec or its precomputed
+	        public void computeDoc2Vec() {
+                this.computeDoc2Vec = true;
+	        }
+	        
+	       //Whether to compute Rdf2Vec or its precomputed
+	        public void rdf2VecPath() {
+	        	this.computeRdf2Vec = true;
+	        }
+	        
 	        @Override
 	        public DataManager validateConfiguration() throws RecommenderException{
 	                super.validateConfiguration();
