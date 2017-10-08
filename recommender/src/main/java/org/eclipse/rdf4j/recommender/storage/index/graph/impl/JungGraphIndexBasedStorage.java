@@ -451,10 +451,24 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
         	for(Integer s :getSourceNodes()) {
         		if(getAbstract(s).isEmpty()) {
+        			System.out.println(s);
     				continue;
     			}
         		List<Double> sourceD2vVector = vec.inferVector(getAbstract(s));
         		hm.put(getURI(s), sourceD2vVector);
+        	}
+        	return hm;
+        }
+        
+        public HashMap<String,List<Double>> targetDoc2Vec(DocModel vec) {
+        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
+        	for(Integer s :getTargetNodes()) {
+        		if(getAbstract(s).isEmpty()) {
+        			System.out.println(s);
+    				continue;
+    			}
+        		List<Double> targetD2vVector = vec.inferVector(getAbstract(s));
+        		hm.put(getURI(s), targetD2vVector);
         	}
         	return hm;
         }

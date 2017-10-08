@@ -8,6 +8,7 @@ import java.util.List;
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.repository.SailRecommenderRepository;
 import org.eclipse.rdf4j.recommender.storage.index.graph.impl.JungGraphIndexBasedStorage;
+import org.eclipse.rdf4j.recommender.util.CsvWriterAppend;
 import org.eclipse.rdf4j.recommender.util.TestRepositoryInstantiator;
 import org.junit.Test;
 
@@ -50,8 +51,12 @@ public class HybridRecWithLikesTest {
             docModel.trainDoc2VecModel(inputPath);
            // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
             
-            HashMap<String,List<Double>> hm = graphStorage.sourceDoc2Vec(docModel);
             
+            HashMap<String,List<Double>> hm = graphStorage.sourceDoc2Vec(docModel);
+            CsvWriterAppend.csvHashMap("doc2vec_source.csv",hm);
+            
+            hm = graphStorage.targetDoc2Vec(docModel);
+            CsvWriterAppend.csvHashMap("doc2vec_target.csv",hm);
             
 
             
