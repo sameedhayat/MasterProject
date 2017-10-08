@@ -9,5 +9,5 @@
 /recommender/*.txt
 /recommender/*.csv
 
-/recommendereval/target/
+recommendereval/target/*
 
