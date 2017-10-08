@@ -44,7 +44,7 @@ public class CsvWriterAppend {
         	String key = (String)l[0];
         	List<Double> doubleList= new ArrayList<Double>();
         	int size = l.length;
-        	for(String s : Arrays.asList(l)) doubleList.add(Double.valueOf(s));
+        	for(String s : Arrays.asList(l)) doubleList.add(Double.parseDouble(s));
         	hm.put(l[0], doubleList.subList(1, size));
         }
         
