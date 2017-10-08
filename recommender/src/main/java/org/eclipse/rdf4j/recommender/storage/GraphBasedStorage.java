@@ -6,6 +6,9 @@
 package org.eclipse.rdf4j.recommender.storage;
 
 import edu.uci.ics.jung.graph.Graph;
+import nlp.word2vec.DocModel;
+import nlp.word2vec.Word2VecModel;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -220,6 +223,33 @@ public interface GraphBasedStorage extends Storage {
          */
         public double contentBasedSubject(int nodeId1, int nodeId2);
         
+        
+        /**
+         * Computes Doc2Vec Embeddings for all the source and the target nodes.
+         * @param DocModel
+         * @return Hashmap with uri as key and embeddings as value
+         */
+        public void computeDoc2VecEmbeddings(DocModel vec);
+       
+        /**
+         * Computes Rdf2Vec Embeddings for all the target nodes.
+         * @param Word2VecModel
+         * @return Hashmap with uri as key and embeddings as value
+         */
+        public void computeRdf2VecEmbeddings(Word2VecModel vec);
+        
+        /**
+         * Read Doc2Vec Embeddings from the csv file.
+         * @param path to csv file
+         */
+        public void readDoc2VecEmbeddings(String path);
+        
+        
+        /**
+         * Computes Rdf2Vec Embeddings for the csv file.
+         * @param path to csv file
+         */
+        public void readRdf2VecEmbeddings(String path);
         
         /**
          * Computes Reword.

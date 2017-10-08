@@ -86,8 +86,8 @@ public final class TestRepositoryInstantiator {
 
         
         
-        /** Creates a repository with a Reword cross-domain based approach.
-        * Dataset: Hand created one. Based on users John and Maria.
+        /** Creates a repository with a Hybrid cross-domain based approach.
+        * Dataset: Books and movies data
         * @return 
         */      
        public static SailRecommenderRepository createHybridRecommenderDataset() {
@@ -130,6 +130,66 @@ public final class TestRepositoryInstantiator {
                        configuration.setRecParadigm(RecParadigm.HYBRID);
                        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
 
+                       recRepository.loadRecConfiguration(configuration);
+               } catch (RecommenderException ex) { 
+                   System.out.println(ex.getMessage());
+               } catch (IOException ex) { 
+                   System.out.println(ex.getMessage());
+               } catch (RDFParseException ex) {
+                   System.out.println(ex.getMessage());
+               } catch (RepositoryException ex) {
+                   System.out.println(ex.getMessage());
+               } 
+               return recRepository;
+       }
+       
+       /** Creates a repository with a Hybrid cross-domain based approach with precomputed Doc2Vec and Rdf2Vec.
+        * Dataset: Books and movies data, precomputed Doc2Vec and Rdf2Vec
+        * @return 
+        */      
+       public static SailRecommenderRepository createHybridRecommenderDatasetPreComputed() {
+               
+    	   	   RepositoryConnection con = null;
+               SailRecommenderRepository recRepository = null;
+               int numberOfDecimalPlaces = 3;
+               try {
+                       recRepository = new SailRecommenderRepository(
+                           new MemoryStore());
+                       recRepository.initialize();    
+                       con = recRepository.getConnection();
+                   
+                       String resource = "testcases/merge_complete_level1.ttl";
+//                       String baseURI = "http://example.org/data#";
+                       String baseURI = "";
+                        
+                       con.add(classLoader.getResource(resource), baseURI, RDFFormat.TURTLE);
+                
+                       //RECOMMENDATION                        
+                       //One needs first to create a configuration for the recommender.
+                       HybridRecConfig configuration = new HybridRecConfig("config1");
+
+                       //NEW thing: 
+                       //Set a recommendation configuration. Right now only one configuration is
+                       //possible. In the future more configurations should be possible.
+                       configuration.setPosGraphPattern(
+                                   "?u <http://example.org/data#likes> ?o"
+                       );
+
+                       configuration.setRecEntity(RecEntity.USER, "?u");
+                       configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
+                       configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
+                       //TODO
+                       //Modify this later
+                       configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
+                               "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
+                       configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
+                               "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book>");
+
+                       configuration.setRecParadigm(RecParadigm.HYBRID);
+                       configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
+                       configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
+                       configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
+                       
                        recRepository.loadRecConfiguration(configuration);
                } catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());

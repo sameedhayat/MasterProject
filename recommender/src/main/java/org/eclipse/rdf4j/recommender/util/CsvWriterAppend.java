@@ -1,11 +1,15 @@
 package org.eclipse.rdf4j.recommender.util;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +18,7 @@ import org.javatuples.Quintet;
 
 public class CsvWriterAppend {
 	
-	public static void csvHashMap(String path,HashMap<String,List<Double>> hm) {
+	public static void writeCsvHashMap(String path,HashMap<String,List<Double>> hm) {
 		String eol = System.getProperty("line.separator");
 		try (Writer writer = new FileWriter(path)) {
             for (Map.Entry<String,List<Double>> entry : hm.entrySet()) {
@@ -27,6 +31,27 @@ public class CsvWriterAppend {
             ex.printStackTrace(System.err);
           }
 	}
+	
+	public static HashMap<String,List<Double>> readCsvHashMap(String path) throws NumberFormatException, IOException {
+		HashMap<String,List<Double>> hm = new HashMap<String,List<Double>>();
+		BufferedReader br = null;
+	    String line = "";
+	    String cvsSplitBy = ",";
+		
+	    br = new BufferedReader(new FileReader(path));
+        while ((line = br.readLine()) != null) {
+        	String[] l = line.split(cvsSplitBy);
+        	String key = (String)l[0];
+        	List<Double> doubleList= new ArrayList<Double>();
+        	int size = l.length;
+        	for(String s : Arrays.asList(l)) doubleList.add(Double.valueOf(s));
+        	hm.put(l[0], doubleList.subList(1, size));
+        }
+        
+        return hm;
+	}
+	
+	
 	public static void appendCsv(String path, List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> data) {
 				
 				File f = new File(path);

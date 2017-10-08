@@ -39,13 +39,14 @@ public class HybridRecWithLikesTest {
             System.out.println("Loading rep");
             
             SailRecommenderRepository recRepository = 
-                    TestRepositoryInstantiator.createHybridRecommenderDataset();
+                    TestRepositoryInstantiator.createHybridRecommenderDatasetPreComputed();
 
             //We rank the objects according to the predictions (we assume 
             //these are correct.
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
 
+            graphStorage.printEmbeddings();
             //Use Doc2Vec Model and save the embeddings for source and targer in csv file
             /*            
             String inputPath = "input_abstract.csv";
@@ -59,7 +60,6 @@ public class HybridRecWithLikesTest {
             
             hm = graphStorage.targetDoc2Vec(docModel);
             CsvWriterAppend.csvHashMap("doc2vec_target.csv",hm);
-            */            
             
             Word2VecModel w2v = new Word2VecModel();
             String modelPath = "rdf2vec_model";
@@ -70,6 +70,7 @@ public class HybridRecWithLikesTest {
             
             hm = graphStorage.targetRdf2Vec(w2v);
             CsvWriterAppend.csvHashMap("rdf2vec_target.csv",hm);
+            */            
             
             
             /*

@@ -6,6 +6,7 @@
 package org.eclipse.rdf4j.recommender.storage.index.graph.impl;
 
 import java.awt.Dimension;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -22,6 +23,7 @@ import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.eclipse.rdf4j.recommender.datamanager.model.IndexedRatedRes;
 import org.eclipse.rdf4j.recommender.storage.GraphBasedStorage;
 import org.eclipse.rdf4j.recommender.storage.index.AbstractIndexBasedStorage;
+import org.eclipse.rdf4j.recommender.util.CsvWriterAppend;
 import org.eclipse.rdf4j.recommender.util.ListOperations;
 import org.eclipse.rdf4j.recommender.util.TFIDF;
 import org.eclipse.rdf4j.recommender.util.VectorOperations;
@@ -54,7 +56,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	 *--------*/
 		private Set<Integer> sourceResources = new HashSet<Integer>();
         private Set<Integer> targetResources = new HashSet<Integer>();
-    
+        
+        private HashMap<String,List<Double>> doc2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
+        private HashMap<String,List<Double>> rdf2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
+        
         /**
          * The complete graph (the RDF graph translated to this specific model)
          */       
@@ -129,6 +134,15 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         @Override
         public Set<Integer> getTargetNodes() {
                 return targetResources;
+        }
+        //Get Doc2Vec embedding
+        public List<Double> getDoc2VecEmbedding(int id) {
+        	return doc2vecEmbeddingsHashMap.get(getURI(id));
+        }
+        
+        //Get Rdf2Vec embedding
+        public List<Double> getRdf2VecEmbedding(int id) {
+        	return rdf2vecEmbeddingsHashMap.get(getURI(id));
         }
         
         @Override
@@ -447,53 +461,90 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         	return ret;
         }
-        public HashMap<String,List<Double>> sourceDoc2Vec(DocModel vec) {
+        
+        public void computeDoc2VecEmbeddings(DocModel vec) {
         	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
+        	
         	for(Integer s :getSourceNodes()) {
         		if(getAbstract(s).isEmpty()) {
         			System.out.println(s);
     				continue;
     			}
         		List<Double> sourceD2vVector = vec.inferVector(getAbstract(s));
-        		hm.put(getURI(s), sourceD2vVector);
+        		doc2vecEmbeddingsHashMap.put(getURI(s), sourceD2vVector);
         	}
-        	return hm;
-        }
-        
-        public HashMap<String,List<Double>> targetDoc2Vec(DocModel vec) {
-        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
+        	
         	for(Integer t :getTargetNodes()) {
         		if(getAbstract(t).isEmpty()) {
         			System.out.println(t);
     				continue;
     			}
         		List<Double> targetD2vVector = vec.inferVector(getAbstract(t));
-        		hm.put(getURI(t), targetD2vVector);
+        		doc2vecEmbeddingsHashMap.put(getURI(t), targetD2vVector);
         	}
-        	return hm;
         }
         
-        public HashMap<String,List<Double>> sourceRdf2Vec(Word2VecModel vec) {
-        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();
+        
+        public void readDoc2VecEmbeddings(String path) {
+        	try {
+				doc2vecEmbeddingsHashMap = CsvWriterAppend.readCsvHashMap(path);
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+         
+        public void readRdf2VecEmbeddings(String path) {
+        	try {
+				rdf2vecEmbeddingsHashMap = CsvWriterAppend.readCsvHashMap(path);
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+        
+        public void printEmbeddings() {
+        	for (String name: doc2vecEmbeddingsHashMap.keySet()){
+        		
+                String key =name.toString();
+                String value = doc2vecEmbeddingsHashMap.get(name).toString();  
+                System.out.println(key + ":" + value);  
 
+
+        	}
+        	
+        	for (String name: rdf2vecEmbeddingsHashMap.keySet()){
+        		
+                String key =name.toString();
+                String value = doc2vecEmbeddingsHashMap.get(name).toString();  
+                System.out.println(key + ":" + value);  
+
+
+        	}
+        }
+        
+        
+        public void computeRdf2VecEmbeddings(Word2VecModel vec) {
+        	
         	for(Integer s :getSourceNodes()) {
         		String tmpUri = getURI(s).replace("http://dbpedia.org/resource/", "dbr:");
         		List<Double> sourceRdf2Vector = vec.inferVector(tmpUri);
-        		hm.put(getURI(s), sourceRdf2Vector);
+        		rdf2vecEmbeddingsHashMap.put(getURI(s), sourceRdf2Vector);
         	}
-        	return hm;
-        }
-        
-        public HashMap<String,List<Double>> targetRdf2Vec(Word2VecModel vec) {
-        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();
-
         	for(Integer t :getTargetNodes()) {
         		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
         		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
-        		hm.put(getURI(t), targetRdf2Vector);
+        		rdf2vecEmbeddingsHashMap.put(getURI(t), targetRdf2Vector);
         	}
-        	return hm;
+        
         }
+        
         
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {
         	List<Pair<Double, Double>> ret = new ArrayList<Pair<Double,Double>>();
