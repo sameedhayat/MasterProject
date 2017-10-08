@@ -544,6 +544,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         
         }
+        public void writeRdf2VecEmbeddings(String path) {
+        	CsvWriterAppend.writeCsvHashMap(path,rdf2vecEmbeddingsHashMap);
+        }
+        public void writeDoc2VecEmbeddings(String path) {
+        	CsvWriterAppend.writeCsvHashMap(path, doc2vecEmbeddingsHashMap);
+        }
+        
         
         
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {

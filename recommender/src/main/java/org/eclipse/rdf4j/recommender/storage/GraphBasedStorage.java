@@ -238,6 +238,22 @@ public interface GraphBasedStorage extends Storage {
          */
         public void computeRdf2VecEmbeddings(Word2VecModel vec);
         
+        
+        /**
+         * Computes Rdf2Vec Embeddings for all the target nodes.
+         * @param Word2VecModel
+         * @return Hashmap with uri as key and embeddings as value
+         */
+        public void writeRdf2VecEmbeddings(String path);
+        
+        
+        /**
+         * Computes Rdf2Vec Embeddings for all the target nodes.
+         * @param Word2VecModel
+         * @return Hashmap with uri as key and embeddings as value
+         */
+        public void writeDoc2VecEmbeddings(String path);
+        
         /**
          * Read Doc2Vec Embeddings from the csv file.
          * @param path to csv file

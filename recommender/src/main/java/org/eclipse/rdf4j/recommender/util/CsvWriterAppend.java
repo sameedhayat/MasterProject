@@ -23,7 +23,7 @@ public class CsvWriterAppend {
 		try (Writer writer = new FileWriter(path)) {
             for (Map.Entry<String,List<Double>> entry : hm.entrySet()) {
               writer.append(entry.getKey())
-                    .append(',')
+                    .append(' ')
                     .append(convertListToString(entry.getValue()))
                     .append(eol);
             }
@@ -44,8 +44,6 @@ public class CsvWriterAppend {
         	String key = (String)l[0];
         	List<Double> doubleList= new ArrayList<Double>();
         	int size = l.length;
-        	System.out.println(key);
-        	System.out.println(Arrays.asList(l).subList(1, size));
         	for(String s : Arrays.asList(l).subList(1, size)) doubleList.add(Double.parseDouble(s));
         	hm.put(key, doubleList);
         }
@@ -90,7 +88,7 @@ public class CsvWriterAppend {
 				res = Double.toString(d);
 				check = 1;
 			}else {
-				res += "," + Double.toString(d);
+				res += " " + Double.toString(d);
 			}
 		}
 		return res;

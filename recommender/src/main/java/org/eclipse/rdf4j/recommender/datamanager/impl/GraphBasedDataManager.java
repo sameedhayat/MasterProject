@@ -213,8 +213,10 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                         	Word2VecModel vec = new Word2VecModel();
                             vec.readWord2VecModel(modelPath);
                             ((GraphBasedStorage)getStorage()).computeRdf2VecEmbeddings(vec);
+                            String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
+                            ((GraphBasedStorage)getStorage()).writeRdf2VecEmbeddings(rdf2VecOutputPath);
                         } else {
-                        	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();;
+                        	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
                         	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
                         }
                         
@@ -224,6 +226,8 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                             DocModel vec = new DocModel();
                             vec.trainDoc2VecModel(inputPath);
                             ((GraphBasedStorage)getStorage()).computeDoc2VecEmbeddings(vec);
+                            String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();
+                            ((GraphBasedStorage)getStorage()).writeDoc2VecEmbeddings(doc2VecOutputPath);
                         } else {
                         	String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();;
                         	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
