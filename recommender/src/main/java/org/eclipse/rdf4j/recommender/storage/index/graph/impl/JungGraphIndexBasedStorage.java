@@ -462,13 +462,35 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         public HashMap<String,List<Double>> targetDoc2Vec(DocModel vec) {
         	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
-        	for(Integer s :getTargetNodes()) {
-        		if(getAbstract(s).isEmpty()) {
-        			System.out.println(s);
+        	for(Integer t :getTargetNodes()) {
+        		if(getAbstract(t).isEmpty()) {
+        			System.out.println(t);
     				continue;
     			}
-        		List<Double> targetD2vVector = vec.inferVector(getAbstract(s));
-        		hm.put(getURI(s), targetD2vVector);
+        		List<Double> targetD2vVector = vec.inferVector(getAbstract(t));
+        		hm.put(getURI(t), targetD2vVector);
+        	}
+        	return hm;
+        }
+        
+        public HashMap<String,List<Double>> sourceRdf2Vec(Word2VecModel vec) {
+        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();
+
+        	for(Integer s :getSourceNodes()) {
+        		String tmpUri = getURI(s).replace("http://dbpedia.org/resource/", "dbr:");
+        		List<Double> sourceRdf2Vector = vec.inferVector(tmpUri);
+        		hm.put(getURI(s), sourceRdf2Vector);
+        	}
+        	return hm;
+        }
+        
+        public HashMap<String,List<Double>> targetRdf2Vec(Word2VecModel vec) {
+        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();
+
+        	for(Integer t :getSourceNodes()) {
+        		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
+        		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
+        		hm.put(getURI(t), targetRdf2Vector);
         	}
         	return hm;
         }

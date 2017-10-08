@@ -13,6 +13,7 @@ import org.eclipse.rdf4j.recommender.util.TestRepositoryInstantiator;
 import org.junit.Test;
 
 import nlp.word2vec.DocModel;
+import nlp.word2vec.Word2VecModel;
 
 public class HybridRecWithLikesTest {
 	
@@ -42,14 +43,15 @@ public class HybridRecWithLikesTest {
 
             //We rank the objects according to the predictions (we assume 
             //these are correct.
-            
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
-            System.out.print(graphStorage.getSourceNodes());
+
+            //Use Doc2Vec Model and save the embeddings for source and targer in csv file
+            /*            
             String inputPath = "input_abstract.csv";
             DocModel docModel = new DocModel();
             docModel.trainDoc2VecModel(inputPath);
-           // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
+            // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
             
             
             HashMap<String,List<Double>> hm = graphStorage.sourceDoc2Vec(docModel);
@@ -57,8 +59,18 @@ public class HybridRecWithLikesTest {
             
             hm = graphStorage.targetDoc2Vec(docModel);
             CsvWriterAppend.csvHashMap("doc2vec_target.csv",hm);
+            */            
             
-
+            Word2VecModel w2v = new Word2VecModel();
+            String modelPath = "rdf2vec_model";
+            w2v.readWord2VecModel(modelPath);
+            
+            HashMap<String,List<Double>> hm = graphStorage.sourceRdf2Vec(w2v);
+            CsvWriterAppend.csvHashMap("rdf2vec_source.csv",hm);
+            
+            hm = graphStorage.targetRdf2Vec(w2v);
+            CsvWriterAppend.csvHashMap("rdf2vec_target.csv",hm);
+            
             
             /*
             //get all the users indexes
@@ -71,10 +83,7 @@ public class HybridRecWithLikesTest {
            // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
 //            List<Pair<Double, Double>> pList = graphStorage.Doc2VecRating(sourceId, docModel);
             
-             Word2VecModel w2v = new Word2VecModel();
-             String modelPath = "rdf2vec_model";
-             w2v.readWord2VecModel(modelPath);
-            
+             
 	    for(Integer u: allUserIndexes){            
             List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> pList = graphStorage.getAllFeatures(u, w2v, docModel);
             CsvWriterAppend.appendCsv("ml_training_data.csv", pList);
