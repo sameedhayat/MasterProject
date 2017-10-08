@@ -8,3 +8,6 @@
 /recommender/target/
 /recommender/*.txt
 /recommender/*.csv
+
+/recommendereval/target/
+
