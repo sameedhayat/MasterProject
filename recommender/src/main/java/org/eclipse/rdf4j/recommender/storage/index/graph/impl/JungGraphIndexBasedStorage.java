@@ -487,7 +487,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public HashMap<String,List<Double>> targetRdf2Vec(Word2VecModel vec) {
         	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();
 
-        	for(Integer t :getSourceNodes()) {
+        	for(Integer t :getTargetNodes()) {
         		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
         		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
         		hm.put(getURI(t), targetRdf2Vector);
