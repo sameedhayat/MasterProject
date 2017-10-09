@@ -60,6 +60,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         private HashMap<String,List<Double>> doc2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
         private HashMap<String,List<Double>> rdf2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
         
+        private HashMap<Integer,List<Double>> usersEmbeddingsAverageHashMap = new HashMap<Integer,List<Double>>();
+        
         /**
          * The complete graph (the RDF graph translated to this specific model)
          */       
@@ -377,14 +379,44 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			System.out.println(cosineSimilarity(targetNodeVector, sourceNodeVector));
         	}
         }
-        
+        @Override
+        public void computeUsersEmbeddingsAverage(String path) {
+        	Set<Integer> allUserIndexes = getAllUserIndexes();
+        	
+        	for (Integer userId: allUserIndexes) {
+        		
+        		ArrayList<List<Double>> doc2vecSourceList = new ArrayList<List<Double>>();
+            	ArrayList<List<Double>> rdf2vecSourceList = new ArrayList<List<Double>>();
+            	
+        		//items liked by user in the source domain
+	        	Collection<Integer> userLikesSource = new HashSet(jungCompleteGraph.getNeighbors(userId));
+	        	Set sourceNodes = new HashSet(getSourceNodes());
+	        	System.out.println(sourceNodes);
+	        	userLikesSource.retainAll(sourceNodes);
+	        	
+	        	if(!userLikesSource.isEmpty()) {
+	        		for(Integer s: userLikesSource) {
+	        			if(getAbstract(s).isEmpty()) {
+	        				continue;
+	        			}
+	        			doc2vecSourceList.add(doc2vecEmbeddingsHashMap.get(getURI(s)));
+	        			rdf2vecSourceList.add(rdf2vecEmbeddingsHashMap.get(getURI(s)));
+	        		}
+	        		List<Double> tmp = new ArrayList<Double>();
+	            	
+	        		tmp.addAll(ListOperations.averageList(doc2vecSourceList));
+	        		tmp.addAll(ListOperations.averageList(rdf2vecSourceList));
+	        		usersEmbeddingsAverageHashMap.put(userId, tmp);
+	        	}
+        	}
+        }
         public List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> getAllFeatures(int userId, Word2VecModel w2v,DocModel d2v) {
         	List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> ret = new ArrayList<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>>();
         	
         	//items liked by user in the source domain
         	Collection<Integer> userLikesSource = new HashSet(jungCompleteGraph.getNeighbors(userId));
         	Set sourceNodes = new HashSet(getSourceNodes());
-		System.out.println(sourceNodes);
+        	System.out.println(sourceNodes);
         	userLikesSource.retainAll(sourceNodes);
         	
         	//items liked by user in the target domain
@@ -517,22 +549,16 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public void printEmbeddings() {
         	System.out.println("Printing Doc2Vec Embeddings from CSV");
         	for (String name: doc2vecEmbeddingsHashMap.keySet()){
-        		
-                String key =name.toString();
+        		String key =name.toString();
                 String value = doc2vecEmbeddingsHashMap.get(name).toString();  
                 System.out.println(key + ":" + value);  
-
-
         	}
         	
         	System.out.println("Printing Rdf2Vec Embeddings from CSV");
         	for (String name: rdf2vecEmbeddingsHashMap.keySet()){
-        		
                 String key =name.toString();
                 String value = doc2vecEmbeddingsHashMap.get(name).toString();  
                 System.out.println(key + ":" + value);  
-
-
         	}
         }
         
@@ -562,6 +588,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public void writeDoc2VecEmbeddings(String path) {
         	System.out.println("Writing Doc2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path, doc2vecEmbeddingsHashMap);
+        }
+        
+        
+        @Override
+        public void writeUsersEmbeddingsAverage(String path) {
+        	System.out.println("Writing User embeddings average");
+        	CsvWriterAppend.writeCsvHashMapUser(path, usersEmbeddingsAverageHashMap);
         }
         
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {

@@ -32,6 +32,19 @@ public class CsvWriterAppend {
           }
 	}
 	
+	public static void writeCsvHashMapUser(String path,HashMap<Integer,List<Double>> hm) {
+		String eol = System.getProperty("line.separator");
+		try (Writer writer = new FileWriter(path)) {
+            for (Map.Entry<Integer,List<Double>> entry : hm.entrySet()) {
+              writer.append(entry.getKey().toString())
+                    .append(' ')
+                    .append(convertListToString(entry.getValue()))
+                    .append(eol);
+            }
+          } catch (IOException ex) {
+            ex.printStackTrace(System.err);
+          }
+	}
 	public static HashMap<String,List<Double>> readCsvHashMap(String path) throws NumberFormatException, IOException {
 		HashMap<String,List<Double>> hm = new HashMap<String,List<Double>>();
 		BufferedReader br = null;

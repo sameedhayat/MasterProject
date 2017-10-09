@@ -278,6 +278,21 @@ public class ListOperations {
         	return flatList;
         } 
         
+        public static List<Double> averageList(ArrayList<List<Double>> l){
+        	int size = l.size();
+        	List<Double> avg = l.get(0);
+        	for(int i=1; i< l.size(); i++) {
+        		for(int j=1; j< avg.size(); j++) {
+        			avg.set(j, avg.get(j) + l.get(i).get(j));
+        		}
+        	}
+        	
+        	for(int i=1; i< avg.size(); i++) {
+        		avg.set(i, avg.get(i)/ size);
+        	}
+        	return avg;
+        }
+        
         /**
          * Get common elements in two sets 
          * @param list1

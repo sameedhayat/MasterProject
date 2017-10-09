@@ -267,6 +267,19 @@ public interface GraphBasedStorage extends Storage {
          */
         public void readRdf2VecEmbeddings(String path);
         
+        
+        /**
+         * computes users embeddings average to the csv file.
+         * @param path to csv file
+         */
+        public void computeUsersEmbeddingsAverage(String path);
+        
+        /**
+         * saves users embeddings average to the csv file.
+         * @param path to csv file
+         */
+        public void writeUsersEmbeddingsAverage(String path);
+        
         /**
          * Computes Reword.
          * @param nodeId1
