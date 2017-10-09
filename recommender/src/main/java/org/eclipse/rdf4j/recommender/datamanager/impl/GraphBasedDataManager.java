@@ -203,35 +203,36 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                                 ((GraphBasedStorage)getStorage()).addEdge(subjectRes, objectRes, predicateRes); 
                                                 ((GraphBasedStorage)getStorage()).addEdge(objectRes, subjectRes, predicateRes); 
                                         }
-                                }                                        
+                                }
+                                	 //Compute Rdf2Vec or read precomputed embeddings from the csv file
+                                    if (((HybridRecConfig)getRecConfig()).getComputeRdf2Vec() == true) {
+                                    	String modelPath = ((HybridRecConfig)getRecConfig()).getRdf2VecInputPath();;
+                                    	Word2VecModel vec = new Word2VecModel();
+                                        vec.readWord2VecModel(modelPath);
+                                        ((GraphBasedStorage)getStorage()).computeRdf2VecEmbeddings(vec);
+                                        String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
+                                        ((GraphBasedStorage)getStorage()).writeRdf2VecEmbeddings(rdf2VecOutputPath);
+                                    } else {
+                                    	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
+                                    	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
+                                    }
+                                    
+                                    //Compute Doc2Vec or read precomputed embeddings from the csv file
+                                    if (((HybridRecConfig)getRecConfig()).getComputeDoc2Vec() == true) {
+                                    	String inputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecInputPath();
+                                        DocModel vec = new DocModel();
+                                        vec.trainDoc2VecModel(inputPath);
+                                        ((GraphBasedStorage)getStorage()).computeDoc2VecEmbeddings(vec);
+                                        String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();
+                                        ((GraphBasedStorage)getStorage()).writeDoc2VecEmbeddings(doc2VecOutputPath);
+                                    } else {
+                                    	String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();;
+                                    	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
+                                    }
                         break;
                         }
                         
-                        //Compute Rdf2Vec or read precomputed embeddings from the csv file
-                        if (((HybridRecConfig)getRecConfig()).getComputeRdf2Vec() == true) {
-                        	String modelPath = ((HybridRecConfig)getRecConfig()).getRdf2VecInputPath();;
-                        	Word2VecModel vec = new Word2VecModel();
-                            vec.readWord2VecModel(modelPath);
-                            ((GraphBasedStorage)getStorage()).computeRdf2VecEmbeddings(vec);
-                            String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
-                            ((GraphBasedStorage)getStorage()).writeRdf2VecEmbeddings(rdf2VecOutputPath);
-                        } else {
-                        	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
-                        	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
-                        }
-                        
-                        //Compute Doc2Vec or read precomputed embeddings from the csv file
-                        if (((HybridRecConfig)getRecConfig()).getComputeDoc2Vec() == true) {
-                        	String inputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecInputPath();
-                            DocModel vec = new DocModel();
-                            vec.trainDoc2VecModel(inputPath);
-                            ((GraphBasedStorage)getStorage()).computeDoc2VecEmbeddings(vec);
-                            String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();
-                            ((GraphBasedStorage)getStorage()).writeDoc2VecEmbeddings(doc2VecOutputPath);
-                        } else {
-                        	String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();;
-                        	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
-                        }
+                       
                             
                         
                         if (getRecConfig().getRecParadigm() == RecParadigm.CROSS_DOMAIN_K_STEP_MARKOV_CENTRALITY ||
