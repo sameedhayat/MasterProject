@@ -100,7 +100,7 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        }
 	        
 	       //Whether to compute Rdf2Vec or its precomputed
-	        public void computerRdf2Vec() {
+	        public void computeRdf2Vec() {
 	        	this.computeRdf2Vec = true;
 	        }
 	        

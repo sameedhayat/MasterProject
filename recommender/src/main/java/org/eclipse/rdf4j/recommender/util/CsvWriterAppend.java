@@ -36,7 +36,7 @@ public class CsvWriterAppend {
 		HashMap<String,List<Double>> hm = new HashMap<String,List<Double>>();
 		BufferedReader br = null;
 	    String line = "";
-	    String cvsSplitBy = ",";
+	    String cvsSplitBy = " ";
 		
 	    br = new BufferedReader(new FileReader(path));
         while ((line = br.readLine()) != null) {

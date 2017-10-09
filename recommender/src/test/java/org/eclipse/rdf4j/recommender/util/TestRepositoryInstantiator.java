@@ -189,7 +189,7 @@ public final class TestRepositoryInstantiator {
                        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
                        
                        configuration.computeDoc2Vec();
-                       configuration.computerRdf2Vec();
+                       configuration.computeRdf2Vec();
                        configuration.doc2VecInputPath("input_abstract.csv");
                        configuration.rdf2VecInputPath("rdf2vec_model");
                        
