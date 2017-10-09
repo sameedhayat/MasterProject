@@ -39,7 +39,7 @@ public class HybridRecWithLikesTest {
             System.out.println("Loading rep");
             
             SailRecommenderRepository recRepository = 
-                    TestRepositoryInstantiator.createHybridRecommenderDataset();
+                    TestRepositoryInstantiator.createHybridRecommenderDatasetPreComputed();
 
             //We rank the objects according to the predictions (we assume 
             //these are correct.
