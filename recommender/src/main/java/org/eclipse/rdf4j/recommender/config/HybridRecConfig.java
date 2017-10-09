@@ -104,6 +104,7 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        	this.computeRdf2Vec = true;
 	        }
 	        
+	        
 	        @Override
 	        public DataManager validateConfiguration() throws RecommenderException{
 	                super.validateConfiguration();
