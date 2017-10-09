@@ -463,7 +463,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         public void computeDoc2VecEmbeddings(DocModel vec) {
-        	HashMap<String,List<Double>> hm=new HashMap<String,List<Double>>();  
+        	System.out.println("Computing Rdf2Vec Embeddings");
         	
         	for(Integer s :getSourceNodes()) {
         		if(getAbstract(s).isEmpty()) {
@@ -482,11 +482,14 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		List<Double> targetD2vVector = vec.inferVector(getAbstract(t));
         		doc2vecEmbeddingsHashMap.put(getURI(t), targetD2vVector);
         	}
+        	System.out.println("Doc2Vec Embeddings Computed");
         }
         
         
         public void readDoc2VecEmbeddings(String path) {
+        	
         	try {
+        		System.out.println("Reading Doc2Vec Embeddings from CSV");
 				doc2vecEmbeddingsHashMap = CsvWriterAppend.readCsvHashMap(path);
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
@@ -499,6 +502,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
          
         public void readRdf2VecEmbeddings(String path) {
         	try {
+        		System.out.println("Reading Rdf2Vec Embeddings from CSV");
 				rdf2vecEmbeddingsHashMap = CsvWriterAppend.readCsvHashMap(path);
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
@@ -510,6 +514,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         public void printEmbeddings() {
+        	System.out.println("Printing Doc2Vec Embeddings from CSV");
         	for (String name: doc2vecEmbeddingsHashMap.keySet()){
         		
                 String key =name.toString();
@@ -519,6 +524,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 
         	}
         	
+        	System.out.println("Printing Rdf2Vec Embeddings from CSV");
         	for (String name: rdf2vecEmbeddingsHashMap.keySet()){
         		
                 String key =name.toString();
@@ -531,7 +537,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         
         public void computeRdf2VecEmbeddings(Word2VecModel vec) {
-        	
+        	System.out.println("Computing Rdf2Vec Embeddings");
         	for(Integer s :getSourceNodes()) {
         		String tmpUri = getURI(s).replace("http://dbpedia.org/resource/", "dbr:");
         		List<Double> sourceRdf2Vector = vec.inferVector(tmpUri);
@@ -542,12 +548,16 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
         		rdf2vecEmbeddingsHashMap.put(getURI(t), targetRdf2Vector);
         	}
-        
+        	System.out.println("Rdf2Vec Embeddings Computed");
         }
+        
+        
         public void writeRdf2VecEmbeddings(String path) {
+        	System.out.println("Writing Rdf2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path,rdf2vecEmbeddingsHashMap);
         }
         public void writeDoc2VecEmbeddings(String path) {
+        	System.out.println("Writing Doc2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path, doc2vecEmbeddingsHashMap);
         }
         
