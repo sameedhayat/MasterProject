@@ -216,7 +216,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                     	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
                                     	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
                                     }
-                                    
+                                    /*
                                     //Compute Doc2Vec or read precomputed embeddings from the csv file
                                     if (((HybridRecConfig)getRecConfig()).getComputeDoc2Vec() == true) {
                                     	String inputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecInputPath();
@@ -229,6 +229,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                     	String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();;
                                     	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
                                     }
+                                    */
                         break;
                         }
                         
