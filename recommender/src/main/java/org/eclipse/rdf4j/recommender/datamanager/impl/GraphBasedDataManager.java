@@ -204,6 +204,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                                 ((GraphBasedStorage)getStorage()).addEdge(objectRes, subjectRes, predicateRes); 
                                         }
                                 }
+                                	/*
                                 	 //Compute Rdf2Vec or read precomputed embeddings from the csv file
                                     if (((HybridRecConfig)getRecConfig()).getComputeRdf2Vec() == true) {
                                     	String modelPath = ((HybridRecConfig)getRecConfig()).getRdf2VecInputPath();;
@@ -216,7 +217,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                     	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
                                     	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
                                     }
-                                    /*
+                                    
                                     //Compute Doc2Vec or read precomputed embeddings from the csv file
                                     if (((HybridRecConfig)getRecConfig()).getComputeDoc2Vec() == true) {
                                     	String inputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecInputPath();
@@ -304,10 +305,10 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                         throw new RecommenderException(ex);
                 } catch (QueryEvaluationException ex) {
                         throw new RecommenderException(ex);
-                } catch (FileNotFoundException e) {
+                } //catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			//		e.printStackTrace();
+				//}
         }
         
         @Override
