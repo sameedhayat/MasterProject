@@ -461,7 +461,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         	return ret;
         }
-        
+        @Override
         public void computeDoc2VecEmbeddings(DocModel vec) {
         	System.out.println("Computing Rdf2Vec Embeddings");
         	
@@ -485,7 +485,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	System.out.println("Doc2Vec Embeddings Computed");
         }
         
-        
+        @Override
         public void readDoc2VecEmbeddings(String path) {
         	
         	try {
@@ -499,7 +499,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 				e.printStackTrace();
 			}
         }
-         
+        
+        @Override
         public void readRdf2VecEmbeddings(String path) {
         	try {
         		System.out.println("Reading Rdf2Vec Embeddings from CSV");
@@ -535,7 +536,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         }
         
-        
+        @Override
         public void computeRdf2VecEmbeddings(Word2VecModel vec) {
         	System.out.println("Computing Rdf2Vec Embeddings");
         	for(Integer s :getSourceNodes()) {
@@ -551,17 +552,17 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	System.out.println("Rdf2Vec Embeddings Computed");
         }
         
-        
+        @Override
         public void writeRdf2VecEmbeddings(String path) {
         	System.out.println("Writing Rdf2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path,rdf2vecEmbeddingsHashMap);
         }
+        
+        @Override
         public void writeDoc2VecEmbeddings(String path) {
         	System.out.println("Writing Doc2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path, doc2vecEmbeddingsHashMap);
         }
-        
-        
         
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {
         	List<Pair<Double, Double>> ret = new ArrayList<Pair<Double,Double>>();
@@ -569,7 +570,6 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
         	userLikesSource.containsAll(getSourceNodes());
         	List<Double> cosineList = new ArrayList<Double>();
-        	
         	
         	Set<Integer> targetUris = getTargetNodes();
         	
@@ -587,13 +587,12 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return ret;
         }
         
-      //get user abstract from graph
+        //get user abstract from graph
         public String getAbstract(int userSource) {
         	String abs = "";
         	for (String edge :jungCompleteGraph.getOutEdges(userSource)){
     			if(edge.contains("http://dbpedia.org/ontology/abstract")){
     				abs = getURI(jungCompleteGraph.getDest(edge)); 
-    				
     			}
     		}
         	return abs;
