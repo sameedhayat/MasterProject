@@ -272,7 +272,7 @@ public interface GraphBasedStorage extends Storage {
          * computes users embeddings average to the csv file.
          * @param path to csv file
          */
-        public void computeUsersEmbeddingsAverage(String path);
+        public void computeUsersEmbeddingsAverage();
         
         /**
          * saves users embeddings average to the csv file.

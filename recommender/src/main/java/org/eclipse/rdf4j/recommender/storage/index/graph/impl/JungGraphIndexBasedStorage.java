@@ -380,7 +380,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         }
         @Override
-        public void computeUsersEmbeddingsAverage(String path) {
+        public void computeUsersEmbeddingsAverage() {
         	Set<Integer> allUserIndexes = getAllUserIndexes();
         	
         	for (Integer userId: allUserIndexes) {
