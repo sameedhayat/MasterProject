@@ -391,7 +391,6 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		//items liked by user in the source domain
 	        	Collection<Integer> userLikesSource = new HashSet(jungCompleteGraph.getNeighbors(userId));
 	        	Set sourceNodes = new HashSet(getSourceNodes());
-	        	System.out.println(sourceNodes);
 	        	userLikesSource.retainAll(sourceNodes);
 	        	
 	        	if(!userLikesSource.isEmpty()) {
