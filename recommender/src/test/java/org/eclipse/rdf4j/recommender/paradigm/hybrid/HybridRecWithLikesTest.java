@@ -2,8 +2,10 @@ package org.eclipse.rdf4j.recommender.paradigm.hybrid;
 
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+
 
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.repository.SailRecommenderRepository;
@@ -13,6 +15,7 @@ import org.eclipse.rdf4j.recommender.util.TestRepositoryInstantiator;
 import org.junit.Test;
 
 import nlp.word2vec.DocModel;
+import nlp.word2vec.TreeModel;
 import nlp.word2vec.Word2VecModel;
 
 public class HybridRecWithLikesTest {
@@ -35,7 +38,7 @@ public class HybridRecWithLikesTest {
 	
 	
 	@Test
-    public void loadModelAndCalculateSimilarity() throws RecommenderException, FileNotFoundException {
+    public void loadModelAndCalculateSimilarity() throws RecommenderException, IOException {
             System.out.println("Loading rep");
             
             SailRecommenderRepository recRepository = 
@@ -48,6 +51,9 @@ public class HybridRecWithLikesTest {
             //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
             graphStorage.mlTrainingData("ml_training_data.csv");
+            TreeModel t = new TreeModel();
+            t.readData("ml_training_data.csv", "ml_training_data.arff");
+            
             //graphStorage.printEmbeddings();
             //Use Doc2Vec Model and save the embeddings for source and targer in csv file
             /*            
