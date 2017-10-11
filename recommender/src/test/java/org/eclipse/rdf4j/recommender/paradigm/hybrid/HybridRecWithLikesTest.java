@@ -45,9 +45,8 @@ public class HybridRecWithLikesTest {
             //these are correct.
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
-            
-            graphStorage.computeUsersEmbeddingsAverage();
-            graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
+            graphStorage.printSource();
+            //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.printEmbeddings();
             //Use Doc2Vec Model and save the embeddings for source and targer in csv file
             /*            

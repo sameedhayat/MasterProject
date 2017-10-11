@@ -26,6 +26,10 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 		
 	//Path to rdf2vec csv file
 	private String rdf2VecOutputPath = "";
+	
+	//Path to userEmbedding path csv file
+	private String userEmbeddingsPath = "";
+	
 		
 	
 	//Whether to compute Doc2Vec or its precomputed
@@ -102,6 +106,16 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	       //Whether to compute Rdf2Vec or its precomputed
 	        public void computeRdf2Vec() {
 	        	this.computeRdf2Vec = true;
+	        }
+	        
+	        //Whether to compute Rdf2Vec or its precomputed
+	        public void readUserEmbeddings(String path) {
+	        	this.userEmbeddingsPath = path;
+	        }
+	        
+	      //Whether to compute Rdf2Vec or its precomputed
+	        public String getUserEmbeddingsPath() {
+	        	return userEmbeddingsPath;
 	        }
 	        
 	        

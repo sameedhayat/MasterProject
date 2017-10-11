@@ -492,6 +492,25 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         	return ret;
         }
+        
+        public void getLabel(Integer userId, Integer targetId) {
+        	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
+        	System.out.println("--------Target nodes--------");
+        	System.out.println(getTargetNodes());
+        	System.out.println("--------Source nodes--------");
+        	System.out.println(getSourceNodes());
+        	
+        	
+        }
+        
+        public void printSource() {
+        	System.out.println("--------Target nodes--------");
+        	System.out.println(getTargetNodes());
+        	System.out.println("--------Source nodes--------");
+        	System.out.println(getSourceNodes());
+        }
+            
+        
         @Override
         public void computeDoc2VecEmbeddings(DocModel vec) {
         	System.out.println("Computing Rdf2Vec Embeddings");
@@ -594,6 +613,37 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public void writeUsersEmbeddingsAverage(String path) {
         	System.out.println("Writing User embeddings average");
         	CsvWriterAppend.writeCsvHashMapUser(path, usersEmbeddingsAverageHashMap);
+        }
+        
+        @Override
+        public void mlTrainingData() {
+        	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
+            List<String> label = new ArrayList<String>();
+        	for(Integer u: usersEmbeddingsAverageHashMap.keySet()) {
+        		for(Integer t: getTargetNodes()) {
+        			List<Double> val = new ArrayList<Double>();
+        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
+        			ret.put(u, val);
+        		}
+        		
+        	}
+        }
+        
+        
+        @Override
+        public void readUsersEmbeddingsAverage(String path) {
+        	System.out.println("Writing User embeddings average");
+        	try {
+        		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMapUser(path);
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
         
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {

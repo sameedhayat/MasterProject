@@ -64,6 +64,25 @@ public class CsvWriterAppend {
         return hm;
 	}
 	
+	public static HashMap<Integer,List<Double>> readCsvHashMapUser(String path) throws NumberFormatException, IOException {
+		HashMap<Integer,List<Double>> hm = new HashMap<Integer,List<Double>>();
+		BufferedReader br = null;
+	    String line = "";
+	    String cvsSplitBy = " ";
+		
+	    br = new BufferedReader(new FileReader(path));
+        while ((line = br.readLine()) != null) {
+        	String[] l = line.split(cvsSplitBy);
+        	Integer key =Integer.parseInt(l[0]);
+        	List<Double> doubleList= new ArrayList<Double>();
+        	int size = l.length;
+        	for(String s : Arrays.asList(l).subList(1, size)) doubleList.add(Double.parseDouble(s));
+        	hm.put(key, doubleList);
+        }
+        
+        return hm;
+	}
+	
 	
 	public static void appendCsv(String path, List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> data) {
 				
