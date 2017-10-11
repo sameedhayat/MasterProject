@@ -48,11 +48,12 @@ public class HybridRecWithLikesTest {
             //these are correct.
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
+            
+            String sourceUri = "http://example.org/data#u39040";
+            String targetUri = "http://dbpedia.org/resource/Burned_(Hopkins_novel)";
+            System.out.println(recRepository.predictRating(sourceUri, targetUri));
             //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
-            graphStorage.mlTrainingData("ml_training_data.csv");
-            TreeModel t = new TreeModel();
-            t.readData("ml_training_data.csv", "ml_training_data.arff");
             
             //graphStorage.printEmbeddings();
             //Use Doc2Vec Model and save the embeddings for source and targer in csv file

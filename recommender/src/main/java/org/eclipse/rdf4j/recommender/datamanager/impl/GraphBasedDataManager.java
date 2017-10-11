@@ -310,7 +310,11 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
 	                             ((GraphBasedStorage)getStorage()).readUsersEmbeddingsAverage(userEmbeddingPath);
 	                         }
                              
-                             
+                             if(((HybridRecConfig)getRecConfig()).getTrainTreeModel() == true) {
+                             String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
+                             ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
+                             ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
+                             }
                       }
                        
                 } catch (RepositoryException ex) {
@@ -466,7 +470,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                 return score;
                         
                         case HYBRID:
-                            return ((GraphBasedStorage)getStorage()).contentBasedSubject(indexOfNode1, indexOfNode2);
+                            return ((GraphBasedStorage)getStorage()).predictRating(indexOfNode1, indexOfNode2);
                 }
                 return -1.0;
         }

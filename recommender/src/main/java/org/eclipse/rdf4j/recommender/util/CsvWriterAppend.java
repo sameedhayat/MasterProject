@@ -151,5 +151,25 @@ public class CsvWriterAppend {
         	e.printStackTrace();
         }
 	}
+	
+	public static void writeMlDataOneInstance(String path, HashMap<Integer,Pair<List<Double>,String>> hm) throws IOException {
+		File f = new File(path);
+		f.createNewFile();
+        try {
+        	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
+            
+            for(Integer userId : hm.keySet()) {
+            	Pair<List<Double>,String> l = hm.get(userId);
+            	String result = convertListToString(l.getValue0());
+            	result += "," + l.getValue1();
+            	out.println(result);
+			}
+            out.close();
+        }catch (IOException e){
+        	e.printStackTrace();
+        }
+	}
+	
+	
 		
 }

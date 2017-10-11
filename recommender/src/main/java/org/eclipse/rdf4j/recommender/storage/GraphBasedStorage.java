@@ -7,6 +7,7 @@ package org.eclipse.rdf4j.recommender.storage;
 
 import edu.uci.ics.jung.graph.Graph;
 import nlp.word2vec.DocModel;
+import nlp.word2vec.TreeModel;
 import nlp.word2vec.Word2VecModel;
 
 import java.util.List;
@@ -294,6 +295,20 @@ public interface GraphBasedStorage extends Storage {
          */
         public void trainModel(String path);
         
+        
+        /**
+         * predict rating for one instance
+         * @param path to csv file
+         */
+        public double predictRating(Integer userId, Integer targetId);
+        
+        
+        /**
+         * train tree model
+         * @param path to csv file
+         */
+        public void trainTreeModel(String inputPath, String outputPath);
+            
         
         /**
          * saves users embeddings average to the csv file.

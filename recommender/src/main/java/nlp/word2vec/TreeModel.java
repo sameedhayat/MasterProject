@@ -39,7 +39,7 @@ public class TreeModel {
 		saver.writeBatch();
     }
     
-    public void loadDataAndTrain(String inputPath, double bias) throws Exception {
+    public void loadDataAndTrain(String inputPath) throws Exception {
     	//load datasets
 		DataSource source = new DataSource(inputPath);
 		Instances dataset = source.getDataSet();	
@@ -73,8 +73,21 @@ public class TreeModel {
 		tree.buildClassifier(train);
     }
     
-    public void predict(String inputPath, double bias) throws Exception {
-    	String n = "Hello";
+    public double predict(String inputPath) throws Exception {
+    	CSVLoader loader = new CSVLoader();
+		loader.noHeaderRowPresentTipText();
+		loader.setSource(new File(inputPath));
+		Instances data = loader.getDataSet();//get instances object
+		//      // save ARFF
+		ArffSaver saver = new ArffSaver();
+		saver.setInstances(data);//set the dataset we want to convert
+		//and save as ARFF
+		saver.setFile(new File("tmp.arff"));
+		saver.writeBatch();
+    	
+		DataSource source = new DataSource(inputPath);
+		Instances dataset = source.getDataSet();	
+		return tree.classifyInstance(dataset.get(0));
     }
     
     

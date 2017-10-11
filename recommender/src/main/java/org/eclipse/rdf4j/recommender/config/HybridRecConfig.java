@@ -1,11 +1,15 @@
 package org.eclipse.rdf4j.recommender.config;
 
+import java.io.IOException;
+
 import org.eclipse.rdf4j.recommender.datamanager.DataManager;
 import org.eclipse.rdf4j.recommender.datamanager.impl.GraphBasedDataManager;
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.parameter.RecGraphOrientation;
 import org.eclipse.rdf4j.recommender.parameter.RecParadigm;
 import org.eclipse.rdf4j.recommender.parameter.RecStorage;
+
+import nlp.word2vec.TreeModel;
 
 public class HybridRecConfig extends CrossDomainRecConfig {
 	 /*--------------*
@@ -41,6 +45,9 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	
 	//Whether to compute user embeddings or its precomputed
 	private Boolean computerUserEmbeddings = false;
+	
+	private Boolean trainTreeModel = false;
+	//Whether to compute user embeddings or its precomputed
 	
 	      
 	        public HybridRecConfig (String configName) {
@@ -139,6 +146,14 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        
 	        public String getMlInputFile() {
 	        	return mlInputFilePath;
+	        }
+	        
+	        public void trainTreeModel() {
+	        	trainTreeModel = true;
+	        }
+	        
+	        public Boolean getTrainTreeModel() {
+	        	return trainTreeModel;
 	        }
 	        
 	        

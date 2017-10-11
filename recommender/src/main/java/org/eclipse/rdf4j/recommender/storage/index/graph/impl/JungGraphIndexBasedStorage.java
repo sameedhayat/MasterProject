@@ -43,6 +43,7 @@ import edu.uci.ics.jung.visualization.control.ModalGraphMouse;
 import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
 import edu.uci.ics.jung.visualization.renderers.Renderer.VertexLabel.Position;
 import nlp.word2vec.DocModel;
+import nlp.word2vec.TreeModel;
 import nlp.word2vec.Word2VecModel;
 
 /**
@@ -61,7 +62,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         private HashMap<String,List<Double>> rdf2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
         
         private HashMap<Integer,List<Double>> usersEmbeddingsAverageHashMap = new HashMap<Integer,List<Double>>();
-        
+        private TreeModel treeModel = new TreeModel();
+    	
         /**
          * The complete graph (the RDF graph translated to this specific model)
          */       
@@ -633,6 +635,49 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		CsvWriterAppend.writeMlData(path,ret);
         	}
         }
+        
+        public void trainTreeModel(String inputPath, String outputPath) {
+        	try {
+				treeModel.readData(inputPath, outputPath);
+				treeModel.loadDataAndTrain(outputPath);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+        
+        @Override
+        public double predictRating(Integer userId, Integer targetId) {
+        	HashMap<Integer,Pair<List<Double>,String>> ret = new HashMap<Integer,Pair<List<Double>,String>>();
+        	List<Double> val = new ArrayList<Double>();
+			
+        	val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
+			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
+			val.addAll(usersEmbeddingsAverageHashMap.get(userId));
+			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(userId, targetId));
+			ret.put(userId,p);
+        	try {
+				CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	double pred = -1.0;
+        	try {
+        		pred = treeModel.predict("tmp.csv");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	return pred;
+        	
+        	
+        	
+        }
+        
         
         
         @Override
