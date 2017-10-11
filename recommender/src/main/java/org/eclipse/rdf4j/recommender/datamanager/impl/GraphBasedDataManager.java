@@ -301,8 +301,8 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                              	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
                              }
                              
-                             String userEmbeddingPath = ((HybridRecConfig)getRecConfig()).getUserEmbeddingsPath();
-                             ((GraphBasedStorage)getStorage()).readUsersEmbeddingsAverage(userEmbeddingPath);
+//                             String userEmbeddingPath = ((HybridRecConfig)getRecConfig()).getUserEmbeddingsPath();
+//                             ((GraphBasedStorage)getStorage()).readUsersEmbeddingsAverage(userEmbeddingPath);
                       }
                        
                 } catch (RepositoryException ex) {
