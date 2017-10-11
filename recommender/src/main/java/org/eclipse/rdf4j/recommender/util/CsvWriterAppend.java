@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.javatuples.Pair;
 import org.javatuples.Quintet;
 
 public class CsvWriterAppend {
@@ -124,6 +125,31 @@ public class CsvWriterAppend {
 			}
 		}
 		return res;
+	}
+	
+	public static void writeMlData(String path, HashMap<Integer,Pair<List<Double>,String>> hm) {
+		File f = new File(path);
+        if(!f.exists()){
+        	  try{ 
+        	    f.createNewFile();
+        	  }catch(Exception e){
+        	    e.printStackTrace();
+        	  }
+        }
+        try {
+        	
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
+            
+            for(Integer userId : hm.keySet()) {
+            	Pair<List<Double>,String> l = hm.get(userId);
+            	String result = convertListToString(l.getValue0());
+            	result += "," + l.getValue1();
+            	out.println(result);
+			}
+            out.close();
+        }catch (IOException e){
+        	e.printStackTrace();
+        }
 	}
 		
 }

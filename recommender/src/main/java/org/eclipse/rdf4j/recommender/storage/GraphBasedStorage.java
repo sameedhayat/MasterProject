@@ -285,7 +285,7 @@ public interface GraphBasedStorage extends Storage {
          * Combine ML data
          * @param path to csv file
          */
-        public void mlTrainingData();
+        public void mlTrainingData(String path);
         
         
         

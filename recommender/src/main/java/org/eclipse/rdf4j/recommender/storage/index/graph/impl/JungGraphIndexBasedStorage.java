@@ -493,14 +493,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return ret;
         }
         
-        public void getLabel(Integer userId, Integer targetId) {
+        public String getLabel(Integer userId, Integer targetId) {
         	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
-        	System.out.println("--------Target nodes--------");
-        	System.out.println(getTargetNodes());
-        	System.out.println("--------Source nodes--------");
-        	System.out.println(getSourceNodes());
-        	
-        	
+        	if(userLikesSource.contains(targetId)){
+        		return "Like";
+        	}else {
+        		return "Dislike";
+        	}
         }
         
         public void printSource() {
@@ -616,18 +615,19 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         @Override
-        public void mlTrainingData() {
-        	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
-            List<String> label = new ArrayList<String>();
+        public void mlTrainingData(String path) {
         	for(Integer u: usersEmbeddingsAverageHashMap.keySet()) {
+        		HashMap<Integer,Pair<List<Double>,String>> ret = new HashMap<Integer,Pair<List<Double>,String>>();
+                List<String> label = new ArrayList<String>();
         		for(Integer t: getTargetNodes()) {
         			List<Double> val = new ArrayList<Double>();
         			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
         			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
         			val.addAll(usersEmbeddingsAverageHashMap.get(u));
-        			ret.put(u, val);
+        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+        			ret.put(u,p);
         		}
-        		
+        		CsvWriterAppend.writeMlData(path,ret);
         	}
         }
         
