@@ -195,8 +195,7 @@ public final class TestRepositoryInstantiator {
                        
                        configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
                        configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
-                       configuration.computerU
-                       configuration.readUserEmbeddings("user_embeddings.csv");
+                       //configuration.readUserEmbeddings("user_embeddings.csv");
                        
                        recRepository.loadRecConfiguration(configuration);
                } catch (RecommenderException ex) { 
