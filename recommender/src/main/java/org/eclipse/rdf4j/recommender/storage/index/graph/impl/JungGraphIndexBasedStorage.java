@@ -649,6 +649,22 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			}
         }
         
+        
+        @Override
+        public void trainModel(String path) {
+        	System.out.println("Training ML Model");
+        	try {
+        		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMapUser(path);
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+        
+        
         public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {
         	List<Pair<Double, Double>> ret = new ArrayList<Pair<Double,Double>>();
         	

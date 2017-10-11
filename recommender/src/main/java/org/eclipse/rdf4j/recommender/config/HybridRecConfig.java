@@ -30,13 +30,17 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	//Path to userEmbedding path csv file
 	private String userEmbeddingsPath = "";
 	
-		
+	//Path to userEmbedding path csv file
+	private String mlInputFilePath = "";
 	
 	//Whether to compute Doc2Vec or its precomputed
 	private Boolean computeDoc2Vec = false;
 	
 	//Whether to compute Rdf2Vec or its precomputed
 	private Boolean computeRdf2Vec = false;
+	
+	//Whether to compute user embeddings or its precomputed
+	private Boolean computerUserEmbeddings = false;
 	
 	      
 	        public HybridRecConfig (String configName) {
@@ -113,9 +117,28 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        	this.userEmbeddingsPath = path;
 	        }
 	        
+	        //Whether to compute user embeddings or its precomputed
+	        public void computeUserEmbeddings(String path) {
+	        	this.computerUserEmbeddings = true;
+	        	this.userEmbeddingsPath = path;
+	        }
+	        
+	      //Whether to compute user embeddings or its precomputed
+	        public Boolean getComputeUserEmbeddings() {
+	        	return computerUserEmbeddings;
+	        }
+	        
 	      //Whether to compute Rdf2Vec or its precomputed
 	        public String getUserEmbeddingsPath() {
 	        	return userEmbeddingsPath;
+	        }
+	        
+	        public void mlInputFile(String path) {
+	        	this.mlInputFilePath = path;
+	        }
+	        
+	        public String getMlInputFile() {
+	        	return mlInputFilePath;
 	        }
 	        
 	        

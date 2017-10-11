@@ -288,6 +288,11 @@ public interface GraphBasedStorage extends Storage {
         public void mlTrainingData(String path);
         
         
+        /**
+         * Train model for prediction
+         * @param path to csv file
+         */
+        public void trainModel(String path);
         
         
         /**
