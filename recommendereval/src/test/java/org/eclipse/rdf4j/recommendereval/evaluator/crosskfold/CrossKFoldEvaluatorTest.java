@@ -48,6 +48,86 @@ public class CrossKFoldEvaluatorTest {
     private final double DELTA = EvalTestRepositoryInstantiator.DELTA_7;
     private final double DELTA_3 = EvalTestRepositoryInstantiator.DELTA_3;
 
+    
+    /**
+     * Tests results for each metric.(Dataset from the book).
+     *
+     * Non-CD with ratings
+     */
+    @Test
+    public void testRecKFoldHybrid() {
+
+        System.out.println("");
+        System.out.println("testRecKFoldHybrid starting...");
+
+        SailRecEvaluatorRepository recEvalRepository
+                = EvalTestRepositoryInstantiator.createTestRepositoryHybrid(
+                        EvalTestRepositoryInstantiator.getRecConfigListHybrid());
+
+        CrossKFoldEvalConfig evalConfig = new CrossKFoldEvalConfig();
+
+        try {
+            evalConfig.setOutputMethod(EvalOutput.EXTERNAL_FILE, "evaluationOutput.csv");
+            evalConfig.setStorage(EvalStorage.MEMORY);
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.PRE));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.REC));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.F_MEASURE));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.MRR));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.DIVERSITY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NOVELTY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NDCG));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.ACC));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.MAE));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.RMSE));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.AUC));
+            evalConfig.addEvalMetric(new GlobalEvalMetric(EvalMetric.COVERAGE));
+            evalConfig.addRankingMetricTopKSize(1);
+            evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
+            evalConfig.setIsReproducible(true);
+            evalConfig.setNumberOfFolds(5);
+            evalConfig.addEvalEntity(EvalEntity.FEATURE, "?genre");
+            evalConfig.setFeatureGraphPattern("?movie <http://example.org/movies#hasGenre> ?genre ");
+
+            recEvalRepository.loadEvalConfiguration(evalConfig);
+            recEvalRepository.evaluate();
+
+            EvaluationResult result = recEvalRepository.getEvaluator().getEvalResultByName("config1");
+
+            Double expectedPrecision = 0.5;
+            Double expectedRecall = 0.5;
+            Double expectedFMeasure = 0.5;
+            Double expectedMRR = 0.5;
+            Double expectedDiversity = 0.0;
+            Double expectedNovelty = 0.777525512860841;
+            Double expectedNDCG = 0.5;
+            Double expectedAccuracy = 0.5;
+            Double expectedMAE = 1.1818481288744074;
+            Double expectedRMSE = 1.7161880660968483;
+            Double expectedAUC = 0.5;
+            Double expectedCoverage = 0.68;
+
+            Assert.assertEquals(expectedPrecision, result.getOverallPerformance().getPrecisionScore(1), DELTA);
+            Assert.assertEquals(expectedRecall, result.getOverallPerformance().getRecallScore(1), DELTA);
+            Assert.assertEquals(expectedFMeasure, result.getOverallPerformance().getFMeasureScore(1), DELTA);
+            Assert.assertEquals(expectedMRR, result.getOverallPerformance().getMRRScore(1), DELTA);
+            Assert.assertEquals(expectedDiversity, result.getOverallPerformance().getDiversityScore(1), DELTA);
+            Assert.assertEquals(expectedNovelty, result.getOverallPerformance().getNoveltyScore(1), DELTA);
+            Assert.assertEquals(expectedNDCG, result.getOverallPerformance().getNDCGScore(1), DELTA);
+            Assert.assertEquals(expectedAccuracy, result.getOverallPerformance().getAccuracyScore(1), DELTA);
+            Assert.assertEquals(expectedMAE, result.getOverallPerformance().getMAEScore(), DELTA);
+            Assert.assertEquals(expectedRMSE, result.getOverallPerformance().getRMSEScore(), DELTA);
+            Assert.assertEquals(expectedAUC, result.getOverallPerformance().getAUCScore(), DELTA);
+            Assert.assertEquals(expectedCoverage, result.getOverallPerformance().getCoverageScore(), DELTA);
+
+        } catch (EvaluatorException ex) {
+            Logger.getLogger(CrossKFoldEvaluatorTest.class.getName()).log(Level.SEVERE, null, ex);
+            Assert.fail();
+        }
+
+        System.out.println("testRecKFold1 COMPLETED");
+    }
+
+    
     /**
      * Tests results for each metric.(Dataset from the book).
      *

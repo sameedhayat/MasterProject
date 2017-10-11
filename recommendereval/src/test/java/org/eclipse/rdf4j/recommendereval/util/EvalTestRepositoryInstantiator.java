@@ -10,11 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.eclipse.rdf4j.recommender.config.HybridRecConfig;
 import org.eclipse.rdf4j.recommender.config.LinkAnalysisRecConfig;
 import org.eclipse.rdf4j.recommender.config.RecConfig;
 import org.eclipse.rdf4j.recommender.config.VsmCfRecConfig;
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.parameter.RecEntity;
+import org.eclipse.rdf4j.recommender.parameter.RecGraphOrientation;
 import org.eclipse.rdf4j.recommender.parameter.RecParadigm;
 import org.eclipse.rdf4j.recommender.parameter.RecSimMetric;
 import org.eclipse.rdf4j.recommender.parameter.RecStorage;
@@ -165,6 +168,21 @@ public final class EvalTestRepositoryInstantiator {
         return createTestRepositoryHelper(configList,resource,baseURI);
     }
 
+    /**
+     * Creates a repository with given Recommender Configuration list.
+     *
+     * DataSet: merge_complete_level1.ttl
+     *
+     * @param configList Recommender Configurations to evaluate
+     * @return
+     */
+    public static SailRecEvaluatorRepository createTestRepositoryHybrid(ArrayList<RecConfig> configList) {
+    	
+    	String resource = "testcases/merge_complete_level1.ttl";
+    	String baseURI = "";
+        return createTestRepositoryHelper(configList,resource,baseURI);
+    }
+    
     /**
      * Creates a repository with given Recommender Configuration list.
      *
@@ -580,6 +598,58 @@ public final class EvalTestRepositoryInstantiator {
             configuration.setDecimalPlaces(3);
 
             recConfigList.add(configuration);
+
+        } catch (RecommenderException ex) {
+            Logger.getLogger(EvalTestRepositoryInstantiator.class.getName()).log(Level.SEVERE, null, ex);
+            Assert.fail();
+        }
+
+        return recConfigList;
+    }
+    
+    /**
+     * Creates a list of Recommender Configurations.
+     * 
+     * Dataset: Cross Domain - Likes 
+     *
+     * @return
+     */
+    public static ArrayList<RecConfig> getRecConfigListHybrid() {
+
+        ArrayList<RecConfig> recConfigList = new ArrayList();
+
+        try {
+            
+            HybridRecConfig configuration = new HybridRecConfig("config1");
+
+            configuration.setPosGraphPattern(
+                    "?u <http://example.org/data#likes> ?o"
+            		);
+
+	        configuration.setRecEntity(RecEntity.USER, "?u");
+	        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
+	        configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
+	        //TODO
+	        //Modify this later
+	        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
+	                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
+	        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
+	                "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book>");
+	
+	        configuration.setRecParadigm(RecParadigm.HYBRID);
+	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
+	        
+	        //configuration.computeDoc2Vec();
+	        //configuration.computeRdf2Vec();
+	        //configuration.doc2VecInputPath("input_abstract.csv");
+	        //configuration.rdf2VecInputPath("rdf2vec_model");
+	        
+	        configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
+	        configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
+	        configuration.readUserEmbeddings("user_embeddings.csv");
+	        configuration.mlInputFile("ml_training_data.csv");
+	        configuration.trainTreeModel();
+	        recConfigList.add(configuration);
 
         } catch (RecommenderException ex) {
             Logger.getLogger(EvalTestRepositoryInstantiator.class.getName()).log(Level.SEVERE, null, ex);
