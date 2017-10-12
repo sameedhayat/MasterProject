@@ -682,7 +682,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         @Override
         public void readUsersEmbeddingsAverage(String path) {
-        	System.out.println("Writing User embeddings average");
+        	System.out.println("Reading User embeddings average");
         	try {
         		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMapUser(path);
 			} catch (NumberFormatException e) {
