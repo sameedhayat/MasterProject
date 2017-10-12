@@ -311,10 +311,12 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
 	                         }
                              
                              if(((HybridRecConfig)getRecConfig()).getTrainTreeModel() == true) {
-                             String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
-                             ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
-                             ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
+                            	 String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
+                            	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
                              }
+                             String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
+                             ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
+                             
                       }
                        
                 } catch (RepositoryException ex) {
