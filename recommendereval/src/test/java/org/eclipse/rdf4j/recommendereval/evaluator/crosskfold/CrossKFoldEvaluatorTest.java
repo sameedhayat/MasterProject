@@ -85,8 +85,8 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
             evalConfig.setIsReproducible(true);
             evalConfig.setNumberOfFolds(5);
-            evalConfig.addEvalEntity(EvalEntity.FEATURE, "?genre");
-            evalConfig.setFeatureGraphPattern("?movie <http://example.org/movies#hasGenre> ?genre ");
+            evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
+            evalConfig.setFeatureGraphPattern("?book <http://purl.org/dc/terms/subject> ?subject ");
 
             recEvalRepository.loadEvalConfiguration(evalConfig);
             recEvalRepository.evaluate();
