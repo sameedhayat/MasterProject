@@ -1,17 +1,10 @@
 package nlp.word2vec;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 import java.util.Random;
 
-import org.deeplearning4j.models.paragraphvectors.ParagraphVectors;
-
 import weka.classifiers.trees.J48;
-import weka.core.Attribute;
-import weka.core.FastVector;
-import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVLoader;
@@ -21,7 +14,7 @@ import weka.filters.supervised.instance.Resample;
 
 public class TreeModel {
 
-	private J48 tree;    
+	private static J48 tree;    
 	/**
      * Sets the size of the neighborhood (collaborative methods).
      * @param size 
@@ -134,44 +127,7 @@ public class TreeModel {
 		return tree.classifyInstance(dataset.get(0));
     }
     */
-    public void main(String[] args) throws Exception{
-    	
-    	DataSource source;
-		
-			source = new DataSource("ml_training_data.arff");
-		Instances dataset = source.getDataSet();	
-		dataset.setClassIndex(dataset.numAttributes()-1);
-		
-		
-		final Resample filter = new Resample();
-		Instances filteredIns = null;
-		filter.setBiasToUniformClass(1.0);
-		try {
-			filter.setInputFormat(dataset);
-			filter.setNoReplacement(false);
-			filter.setSampleSizePercent(100);
-			
-			filteredIns = Filter.useFilter(dataset, filter);
-		} catch (Exception e) {
-			System.out.println("Error when resampling input data!");
-			e.printStackTrace();
-		}
-			Random rand = new Random(1);
-			filteredIns.randomize(rand);
-		
-		
-		int trainSize = (int) Math.round(filteredIns.numInstances() * 1.0);
-		System.out.println("Train Size : " + trainSize);
-		Instances train = new Instances(filteredIns, 0, trainSize);
-		//set class index to the last attribute
-		train.setClassIndex(train.numAttributes()-1);
-		//create and build the classifier!
-		tree = new J48();
-		tree.buildClassifier(train);
-    	
-    	
-    }
-    	
+
     
     
 
