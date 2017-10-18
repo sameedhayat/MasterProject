@@ -127,6 +127,20 @@ public class CsvWriterAppend {
 		return res;
 	}
 	
+	public static String convertListToString1(List<Double> l) {
+		String res = "";
+		int check = 0;
+		for(Double d : l) {
+			if(check == 0) {
+				res = Double.toString(d);
+				check = 1;
+			}else {
+				res += "," + Double.toString(d);
+			}
+		}
+		return res;
+	}
+	
 	public static void writeMlData(String path, HashMap<Integer,Pair<List<Double>,String>> hm) {
 		File f = new File(path);
         if(!f.exists()){
@@ -142,8 +156,8 @@ public class CsvWriterAppend {
             
             for(Integer userId : hm.keySet()) {
             	Pair<List<Double>,String> l = hm.get(userId);
-            	String result = convertListToString(l.getValue0());
-            	String wr = result + " " + l.getValue1();
+            	String result = convertListToString1(l.getValue0());
+            	String wr = result + "," + l.getValue1();
             	out.println(wr);
 			}
             out.close();
@@ -160,7 +174,7 @@ public class CsvWriterAppend {
             
             for(Integer userId : hm.keySet()) {
             	List<Double> l = hm.get(userId);
-            	String result = convertListToString(l);
+            	String result = convertListToString1(l);
             	out.println(result);
 			}
             out.close();
