@@ -103,7 +103,7 @@ public class TreeModel {
 		//and save as ARFF
 		saver.setFile(new File("tmp.arff"));
 		saver.writeBatch();
-		DataSource source = new DataSource(inputPath);
+		DataSource source = new DataSource("tmp.arff");
 		Instances dataset = source.getDataSet();
 		return tree.classifyInstance(dataset.get(1));
     }
