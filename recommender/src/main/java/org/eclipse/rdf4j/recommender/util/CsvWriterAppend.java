@@ -143,8 +143,8 @@ public class CsvWriterAppend {
             for(Integer userId : hm.keySet()) {
             	Pair<List<Double>,String> l = hm.get(userId);
             	String result = convertListToString(l.getValue0());
-            	result += "," + l.getValue1();
-            	out.println(result);
+            	String wr = result + " " + l.getValue1();
+            	out.println(wr);
 			}
             out.close();
         }catch (IOException e){
@@ -152,16 +152,15 @@ public class CsvWriterAppend {
         }
 	}
 	
-	public static void writeMlDataOneInstance(String path, HashMap<Integer,Pair<List<Double>,String>> hm) throws IOException {
+	public static void writeMlDataOneInstance(String path, HashMap<Integer,List<Double>> hm) throws IOException {
 		File f = new File(path);
 		f.createNewFile();
         try {
         	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
             
             for(Integer userId : hm.keySet()) {
-            	Pair<List<Double>,String> l = hm.get(userId);
-            	String result = convertListToString(l.getValue0());
-            	result += " " + l.getValue1();
+            	List<Double> l = hm.get(userId);
+            	String result = convertListToString(l);
             	out.println(result);
 			}
             out.close();

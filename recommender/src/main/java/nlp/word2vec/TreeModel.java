@@ -28,8 +28,16 @@ public class TreeModel {
     public void readData(String inputPath,String outputPath) throws IOException {
 		// load CSV
 		CSVLoader loader = new CSVLoader();
-		loader.noHeaderRowPresentTipText();
 		loader.setSource(new File(inputPath));
+		
+		String[] options = new String[1]; 
+		options[0] = "-H";
+		try {
+			loader.setOptions(options);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Instances data = loader.getDataSet();//get instances object
 		//      // save ARFF
 		ArffSaver saver = new ArffSaver();
@@ -75,8 +83,15 @@ public class TreeModel {
     
     public double predict(String inputPath) throws Exception {
     	CSVLoader loader = new CSVLoader();
-		loader.noHeaderRowPresentTipText();
 		loader.setSource(new File(inputPath));
+		String[] options = new String[1]; 
+		options[0] = "-H";
+		try {
+			loader.setOptions(options);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Instances data = loader.getDataSet();//get instances object
 		//      // save ARFF
 		ArffSaver saver = new ArffSaver();

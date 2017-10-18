@@ -651,13 +651,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         @Override
         public double predictRating(Integer userId, Integer targetId) {
-        	HashMap<Integer,Pair<List<Double>,String>> ret = new HashMap<Integer,Pair<List<Double>,String>>();
+        	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
         	List<Double> val = new ArrayList<Double>();
 			
         	val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
 			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
 			val.addAll(usersEmbeddingsAverageHashMap.get(userId));
-			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(userId, targetId));
+			List<Double> p = new ArrayList<Double>(val);
 			ret.put(userId,p);
         	try {
 				CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
