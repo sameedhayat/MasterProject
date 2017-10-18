@@ -105,6 +105,7 @@ public class TreeModel {
 		saver.writeBatch();
 		DataSource source = new DataSource("tmp.arff");
 		Instances dataset = source.getDataSet();
+		System.out.println("Print: ------" + dataset.get(0)+ " ------");
 		return tree.classifyInstance(dataset.get(0));
     }
     
