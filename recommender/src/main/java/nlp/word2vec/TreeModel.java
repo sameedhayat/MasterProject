@@ -80,7 +80,7 @@ public class TreeModel {
 		//set class index to the last attribute
 		train.setClassIndex(train.numAttributes()-1);
 		//create and build the classifier!
-		J48 tree = new J48();
+		tree = new J48();
 		tree.buildClassifier(train);
     }
     
@@ -105,7 +105,7 @@ public class TreeModel {
 		saver.writeBatch();
 		DataSource source = new DataSource("tmp.arff");
 		Instances dataset = source.getDataSet();
-		return tree.classifyInstance(dataset.get(1));
+		return tree.classifyInstance(dataset.get(0));
     }
     
     /*
