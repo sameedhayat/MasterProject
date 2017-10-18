@@ -3,12 +3,14 @@ package nlp.word2vec;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
 import org.deeplearning4j.models.paragraphvectors.ParagraphVectors;
 
 import weka.classifiers.trees.J48;
 import weka.core.Attribute;
+import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
@@ -101,12 +103,36 @@ public class TreeModel {
 		//and save as ARFF
 		saver.setFile(new File("tmp.arff"));
 		saver.writeBatch();
+		DataSource source = new DataSource(inputPath);
+		Instances dataset = source.getDataSet();
+		return tree.classifyInstance(dataset.get(1));
+    }
+    
+    /*
+    public double predict1(List<Double> data) throws Exception {
+    	Instance instance = new Ins
+    	for(int i = 0; i < 800; i++) {
+    		Attribute position = new Attribute("attr" + i, data.get(i).toString());
+    	}
+    	// Create numeric attributes "length" and "weight" 
     	
+    	Attribute weight = new Attribute("weight"); 
+
+    	// Create vector to hold nominal values "first", "second", "third" 
+    	
+    	my_nominal_values.addElement("first"); 
+    	my_nominal_values.addElement("second"); 
+    	my_nominal_values.addElement("third"); 
+
+    	// Create nominal attribute "position" 
+    	Attribute position = new Attribute("position", my_nominal_values); 
+
+
 		DataSource source = new DataSource(inputPath);
 		Instances dataset = source.getDataSet();	
 		return tree.classifyInstance(dataset.get(0));
     }
-    
+    */
     
     	
     
