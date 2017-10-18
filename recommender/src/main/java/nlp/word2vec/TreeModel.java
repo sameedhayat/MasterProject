@@ -29,6 +29,7 @@ public class TreeModel {
 		// load CSV
 		CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
+		loader.setFieldSeparator(" ");
 		
 		String[] options = new String[1]; 
 		options[0] = "-H";
@@ -84,6 +85,7 @@ public class TreeModel {
     public double predict(String inputPath) throws Exception {
     	CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
+		loader.setFieldSeparator(" ");
 		String[] options = new String[1]; 
 		options[0] = "-H";
 		try {
