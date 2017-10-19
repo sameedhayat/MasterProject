@@ -141,7 +141,7 @@ public class CsvWriterAppend {
 		return res;
 	}
 	
-	public static void writeMlData(String path, HashMap<Integer,Pair<List<Double>,String>> hm) {
+	public static void writeMlData(String path, List<Pair<List<Double>,String>> hm) {
 		File f = new File(path);
         if(!f.exists()){
         	  try{ 
@@ -154,10 +154,10 @@ public class CsvWriterAppend {
         	
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
             
-            for(Integer userId : hm.keySet()) {
-            	Pair<List<Double>,String> l = hm.get(userId);
-            	String result = convertListToString1(l.getValue0());
-            	String wr = result + "," + l.getValue1();
+            for(Pair<List<Double>,String> userId : hm) {
+//            	Pair<List<Double>,String> l = hm.get(userId);
+            	String result = convertListToString1(userId.getValue0());
+            	String wr = result + "," + userId.getValue1();
             	out.println(wr);
 			}
             out.close();
