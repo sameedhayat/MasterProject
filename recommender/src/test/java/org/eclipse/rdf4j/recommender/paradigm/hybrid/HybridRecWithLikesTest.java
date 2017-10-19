@@ -50,7 +50,7 @@ public class HybridRecWithLikesTest {
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
             
             String sourceUri = "http://example.org/data#u96328";
-            String targetUri = "http://dbpedia.org/resource/The_Unbearable_Lightness_of_Being";
+            String targetUri = "http://dbpedia.org/resource/Harry_Potter";
 //            for(int user: graphStorage.getusersEmbeddingsAverageHashMap()) {
 //            	for(int t: graphStorage.getTargetNodes()) {
 //                	if(graphStorage.getLabel(user, t) == "Like") {
