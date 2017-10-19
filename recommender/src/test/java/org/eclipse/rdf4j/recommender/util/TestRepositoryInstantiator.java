@@ -6,17 +6,12 @@
 package org.eclipse.rdf4j.recommender.util;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.eclipse.rdf4j.recommender.config.HybridRecConfig;
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
-import org.eclipse.rdf4j.recommender.parameter.RecEdgeDistribution;
 import org.eclipse.rdf4j.recommender.parameter.RecEntity;
 import org.eclipse.rdf4j.recommender.parameter.RecGraphOrientation;
 import org.eclipse.rdf4j.recommender.parameter.RecParadigm;
-import org.eclipse.rdf4j.recommender.parameter.RecPriorsDistribution;
-import org.eclipse.rdf4j.recommender.parameter.RecSimMetric;
 import org.eclipse.rdf4j.recommender.parameter.RecStorage;
 import org.eclipse.rdf4j.recommender.repository.SailRecommenderRepository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
@@ -193,11 +188,11 @@ public final class TestRepositoryInstantiator {
                        //configuration.doc2VecInputPath("input_abstract.csv");
                        //configuration.rdf2VecInputPath("rdf2vec_model");
                        
-                       configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
-                       configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
+//                       configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
+//                       configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
                        configuration.readUserEmbeddings("user_embeddings.csv");
-                       configuration.mlInputFile("ml_training_data.csv");
-                       configuration.trainTreeModel();
+//                       configuration.mlInputFile("ml_training_data.csv");
+//                       configuration.trainTreeModel();
                        recRepository.loadRecConfiguration(configuration);
                } catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());

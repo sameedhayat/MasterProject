@@ -57,6 +57,7 @@ public class HybridRecWithLikesTest {
                 		System.out.println("Like Found:" + sourceUri + " " +  graphStorage.getIndexOf(targetUri));
                 	}
             }
+            }
             System.out.println("Done");
             //            System.out.println(recRepository.predictRating(sourceUri, targetUri));
 //            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
