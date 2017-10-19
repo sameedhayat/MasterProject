@@ -626,7 +626,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         @Override
         public void mlTrainingData(String path) {
         	for(Integer u: getusersEmbeddingsAverageHashMap()) {
-        		HashMap<Integer,Pair<List<Double>,String>> ret = new HashMap<Integer,Pair<List<Double>,String>>();
+        		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
         		for(Integer t: getTargetNodes()) {
         			if(getAbstract(t).isEmpty()) {
         				continue;
@@ -640,7 +640,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
 	        		val.addAll(usersEmbeddingsAverageHashMap.get(u));
 	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
-	        		ret.put(u,p);
+	        		ret.add(p);
         			}
         		CsvWriterAppend.writeMlData(path,ret);
         	}
