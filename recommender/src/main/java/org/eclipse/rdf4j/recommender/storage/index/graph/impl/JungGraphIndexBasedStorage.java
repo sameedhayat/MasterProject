@@ -630,14 +630,16 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		for(Integer t: getTargetNodes()) {
         			List<Double> val = new ArrayList<Double>();
         			if(getAbstract(t).isEmpty()) {
+        				System.out.println("Target " + t + " abstract not found");
         				continue;
         			}
         			if(getLabel(u, t) == "Like") {
-	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-	        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
-	        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
-	        			ret.put(u,p);
+        				System.out.println("Like Found:" + u + " " +  t);
+//	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+//	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+//	        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
+//	        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+//	        			ret.put(u,p);
         			}
         		}
         		CsvWriterAppend.writeMlData(path,ret);
@@ -745,6 +747,17 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public String getAbstract(int userSource) {
         	String abs = "";
         	for (String edge :jungCompleteGraph.getOutEdges(userSource)){
+    			if(edge.contains("http://dbpedia.org/ontology/abstract")){
+    				abs = getURI(jungCompleteGraph.getDest(edge)); 
+    			}
+    		}
+        	return abs;
+        }
+        
+      //get user abstract from graph
+        public String getAbstractTarget(int targetId) {
+        	String abs = "";
+        	for (String edge :jungCompleteGraph.getOutEdges(targetId)){
     			if(edge.contains("http://dbpedia.org/ontology/abstract")){
     				abs = getURI(jungCompleteGraph.getDest(edge)); 
     			}
