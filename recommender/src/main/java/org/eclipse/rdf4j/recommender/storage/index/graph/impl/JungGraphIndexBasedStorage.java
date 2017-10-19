@@ -628,11 +628,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			if(getAbstract(t).isEmpty()) {
         				continue;
         			}
-        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
-        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
-        			ret.put(u,p);
+        			if(getLabel(u, t) == "Like") {
+	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+	        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
+	        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        			ret.put(u,p);
+        			}
         		}
         		CsvWriterAppend.writeMlData(path,ret);
         	}
