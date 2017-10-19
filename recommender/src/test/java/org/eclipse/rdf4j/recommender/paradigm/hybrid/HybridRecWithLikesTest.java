@@ -60,7 +60,7 @@ public class HybridRecWithLikesTest {
 //            		System.out.println("Like Found:" + sourceUri + " " +  graphStorage.getIndexOf(targetUri));
 //            	}
 //            System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri)));
-            }
+//            }
             //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
             
