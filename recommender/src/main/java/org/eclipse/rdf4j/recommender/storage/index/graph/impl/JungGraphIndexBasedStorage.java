@@ -149,6 +149,11 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return rdf2vecEmbeddingsHashMap.get(getURI(id));
         }
         
+        //Get user embedding
+        public Set<Integer> getusersEmbeddingsAverageHashMap() {
+        	return usersEmbeddingsAverageHashMap.keySet();
+        }
+        
         @Override
         public void addEdge(String sourceURI, String targetURI, String predicateURI) {
                 createIndex(sourceURI);
