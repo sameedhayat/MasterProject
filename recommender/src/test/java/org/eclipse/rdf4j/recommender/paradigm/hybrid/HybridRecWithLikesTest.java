@@ -49,12 +49,11 @@ public class HybridRecWithLikesTest {
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
             
-            String sourceUri = "http://example.org/data#u39040";
-            String targetUri = "http://dbpedia.org/resource/Burned_(Hopkins_novel)";
+            String sourceUri = "http://example.org/data#u96328";
+            String targetUri = "http://dbpedia.org/resource/The_Unbearable_Lightness_of_Being";
 //            System.out.println(recRepository.predictRating(sourceUri, targetUri));
-            for(int t: graphStorage.getTargetNodes()) {
-            	System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), t));
-            }
+            	System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri)));
+            
             //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
             
