@@ -640,6 +640,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 //	        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
 //	        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
 //	        			ret.put(u,p);
+        			}else {
+        				System.out.println("Like Not Found:" + u + " " +  t);
         			}
         		}
         		CsvWriterAppend.writeMlData(path,ret);
