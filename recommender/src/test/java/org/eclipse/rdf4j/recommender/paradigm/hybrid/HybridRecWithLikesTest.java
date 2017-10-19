@@ -52,8 +52,12 @@ public class HybridRecWithLikesTest {
             String sourceUri = "http://example.org/data#u96328";
             String targetUri = "http://dbpedia.org/resource/The_Unbearable_Lightness_of_Being";
 //            System.out.println(recRepository.predictRating(sourceUri, targetUri));
-            	System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri)));
-            
+            for(int t: graphStorage.getTargetNodes()) {
+            	if(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), t) == "Like") {
+            		System.out.println("Like Found:" + sourceUri + " " +  graphStorage.getIndexOf(targetUri));
+            	}
+           // System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri)));
+            }
             //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
             
