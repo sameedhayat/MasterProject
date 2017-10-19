@@ -54,7 +54,7 @@ public class HybridRecWithLikesTest {
             for(int user: graphStorage.getusersEmbeddingsAverageHashMap()) {
             	for(int t: graphStorage.getTargetNodes()) {
                 	if(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), t) == "Like") {
-                		System.out.println("Like Found:" + sourceUri + " " +  graphStorage.getIndexOf(targetUri));
+                		System.out.println("Like Found:" + user + " " +  t);
                 	}
             }
             }
