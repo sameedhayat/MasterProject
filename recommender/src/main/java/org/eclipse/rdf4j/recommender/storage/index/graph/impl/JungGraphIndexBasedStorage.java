@@ -629,22 +629,18 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		HashMap<Integer,Pair<List<Double>,String>> ret = new HashMap<Integer,Pair<List<Double>,String>>();
         		for(Integer t: getTargetNodes()) {
         			List<Double> val = new ArrayList<Double>();
-        			if(getAbstract(t).isEmpty()) {
-        				System.out.println("Target " + t + " abstract not found");
-        				continue;
+        			
+ 	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+	        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
+	        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        			ret.put(u,p);
         			}
-        			if(getLabel(u, t) == "Like") {
-        				System.out.println("Like Found:" + u + " " +  t);
-//	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-//	        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-//	        			val.addAll(usersEmbeddingsAverageHashMap.get(u));
-//	        			Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
-//	        			ret.put(u,p);
-        			}
-        		}
         		CsvWriterAppend.writeMlData(path,ret);
         	}
         }
+        
+		
         
         public void trainTreeModel(String inputPath, String outputPath) {
         	try {
