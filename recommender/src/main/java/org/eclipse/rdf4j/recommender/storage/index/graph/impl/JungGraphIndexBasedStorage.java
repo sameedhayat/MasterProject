@@ -497,8 +497,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         public String getLabel(Integer userId, Integer targetId) {
         	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
-        	System.out.println("user like sources:" + userLikesSource);
-        	System.out.println("Target item:" + targetId);
+//        	System.out.println("user like sources:" + userLikesSource);
+//        	System.out.println("Target item:" + targetId);
         	if(userLikesSource.contains(targetId)) {
         		return "Like";
         	}else {
