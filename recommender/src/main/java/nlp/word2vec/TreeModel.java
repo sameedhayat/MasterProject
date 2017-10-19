@@ -22,6 +22,7 @@ public class TreeModel {
      */
     public void readData(String inputPath,String outputPath) throws IOException {
 		// load CSV
+    	System.out.println("Reading data:" + inputPath);
 		CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
 		loader.setFieldSeparator(" ");
@@ -41,10 +42,12 @@ public class TreeModel {
 		//and save as ARFF
 		saver.setFile(new File(outputPath));
 		saver.writeBatch();
+		System.out.println("Converted to " + outputPath);
     }
     
     public void loadDataAndTrain(String inputPath) throws Exception {
     	//load datasets
+    	System.out.println("Loading data:" + inputPath);
 		DataSource source = new DataSource(inputPath);
 		Instances dataset = source.getDataSet();	
 		dataset.setClassIndex(dataset.numAttributes()-1);
