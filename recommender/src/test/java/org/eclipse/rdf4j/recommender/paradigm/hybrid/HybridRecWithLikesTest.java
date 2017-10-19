@@ -51,7 +51,9 @@ public class HybridRecWithLikesTest {
             
             String sourceUri = "http://example.org/data#u39040";
             String targetUri = "http://dbpedia.org/resource/Burned_(Hopkins_novel)";
-            System.out.println(recRepository.predictRating(sourceUri, targetUri));
+//            System.out.println(recRepository.predictRating(sourceUri, targetUri));
+            
+            System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri)));
             //graphStorage.computeUsersEmbeddingsAverage();
             //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
             
