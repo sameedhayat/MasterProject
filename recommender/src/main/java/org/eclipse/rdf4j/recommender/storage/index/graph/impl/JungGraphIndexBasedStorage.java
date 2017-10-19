@@ -628,7 +628,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	int i =0;
         	for(Integer u: getusersEmbeddingsAverageHashMap()) {
         		i++;
-        		if(i > 6) {
+        		if(i > 100) {
         			break;
         		}
         		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
