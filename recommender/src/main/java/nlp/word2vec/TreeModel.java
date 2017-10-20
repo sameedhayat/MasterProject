@@ -55,7 +55,7 @@ public class TreeModel {
 		
 		final Resample filter = new Resample();
 		Instances filteredIns = null;
-		filter.setBiasToUniformClass(1.0);
+		filter.setBiasToUniformClass(1.0);	
 		try {
 			filter.setInputFormat(dataset);
 			filter.setNoReplacement(false);
@@ -101,7 +101,7 @@ public class TreeModel {
 		saver.writeBatch();
 		DataSource source = new DataSource("tmp.arff");
 		Instances dataset = source.getDataSet();
-		dataset.setClassIndex(dataset.numAttributes()-1);
+		dataset.get(0).setClassValue('?');
 		return tree.classifyInstance(dataset.get(0));
     }
     
