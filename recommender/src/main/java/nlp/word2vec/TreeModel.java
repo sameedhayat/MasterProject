@@ -3,7 +3,7 @@ package nlp.word2vec;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
-
+import weka.filters.unsupervised.attribute.Add;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
@@ -101,7 +101,18 @@ public class TreeModel {
 		saver.writeBatch();
 		DataSource source = new DataSource("tmp.arff");
 		Instances dataset = source.getDataSet();
+		
+		Add filter;
+        filter = new Add();
+        filter.setAttributeIndex("last");
+        filter.setNominalLabels("Dislike,Like");
+        filter.setAttributeName("class");
+        filter.setInputFormat(dataset);
+        dataset = Filter.useFilter(dataset, filter);
+        dataset.setClassIndex(dataset.numAttributes()-1);
 		dataset.get(0).setClassValue('?');
+		
+		System.out.println("Confidence: " + tree.getConfidenceFactor());
 		return tree.classifyInstance(dataset.get(0));
     }
     
