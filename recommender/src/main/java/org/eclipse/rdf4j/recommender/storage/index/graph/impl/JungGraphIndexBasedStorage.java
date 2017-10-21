@@ -625,12 +625,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         @Override
         public void mlTrainingData(String path) {
-        	int i =0;
         	for(Integer u: getusersEmbeddingsAverageHashMap()) {
-        		i++;
-        		if(i > 100) {
-        			break;
-        		}
         		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
         		for(Integer t: getTargetNodes()) {
         			if(getAbstract(t).isEmpty()) {
