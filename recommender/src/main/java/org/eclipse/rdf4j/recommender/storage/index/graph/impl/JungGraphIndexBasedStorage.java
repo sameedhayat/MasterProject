@@ -628,7 +628,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	System.out.println("No of Users: " + getusersEmbeddingsAverageHashMap().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());
         	
-        	for(Integer u: getusersEmbeddingsAverageHashMap()) {
+        	for(Integer u: getAllUserIndexes()) {
         		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
         		for(Integer t: getTargetNodes()) {
         			if(getAbstract(t).isEmpty()) {
