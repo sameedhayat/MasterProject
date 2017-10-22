@@ -625,7 +625,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         @Override
         public void mlTrainingData(String path) {
-        	System.out.println("No of Users: " + getusersEmbeddingsAverageHashMap().size());
+        	System.out.println("No of Users: " + getAllUserIndexes().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());
         	
         	for(Integer u: getAllUserIndexes()) {
