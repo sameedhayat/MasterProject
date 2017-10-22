@@ -49,7 +49,7 @@ public class HybridRecWithLikesTest {
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
             
-            String sourceUri = "http://example.org/data#u96328";
+            String sourceUri = "http://example.org/data#u144199";
             String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
 //            for(int user: graphStorage.getusersEmbeddingsAverageHashMap()) {
 //            	for(int t: graphStorage.getTargetNodes()) {
