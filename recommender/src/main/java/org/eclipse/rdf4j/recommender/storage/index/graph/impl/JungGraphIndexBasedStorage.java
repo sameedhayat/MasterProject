@@ -61,7 +61,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         private HashMap<String,List<Double>> doc2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
         private HashMap<String,List<Double>> rdf2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
         
-        private HashMap<Integer,List<Double>> usersEmbeddingsAverageHashMap = new HashMap<Integer,List<Double>>();
+        private HashMap<String,List<Double>> usersEmbeddingsAverageHashMap = new HashMap<String,List<Double>>();
         private TreeModel treeModel = new TreeModel();
     	
         /**
@@ -150,7 +150,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         //Get user embedding
-        public Set<Integer> getusersEmbeddingsAverageHashMap() {
+        public Set<String> getusersEmbeddingsAverageHashMap() {
         	return usersEmbeddingsAverageHashMap.keySet();
         }
         
@@ -412,7 +412,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	            	
 	        		tmp.addAll(ListOperations.averageList(doc2vecSourceList));
 	        		tmp.addAll(ListOperations.averageList(rdf2vecSourceList));
-	        		usersEmbeddingsAverageHashMap.put(userId, tmp);
+	        		usersEmbeddingsAverageHashMap.put(getURI(userId), tmp);
 	        	}
         	}
         }
@@ -620,7 +620,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         @Override
         public void writeUsersEmbeddingsAverage(String path) {
         	System.out.println("Writing User embeddings average");
-        	CsvWriterAppend.writeCsvHashMapUser(path, usersEmbeddingsAverageHashMap);
+        	CsvWriterAppend.writeCsvHashMap(path, usersEmbeddingsAverageHashMap);
         }
         
         @Override
@@ -637,7 +637,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			List<Double> val = new ArrayList<Double>(); 
         			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
 	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
-	        		val.addAll(usersEmbeddingsAverageHashMap.get(u));
+	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
 	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
 	        		ret.add(p);
         			}
@@ -695,7 +695,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public void readUsersEmbeddingsAverage(String path) {
         	System.out.println("Reading User embeddings average");
         	try {
-        		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMapUser(path);
+        		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMap(path);
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -710,7 +710,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public void trainModel(String path) {
         	System.out.println("Training ML Model");
         	try {
-        		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMapUser(path);
+        		usersEmbeddingsAverageHashMap = CsvWriterAppend.readCsvHashMap(path);
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
