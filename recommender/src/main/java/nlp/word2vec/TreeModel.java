@@ -80,7 +80,7 @@ public class TreeModel {
 		tree.buildClassifier(train);
     }
     
-    public double predict(String inputPath) throws Exception {
+    public double[] predict(String inputPath) throws Exception {
     	CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
 		loader.setFieldSeparator(" ");
@@ -113,7 +113,7 @@ public class TreeModel {
 		dataset.get(0).setClassValue('?');
 		
 		System.out.println("Confidence: " + tree.getConfidenceFactor());
-		return tree.classifyInstance(dataset.get(0));
+		return tree.distributionForInstance(dataset.get(0));
     }
     
     /*
