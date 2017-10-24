@@ -647,7 +647,7 @@ public final class EvalTestRepositoryInstantiator {
 	        configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
 	        configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
 	        configuration.readUserEmbeddings("user_embeddings.csv");
-	        //configuration.mlInputFile("ml_training_data.csv");
+	        configuration.mlInputFile("ml_training_data.csv");
 	        configuration.trainTreeModel();
 	        recConfigList.add(configuration);
 
