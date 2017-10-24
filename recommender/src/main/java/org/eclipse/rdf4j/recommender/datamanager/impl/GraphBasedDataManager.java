@@ -311,7 +311,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
 	                         }
                              
                              String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
-                        	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
+                        	 //((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
                         	 
                              
                              if(((HybridRecConfig)getRecConfig()).getTrainTreeModel() == true) {
