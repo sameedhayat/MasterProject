@@ -29,7 +29,6 @@
 		<module>console</module>
                 <module>recommender</module>
                 <module>recommendereval</module>
-		<module>http</module>
 		<module>runtime</module>
 		<module>runtime-osgi</module>
 		<module>assembly</module> <!-- this module should always be last in the list -->
