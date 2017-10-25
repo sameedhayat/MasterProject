@@ -251,13 +251,18 @@ public class EvalDataManager {
                 
                 if( recommenderConfigurations.get(0) instanceof CrossDomainRecConfig ) { 
                     // item from source domain
+                	try {
                     if( itemDomainMap.get(rating.getItemURI()).equals("source") ) {
                         sourceDomainRatings.add(rating);
                         continue;
                     }
                     // item from target domain
                     else {
-                    }   
+                    }   }
+                	catch(Exception exp) {
+                		System.out.println("Item Skipped" + rating.getItemURI());
+                		continue;
+                	}
                 }
                 
                 addItem(itemVal.stringValue());
