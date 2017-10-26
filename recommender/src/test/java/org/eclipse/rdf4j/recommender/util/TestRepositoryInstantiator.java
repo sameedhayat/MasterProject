@@ -193,7 +193,7 @@ public final class TestRepositoryInstantiator {
                        //configuration.computeUserEmbeddings("user_embeddings.csv");
                        configuration.readUserEmbeddings("user_embeddings.csv");
                        configuration.mlInputFile("ml_training_data.csv");
-                       configuration.trainTreeModel();
+//                       configuration.trainTreeModel();
                        recRepository.loadRecConfiguration(configuration);
                } catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());

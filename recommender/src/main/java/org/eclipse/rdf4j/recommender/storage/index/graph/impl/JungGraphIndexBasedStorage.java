@@ -636,13 +636,22 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         				continue;
         			}
         			List<Double> val = new ArrayList<Double>(); 
-        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
-	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
-	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
-	        		ret.add(p);
+        			if(doc2vecEmbeddingsHashMap.get(getURI(t)).size() < 200){
+        				System.out.println("doc2vec embeddings for target not found :" + getURI(t));
         			}
-        		CsvWriterAppend.writeMlData(path,ret);
+        			if(rdf2vecEmbeddingsHashMap.get(getURI(t)).size() < 200){
+        				System.out.println("rdf2vec embeddings for target not found :" + getURI(t));
+        			}
+        			if(usersEmbeddingsAverageHashMap.get(getURI(u)).size() < 400){
+        				System.out.println("rdf2vec and doc2vec embeddings for user not found :" + getURI(u));
+        			} 
+//        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+//	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
+//	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
+//	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+//	        		ret.add(p);
+        			}
+//        		CsvWriterAppend.writeMlData(path,ret);
         	}
         }
         
