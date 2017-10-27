@@ -632,10 +632,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public void mlTrainingData(String path) {
         	System.out.println("No of Users: " + getAllUserIndexes().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());
-        	
-        	File f = new File("ml_training_data.csv");
-        	f.delete();
-        	
+        	File f = new File("file.txt");
+        	if(f.exists() && !f.isDirectory()) { 
+        	    f.delete();
+        	}
         	for(Integer u: getAllUserIndexes()) {
         		System.out.println("Getting Embeddings for user:" + getURI(u));
         		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
