@@ -313,8 +313,10 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                              
                              
                              if(((HybridRecConfig)getRecConfig()).getTrainTreeModel() == true) {
+                            	 System.out.println("In machine learning part");
                             	 String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
                             	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
+                            	 System.out.println("After calling mlTrainingData");
                             	 ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
                              }
                              
