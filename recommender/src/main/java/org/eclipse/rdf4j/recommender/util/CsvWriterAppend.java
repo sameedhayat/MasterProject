@@ -171,6 +171,7 @@ public class CsvWriterAppend {
 	
 	public static void writeMlDataOneInstance(String path, HashMap<Integer,List<Double>> hm) throws IOException {
 		File f = new File(path);
+		f.delete();
 		f.createNewFile();
         try {
         	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));

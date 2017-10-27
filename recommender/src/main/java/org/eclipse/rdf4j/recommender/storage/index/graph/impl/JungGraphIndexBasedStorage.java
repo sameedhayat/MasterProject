@@ -6,7 +6,10 @@
 package org.eclipse.rdf4j.recommender.storage.index.graph.impl;
 
 import java.awt.Dimension;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -29,6 +32,8 @@ import org.eclipse.rdf4j.recommender.util.TFIDF;
 import org.eclipse.rdf4j.recommender.util.VectorOperations;
 import org.javatuples.Pair;
 import org.javatuples.Quintet;
+
+import com.google.common.io.Files;
 
 import edu.uci.ics.jung.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung.algorithms.layout.Layout;
@@ -628,6 +633,9 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	System.out.println("No of Users: " + getAllUserIndexes().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());
         	
+        	File f = new File("ml_training_data.csv");
+        	f.delete();
+        	
         	for(Integer u: getAllUserIndexes()) {
         		System.out.println("Getting Embeddings for user:" + getURI(u));
         		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
@@ -645,13 +653,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			if(usersEmbeddingsAverageHashMap.get(getURI(u)).size() < 400){
         				System.out.println("rdf2vec and doc2vec embeddings for user not found :" + getURI(u));
         			} 
-//        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-//	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
-//	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
-//	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
-//	        		ret.add(p);
+        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
+	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
+	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        		ret.add(p);
         			}
-//        		CsvWriterAppend.writeMlData(path,ret);
+        		CsvWriterAppend.writeMlData(path,ret);
         	}
         }
         
