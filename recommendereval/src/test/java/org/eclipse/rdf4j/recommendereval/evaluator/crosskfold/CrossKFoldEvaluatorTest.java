@@ -73,8 +73,8 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.REC));
             evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.F_MEASURE));
             evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.MRR));
-           // evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.DIVERSITY));
-           // evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NOVELTY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.DIVERSITY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NOVELTY));
             evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NDCG));
             evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.ACC));
             evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.MAE));
@@ -85,8 +85,8 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
             evalConfig.setIsReproducible(true);
             evalConfig.setNumberOfFolds(2);
-            //evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
-            //evalConfig.setFeatureGraphPattern("?book <http://purl.org/dc/terms/subject> ?subject ");
+            evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
+            evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
 
             recEvalRepository.loadEvalConfiguration(evalConfig);
             recEvalRepository.evaluate();

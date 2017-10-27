@@ -623,7 +623,9 @@ public final class EvalTestRepositoryInstantiator {
             HybridRecConfig configuration = new HybridRecConfig("config1");
 
             configuration.setPosGraphPattern(
-                    "?u <http://example.org/data#likes> ?o"
+                    "?u <http://example.org/data#likes> ?o ."
+                    + "?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?t ."
+                    + "FILTER (?t=<http://schema.org/Movie> || ?t=<http://schema.org/Book>) "
             		);
 
 	        configuration.setRecEntity(RecEntity.USER, "?u");

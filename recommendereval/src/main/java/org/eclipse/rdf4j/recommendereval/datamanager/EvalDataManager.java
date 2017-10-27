@@ -213,9 +213,10 @@ public class EvalDataManager {
                 sb.append(evalConfig.getGraphPattern());
                 sb.append("}");
             }          
-            
+
             TupleQuery tupleQuery = conn.prepareTupleQuery(QueryLanguage.SPARQL, sb.toString());
             TupleQueryResult result = tupleQuery.evaluate();
+            
 
             while (result.hasNext()) {
 
@@ -251,17 +252,17 @@ public class EvalDataManager {
                 
                 if( recommenderConfigurations.get(0) instanceof CrossDomainRecConfig ) { 
                     // item from source domain
-                	String value = itemDomainMap.get(rating.getItemURI());
-                	if(value != null) {
+                	//String value = itemDomainMap.get(rating.getItemURI());
+                	//if(value != null) {
 	                    if( itemDomainMap.get(rating.getItemURI()).equals("source") ) {
 	                        sourceDomainRatings.add(rating);
 	                        continue;
 	                    }// item from target domain
 	                    else {
 	                    }
-                	}else {
-                		System.out.println("Skipped" + rating.getItemURI());
-                	}
+                	//}else {
+                	//	System.out.println("Skipped" + rating.getItemURI());
+                	//}
                     
                 	
                 }
@@ -288,6 +289,9 @@ public class EvalDataManager {
                 sb.append("WHERE {\n");
                 sb.append(evalConfig.getFeatureGraphPattern());
                 sb.append("}");
+                
+                System.out.println("--------------------------------------------"+sb);
+
                 
                 TupleQuery featureTupleQuery    = conn.prepareTupleQuery(QueryLanguage.SPARQL, sb.toString());
                 TupleQueryResult featureResult  = featureTupleQuery.evaluate();
