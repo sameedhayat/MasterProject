@@ -632,13 +632,11 @@ public final class EvalTestRepositoryInstantiator {
 	        //TODO
 	        //Modify this later
 	        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
-	                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
+	                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Movie>");                        
 	        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
-	                "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book>");
-	
+	                "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Book>");
 	        configuration.setRecParadigm(RecParadigm.HYBRID);
-	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
-	        
+	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH); 
 	        //configuration.computeDoc2Vec();
 	        //configuration.computeRdf2Vec();
 	        //configuration.doc2VecInputPath("input_abstract.csv");

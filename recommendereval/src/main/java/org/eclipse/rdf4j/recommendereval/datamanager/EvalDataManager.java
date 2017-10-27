@@ -131,7 +131,7 @@ public class EvalDataManager {
         
         SailRepositoryConnection conn;
         
-        try {            
+                  
             conn = evalRepository.getConnection();
             
             /**
@@ -181,9 +181,9 @@ public class EvalDataManager {
                     // store target items
                     Value targetItem = bs.getValue(targetItemName.replace("?", ""));
                     itemDomainMap.put(targetItem.stringValue(), "target");
+                    
                 }          
             }
-            
             StringBuilder sb = new StringBuilder();
             HashSet<String> otherEntities = new HashSet<>();
             
@@ -251,14 +251,18 @@ public class EvalDataManager {
                 
                 if( recommenderConfigurations.get(0) instanceof CrossDomainRecConfig ) { 
                     // item from source domain
-          
-                    if( itemDomainMap.get(rating.getItemURI()).equals("source") ) {
-                        sourceDomainRatings.add(rating);
-                        continue;
-                    }
-                    // item from target domain
-                    else {
-                    }
+                	String value = itemDomainMap.get(rating.getItemURI());
+                	if(value != null) {
+	                    if( itemDomainMap.get(rating.getItemURI()).equals("source") ) {
+	                        sourceDomainRatings.add(rating);
+	                        continue;
+	                    }// item from target domain
+	                    else {
+	                    }
+                	}else {
+                		System.out.println("Skipped" + rating.getItemURI());
+                	}
+                    
                 	
                 }
                 
@@ -312,12 +316,12 @@ public class EvalDataManager {
                 }
                 
             }
-        } catch (RepositoryException | MalformedQueryException | QueryEvaluationException 
-                | NullPointerException ex) {
-            LOGGER.error("Cannot get input data from repository, please check input parameters(Graph pattern & entities)!");
-            LOGGER.error(ex.getMessage());
-            throw new EvaluatorException("Cannot get input data from repository, please check input parameters(Graph pattern & entities)!");
-        }
+//        } catch (RepositoryException | MalformedQueryException | QueryEvaluationException 
+//                | NullPointerException ex) {
+//            LOGGER.error("Cannot get input data from repository, please check input parameters(Graph pattern & entities)!");
+//            LOGGER.error(ex.getMessage());
+//            throw new EvaluatorException("Cannot get input data from repository, please check input parameters(Graph pattern & entities)!");
+//        }
          
         selectUsers();
        
