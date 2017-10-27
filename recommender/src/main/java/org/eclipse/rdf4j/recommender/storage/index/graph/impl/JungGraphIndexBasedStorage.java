@@ -643,6 +643,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			if(getAbstract(t).isEmpty()) {
         				continue;
         			}
+        			System.out.println("User used: " + getURI(u));
         			List<Double> val = new ArrayList<Double>(); 
         			if(doc2vecEmbeddingsHashMap.get(getURI(t)).size() < 200){
         				System.out.println("doc2vec embeddings for target not found :" + getURI(t));
