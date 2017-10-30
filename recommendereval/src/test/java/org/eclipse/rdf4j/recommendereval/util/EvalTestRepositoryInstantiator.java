@@ -643,12 +643,13 @@ public final class EvalTestRepositoryInstantiator {
 	        //configuration.computeRdf2Vec();
 	        //configuration.doc2VecInputPath("input_abstract.csv");
 	        //configuration.rdf2VecInputPath("rdf2vec_model");
-	        
+	        System.out.println("Creating Configuration");
 	        configuration.doc2VecOutputPath("doc2vec_embeddings.csv");
 	        configuration.rdf2VecOutputPath("rdf2vec_embeddings.csv");
 	        configuration.readUserEmbeddings("user_embeddings.csv");
 	        configuration.mlInputFile("ml_training_data.csv");
 	        configuration.trainTreeModel();
+	        System.out.println("Done Configuration");
 	        recConfigList.add(configuration);
 
         } catch (RecommenderException ex) {
