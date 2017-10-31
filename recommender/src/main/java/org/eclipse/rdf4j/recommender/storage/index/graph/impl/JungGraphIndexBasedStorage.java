@@ -683,7 +683,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public double predictRating(Integer userId, Integer targetId) {
         	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
         	List<Double> val = new ArrayList<Double>();
-			System.out.println(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
+			
         	val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
 			val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
 			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)));
