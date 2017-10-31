@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Random;
 import weka.filters.unsupervised.attribute.Add;
 import weka.classifiers.trees.J48;
+import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVLoader;
@@ -26,15 +27,17 @@ public class TreeModel {
 		CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
 		loader.setFieldSeparator(" ");
+		loader.setNoHeaderRowPresent(true);
 		
-		String[] options = new String[1]; 
-		options[0] = "-H";
-		try {
-			loader.setOptions(options);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		String[] options = new String[1]; 
+//		options[0] = "-H";
+//		try {
+//			loader.setOptions(options);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
 		Instances data = loader.getDataSet();//get instances object
 		//      // save ARFF
 		ArffSaver saver = new ArffSaver();
@@ -81,17 +84,12 @@ public class TreeModel {
     }
     
     public double predict(String inputPath) throws Exception {
+    	
     	CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
 		loader.setFieldSeparator(" ");
-		String[] options = new String[1]; 
-		options[0] = "-H";
-		try {
-			loader.setOptions(options);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		loader.setNoHeaderRowPresent(true);
+		
 		Instances data = loader.getDataSet();//get instances object
 		//      // save ARFF
 		ArffSaver saver = new ArffSaver();
@@ -112,8 +110,19 @@ public class TreeModel {
         dataset.setClassIndex(dataset.numAttributes()-1);
 		dataset.get(0).setClassValue('?');
 		
-		System.out.println("Confidence: " + tree.getConfidenceFactor());
-		return tree.distributionForInstance(dataset.get(0))[0];
+		Instance predicationDataSet = dataset.get(0);
+		
+		double[] predictionDistribution = 
+        		tree.distributionForInstance(predicationDataSet);
+		
+		String predictedClassLabel =
+        		predicationDataSet.classAttribute().value((int) 1);
+		
+		if(predictedClassLabel == "Like") {
+			return predictionDistribution[1];
+		}else {
+			return predictionDistribution[0];
+		}
     }
     
     /*

@@ -174,7 +174,7 @@ public class CsvWriterAppend {
 		f.delete();
 		f.createNewFile();
         try {
-        	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
+        	PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f)));
             
             for(Integer userId : hm.keySet()) {
             	List<Double> l = hm.get(userId);
