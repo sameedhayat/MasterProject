@@ -636,9 +636,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	if(f.exists() && !f.isDirectory()) { 
         	    f.delete();
         	}
+        	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
         	for(Integer u: getAllUserIndexes()) {
         		System.out.println("Getting Embeddings for user:" + getURI(u));
-        		List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
+        		
         		for(Integer t: getTargetNodes()) {
         			if(getAbstract(t).isEmpty()) {
         				continue;
@@ -660,8 +661,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
 	        		ret.add(p);
         			}
-        		CsvWriterAppend.writeMlData(path,ret);
         	}
+        	CsvWriterAppend.writeMlData(path,ret);
         }
         
 		
