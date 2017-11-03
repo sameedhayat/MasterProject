@@ -26,7 +26,7 @@ public class TreeModel {
     	System.out.println("Reading data:" + inputPath);
 		CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
-//		loader.setFieldSeparator(",");
+		loader.setFieldSeparator(",");
 		loader.setNoHeaderRowPresent(true);
 		
 //		String[] options = new String[1]; 
@@ -87,7 +87,7 @@ public class TreeModel {
     	
     	CSVLoader loader = new CSVLoader();
 		loader.setSource(new File(inputPath));
-//		loader.setFieldSeparator(",");
+		loader.setFieldSeparator(",");
 		loader.setNoHeaderRowPresent(true);
 		
 		Instances data = loader.getDataSet();//get instances object
