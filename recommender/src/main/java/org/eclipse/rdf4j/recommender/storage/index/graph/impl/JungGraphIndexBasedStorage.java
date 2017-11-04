@@ -638,23 +638,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
         	for(Integer u: getAllUserIndexes()) {
-        		System.out.println("Getting Embeddings for user:" + getURI(u));
-        		
         		for(Integer t: getTargetNodes()) {
-        			if(getAbstract(t).isEmpty()) {
-        				continue;
-        			}
-        			System.out.println("User used: " + getURI(u));
         			List<Double> val = new ArrayList<Double>(); 
-        			if(doc2vecEmbeddingsHashMap.get(getURI(t)).size() < 200){
-        				System.out.println("doc2vec embeddings for target not found :" + getURI(t));
-        			}
-        			if(rdf2vecEmbeddingsHashMap.get(getURI(t)).size() < 200){
-        				System.out.println("rdf2vec embeddings for target not found :" + getURI(t));
-        			}
-        			if(usersEmbeddingsAverageHashMap.get(getURI(u)).size() < 400){
-        				System.out.println("rdf2vec and doc2vec embeddings for user not found :" + getURI(u));
-        			} 
         			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
 	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
 	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
@@ -703,10 +688,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			System.out.println("Prediction: " + pred);
         	return pred;
-        	
-        	
-        	
         }
         
         
