@@ -84,7 +84,7 @@ public class TreeModel {
 		//AdaBoost .. 
 		AdaBoostM1 model = new AdaBoostM1();
 		model.setClassifier(new DecisionStump());//needs one base-classifier
-		model.setNumIterations(20);
+		model.setNumIterations(100);
 		model.buildClassifier(train);
 		model = new AdaBoostM1();
 //		tree.buildClassifier(train);
