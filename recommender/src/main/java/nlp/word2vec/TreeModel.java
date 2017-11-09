@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import weka.filters.unsupervised.attribute.Add;
+import weka.classifiers.meta.AdaBoostM1;
+import weka.classifiers.trees.DecisionStump;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -15,7 +17,7 @@ import weka.filters.supervised.instance.Resample;
 
 public class TreeModel {
 
-	private static J48 tree;    
+	private static AdaBoostM1 model;    
 	/**
      * Sets the size of the neighborhood (collaborative methods).
      * @param size 
@@ -79,8 +81,13 @@ public class TreeModel {
 		//set class index to the last attribute
 		train.setClassIndex(train.numAttributes()-1);
 		//create and build the classifier!
-		tree = new J48();
-		tree.buildClassifier(train);
+		//AdaBoost .. 
+		AdaBoostM1 model = new AdaBoostM1();
+		model.setClassifier(new DecisionStump());//needs one base-classifier
+		model.setNumIterations(20);
+		model.buildClassifier(train);
+		model = new AdaBoostM1();
+//		tree.buildClassifier(train);
     }
     
     public double predict(String inputPath) throws Exception {
@@ -113,7 +120,7 @@ public class TreeModel {
 		Instance predicationDataSet = dataset.get(0);
 		
 		double[] predictionDistribution = 
-        		tree.distributionForInstance(predicationDataSet);
+        		model.distributionForInstance(predicationDataSet);
 		
 		String predictedClassLabel =
         		predicationDataSet.classAttribute().value((int) 1);
