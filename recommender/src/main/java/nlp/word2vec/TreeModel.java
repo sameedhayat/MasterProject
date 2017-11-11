@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import weka.filters.unsupervised.attribute.Add;
+import weka.classifiers.CostMatrix;
 import weka.classifiers.meta.AdaBoostM1;
+import weka.classifiers.meta.CostSensitiveClassifier;
 import weka.classifiers.trees.DecisionStump;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
@@ -17,7 +19,8 @@ import weka.filters.supervised.instance.Resample;
 
 public class TreeModel {
 
-	private static AdaBoostM1 model;    
+//	private AdaBoostM1 model;
+	private CostSensitiveClassifier model;
 	/**
      * Sets the size of the neighborhood (collaborative methods).
      * @param size 
@@ -82,10 +85,21 @@ public class TreeModel {
 		train.setClassIndex(train.numAttributes()-1);
 		//create and build the classifier!
 		//AdaBoost .. 
-		model = new AdaBoostM1();
-		model.setClassifier(new DecisionStump());//needs one base-classifier
-		model.setNumIterations(100);
-		model.buildClassifier(train);
+		AdaBoostM1 classifier_ada = new AdaBoostM1();
+		classifier_ada.setClassifier(new DecisionStump());//needs one base-classifier
+		classifier_ada.setNumIterations(100);
+		
+		model = new CostSensitiveClassifier();
+        CostMatrix costMatrix = new CostMatrix(2);
+//      costMatrix.setCell(0, 0, 0.8d);
+        //          costMatrix.setCell(0, 1, 5.0d);
+        costMatrix.setCell(1, 0, 2d);
+        
+        model.setClassifier(classifier_ada);
+        model.setCostMatrix(costMatrix);
+        model.buildClassifier(train);
+        
+//		model.buildClassifier(train);
 //		tree.buildClassifier(train);
     }
     
