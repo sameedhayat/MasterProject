@@ -19,8 +19,8 @@ import weka.filters.supervised.instance.Resample;
 
 public class TreeModel {
 
-//	private AdaBoostM1 model;
-	private CostSensitiveClassifier model;
+	private AdaBoostM1 model;
+//	private CostSensitiveClassifier model;
 	/**
      * Sets the size of the neighborhood (collaborative methods).
      * @param size 
@@ -85,18 +85,19 @@ public class TreeModel {
 		train.setClassIndex(train.numAttributes()-1);
 		//create and build the classifier!
 		//AdaBoost .. 
-		AdaBoostM1 classifier_ada = new AdaBoostM1();
-		classifier_ada.setClassifier(new DecisionStump());//needs one base-classifier
-		classifier_ada.setNumIterations(100);
+//		AdaBoostM1 classifier_ada = new AdaBoostM1();
+//		classifier_ada.setClassifier(new DecisionStump());//needs one base-classifier
+		model = new AdaBoostM1();
+		model.setNumIterations(100);
 		
-		model = new CostSensitiveClassifier();
-        CostMatrix costMatrix = new CostMatrix(2);
-//      costMatrix.setCell(0, 0, 0.8d);
-        //          costMatrix.setCell(0, 1, 5.0d);
-        costMatrix.setCell(1, 0, 2d);
-        
-        model.setClassifier(classifier_ada);
-        model.setCostMatrix(costMatrix);
+//		model = new CostSensitiveClassifier();
+//        CostMatrix costMatrix = new CostMatrix(2);
+////      costMatrix.setCell(0, 0, 0.8d);
+//        //          costMatrix.setCell(0, 1, 5.0d);
+//        costMatrix.setCell(1, 0, 2d);
+//        
+//        model.setClassifier(classifier_ada);
+//        model.setCostMatrix(costMatrix);
         model.buildClassifier(train);
         
 //		model.buildClassifier(train);
