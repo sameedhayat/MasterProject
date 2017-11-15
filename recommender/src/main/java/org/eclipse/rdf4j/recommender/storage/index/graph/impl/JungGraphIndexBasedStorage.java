@@ -667,8 +667,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        		List<Double> uE = usersEmbeddingsAverageHashMap.get(getURI(u));
 	        		List<Double> doc2vecUser = uE.subList(0, 200);
 	        		List<Double> rdf2vecUser = uE.subList(200, 400);
-	        		val.add(val.size()-1 , ListOperations.cosineSimilarity(doc2vecUser, doc2vecEmbeddingsHashMap.get(getURI(t))));
-	        		val.add(val.size()-1 , ListOperations.cosineSimilarity(rdf2vecUser, rdf2vecEmbeddingsHashMap.get(getURI(t))));
+	        		val.add(ListOperations.cosineSimilarity(doc2vecUser, doc2vecEmbeddingsHashMap.get(getURI(t))));
+	        		val.add(ListOperations.cosineSimilarity(rdf2vecUser, rdf2vecEmbeddingsHashMap.get(getURI(t))));
 	        		
 //	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
 	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
