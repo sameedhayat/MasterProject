@@ -61,26 +61,26 @@ public class TreeModel {
 		dataset.setClassIndex(dataset.numAttributes()-1);
 		
 		
-//		final Resample filter = new Resample();
-//		Instances filteredIns = null;
-//		filter.setBiasToUniformClass(0.5f);	
-//		try {
-//			filter.setInputFormat(dataset);
-//			filter.setNoReplacement(false);
-//			filter.setSampleSizePercent(100);
-//			
-//			filteredIns = Filter.useFilter(dataset, filter);
-//		} catch (Exception e) {
-//			System.out.println("Error when resampling input data!");
-//			e.printStackTrace();
-//		}
-//			Random rand = new Random(1);
-//			filteredIns.randomize(rand);
+		final Resample filter = new Resample();
+		Instances filteredIns = null;
+		filter.setBiasToUniformClass(0.5f);	
+		try {
+			filter.setInputFormat(dataset);
+			filter.setNoReplacement(false);
+			filter.setSampleSizePercent(100);
+			
+			filteredIns = Filter.useFilter(dataset, filter);
+		} catch (Exception e) {
+			System.out.println("Error when resampling input data!");
+			e.printStackTrace();
+		}
+			Random rand = new Random(1);
+			filteredIns.randomize(rand);
 		
 		
-		int trainSize = (int) Math.round(dataset.numInstances() * 1.0);
+		int trainSize = (int) Math.round(filteredIns.numInstances() * 1.0);
 		System.out.println("Train Size : " + trainSize);
-		Instances train = new Instances(dataset, 0, trainSize);
+		Instances train = new Instances(filteredIns, 0, trainSize);
 		//set class index to the last attribute
 		train.setClassIndex(train.numAttributes()-1);
 		//create and build the classifier!
