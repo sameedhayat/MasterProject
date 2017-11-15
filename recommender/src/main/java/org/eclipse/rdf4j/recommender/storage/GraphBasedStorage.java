@@ -303,6 +303,14 @@ public interface GraphBasedStorage extends Storage {
         public double predictRating(Integer userId, Integer targetId);
         
         
+        
+        /**
+         * training data with cosine
+         * @param path to csv file
+         */
+        public double predictRatingCosine(Integer userId, Integer targetId);
+        
+        
         /**
          * training data with cosine
          * @param path to csv file

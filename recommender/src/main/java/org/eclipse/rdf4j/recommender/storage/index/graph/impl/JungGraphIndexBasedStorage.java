@@ -720,6 +720,39 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return pred;
         }
         
+        @Override
+        public double predictRatingCosine(Integer userId, Integer targetId) {
+        	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
+        	List<Double> val = new ArrayList<Double>();
+			
+        	List<Double> uE = usersEmbeddingsAverageHashMap.get(getURI(userId));
+    		List<Double> doc2vecUser = uE.subList(0, 200);
+    		List<Double> rdf2vecUser = uE.subList(200, 400);
+    		ListOperations.cosineSimilarity(doc2vecUser, doc2vecEmbeddingsHashMap.get(getURI(targetId)));
+    		ListOperations.cosineSimilarity(rdf2vecUser, rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
+        	
+//			val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
+//			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)));
+			List<Double> p = new ArrayList<Double>(val);
+			ret.put(userId,p);
+        	try {
+				CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	double pred = -1.0;
+        	try {
+        		pred = treeModel.predict("tmp.csv");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("Prediction: " + pred);
+        	return pred;
+        }
+        
+        
         
         
         @Override

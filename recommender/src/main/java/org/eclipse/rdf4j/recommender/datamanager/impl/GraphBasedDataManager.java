@@ -476,7 +476,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                 return score;
                         
                         case HYBRID:
-                            return ((GraphBasedStorage)getStorage()).predictRating(indexOfNode1, indexOfNode2);
+                            return ((GraphBasedStorage)getStorage()).predictRatingCosine(indexOfNode1, indexOfNode2);
                 }
                 return -1.0;
         }
