@@ -343,6 +343,30 @@ public class ListOperations {
             return result;
         }
         
+        public static double[] convertListToArray(List<Double> list1){
+        	 double[] target = new double[list1.size()];
+        	 for (int i = 0; i < target.length; i++) {
+        	    target[i] = list1.get(i).doubleValue();  // java 1.4 style
+        	    // or:
+        	    target[i] = list1.get(i);                // java 1.5+ style (outboxing)
+        	 }
+        	 return target;
+        }
+        
+        
+        public static double cosineSimilarity(List<Double> list1, List<Double> list2) {
+        	double[] vectorA = convertListToArray(list1);
+        	double[] vectorB = convertListToArray(list2);
+        	double dotProduct = 0.0;
+            double normA = 0.0;
+            double normB = 0.0;
+            for (int i = 0; i < vectorA.length; i++) {
+                dotProduct += vectorA[i] * vectorB[i];
+                normA += Math.pow(vectorA[i], 2);
+                normB += Math.pow(vectorB[i], 2);
+            }   
+            return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+        }
         
         /**
          * Implements binary search on an ordered array of integers. As a second

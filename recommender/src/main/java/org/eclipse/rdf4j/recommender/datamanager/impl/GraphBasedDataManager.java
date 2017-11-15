@@ -316,7 +316,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                             	 System.out.println("In machine learning part");
                             	 String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
                             	 System.out.println("ML path :-----" + mlTrainingInput + "-------");
-                            	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
+                            	 ((GraphBasedStorage)getStorage()).mlTrainingDataCosine(mlTrainingInput);
                             	 System.out.println("After calling mlTrainingData");
                             	 ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
                              }

@@ -650,6 +650,34 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	CsvWriterAppend.writeMlData(path,ret);
         }
         
+        @Override
+        public void mlTrainingDataCosine(String path) {
+        	System.out.println("No of Users: " + getAllUserIndexes().size());
+        	System.out.println("No of Target Items: " + getTargetNodes().size());
+        	File f = new File(path);
+        	if(f.exists() && !f.isDirectory()) { 
+        	    f.delete();
+        	}
+        	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
+        	for(Integer u: getAllUserIndexes()) {
+        		for(Integer t: getTargetNodes()) {
+        			List<Double> val = new ArrayList<Double>(); 
+//        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+//	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
+	        		List<Double> uE = usersEmbeddingsAverageHashMap.get(getURI(u));
+	        		List<Double> doc2vecUser = uE.subList(0, 200);
+	        		List<Double> rdf2vecUser = uE.subList(200, 400);
+	        		val.add(val.size()-1 , ListOperations.cosineSimilarity(doc2vecUser, doc2vecEmbeddingsHashMap.get(getURI(t))));
+	        		val.add(val.size()-1 , ListOperations.cosineSimilarity(rdf2vecUser, rdf2vecEmbeddingsHashMap.get(getURI(t))));
+	        		
+//	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
+	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        		ret.add(p);
+        			}
+        	}
+        	CsvWriterAppend.writeMlData(path,ret);
+        }
+        
 		
         
         public void trainTreeModel(String inputPath, String outputPath) {

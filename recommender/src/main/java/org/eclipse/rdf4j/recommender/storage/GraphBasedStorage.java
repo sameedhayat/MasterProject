@@ -304,6 +304,13 @@ public interface GraphBasedStorage extends Storage {
         
         
         /**
+         * training data with cosine
+         * @param path to csv file
+         */
+        public void mlTrainingDataCosine(String inputPath);
+         
+        
+        /**
          * train tree model
          * @param path to csv file
          */
