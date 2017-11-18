@@ -9,6 +9,7 @@ import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.CostSensitiveClassifier;
 import weka.classifiers.trees.DecisionStump;
 import weka.classifiers.trees.J48;
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
@@ -16,6 +17,7 @@ import weka.core.converters.CSVLoader;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.supervised.instance.Resample;
+import weka.filters.supervised.instance.SpreadSubsample;
 
 public class TreeModel {
 
@@ -61,22 +63,27 @@ public class TreeModel {
 		dataset.setClassIndex(dataset.numAttributes()-1);
 		
 		
-		final Resample filter = new Resample();
-		Instances filteredIns = null;
-		filter.setBiasToUniformClass(0.5f);	
-		try {
-			filter.setInputFormat(dataset);
-			filter.setNoReplacement(false);
-			filter.setSampleSizePercent(100);
-			
-			filteredIns = Filter.useFilter(dataset, filter);
-		} catch (Exception e) {
-			System.out.println("Error when resampling input data!");
-			e.printStackTrace();
-		}
-			Random rand = new Random(1);
-			filteredIns.randomize(rand);
+//		final Resample filter = new Resample();
+//		Instances filteredIns = null;
+//		filter.setBiasToUniformClass(1);	
+//		try {
+//			filter.setInputFormat(dataset);
+//			filter.setNoReplacement(false);
+//			filter.setSampleSizePercent(100);
+//			
+//			filteredIns = Filter.useFilter(dataset, filter);
+//		} catch (Exception e) {
+//			System.out.println("Error when resampling input data!");
+//			e.printStackTrace();
+//		}
+//			Random rand = new Random(1);
+//			filteredIns.randomize(rand);
 		
+		SpreadSubsample ff = new SpreadSubsample();
+		ff.setInputFormat(dataset);
+		ff.setDistributionSpread(1);
+		
+		Instances filteredIns = Filter.useFilter(dataset, ff);
 		
 		int trainSize = (int) Math.round(filteredIns.numInstances() * 1.0);
 		System.out.println("Train Size : " + trainSize);
@@ -88,7 +95,10 @@ public class TreeModel {
 //		AdaBoostM1 classifier_ada = new AdaBoostM1();
 //		classifier_ada.setClassifier(new DecisionStump());//needs one base-classifier
 		model = new AdaBoostM1();
+		RandomForest rf = new RandomForest();
 		model.setNumIterations(100);
+		model.setClassifier(rf);
+		
 		
 //		model = new CostSensitiveClassifier();
 //        CostMatrix costMatrix = new CostMatrix(2);

@@ -316,7 +316,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                             	 System.out.println("In machine learning part");
                             	 String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
                             	 System.out.println("ML path :-----" + mlTrainingInput + "-------");
-                            	 ((GraphBasedStorage)getStorage()).mlTrainingDataCosine(mlTrainingInput);
+                            	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
                             	 System.out.println("After calling mlTrainingData");
                             	 ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
                              }
@@ -476,7 +476,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                 return score;
                         
                         case HYBRID:
-                            return ((GraphBasedStorage)getStorage()).predictRatingCosine(indexOfNode1, indexOfNode2);
+                            return ((GraphBasedStorage)getStorage()).predictRating(indexOfNode1, indexOfNode2);
                 }
                 return -1.0;
         }
