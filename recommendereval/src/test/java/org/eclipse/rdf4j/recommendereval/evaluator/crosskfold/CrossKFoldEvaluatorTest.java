@@ -81,10 +81,10 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.RMSE));
             evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.AUC));
             evalConfig.addEvalMetric(new GlobalEvalMetric(EvalMetric.COVERAGE));
-            evalConfig.addRankingMetricTopKSize(10);
+            evalConfig.addRankingMetricTopKSize(20);
             evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
             evalConfig.setIsReproducible(true);
-            evalConfig.setNumberOfFolds(3);
+            evalConfig.setNumberOfFolds(10);
             evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
             evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
 
