@@ -18,6 +18,7 @@ import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.supervised.instance.Resample;
 import weka.filters.supervised.instance.SpreadSubsample;
+import weka.core.SerializationHelper;
 
 public class TreeModel {
 
@@ -109,6 +110,7 @@ public class TreeModel {
 //        model.setClassifier(classifier_ada);
 //        model.setCostMatrix(costMatrix);
         model.buildClassifier(train);
+        SerializationHelper.write("trained_full.model", model);
         
 //		model.buildClassifier(train);
 //		tree.buildClassifier(train);
