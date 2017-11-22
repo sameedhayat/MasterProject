@@ -156,9 +156,9 @@ public class CsvWriterAppend {
             
             for(Pair<List<Double>,String> userId : hm) {
 //            	Pair<List<Double>,String> l = hm.get(userId);
-//            	if(userId.getValue0().size() < 800){
-//            		continue;
-//            	}
+            	if(userId.getValue0().size() < 800){
+            		continue;
+            	}
             	String result = convertListToString1(userId.getValue0());
             	String wr = result + "," + userId.getValue1();
             	out.println(wr);
