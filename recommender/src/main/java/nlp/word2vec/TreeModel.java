@@ -67,6 +67,7 @@ public class TreeModel {
 		}
     }
     
+    
     public void loadDataAndTrain(String inputPath) throws Exception {
     	//load datasets
     	System.out.println("Loading data:" + inputPath);
@@ -157,7 +158,7 @@ public class TreeModel {
 		Instance predicationDataSet = dataset.get(0);
 		
 		double[] predictionDistribution = 
-        		model.distributionForInstance(predicationDataSet);
+        		trainedModel.distributionForInstance(predicationDataSet);
 		
 		String predictedClassLabel =
         		predicationDataSet.classAttribute().value((int) 1);
