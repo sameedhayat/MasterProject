@@ -363,10 +363,10 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                         Set<Integer> allUserNodes = graphStorage.getSubgraphVertices(indexOfUser);
                                         System.out.println("All User Nodes");
                                         System.out.println(allUserNodes);
-                                        targetNodeIds.retainAll(allUserNodes);
-                                        System.out.println("All Target Nodes");
-                                        System.out.println(targetNodeIds);
-                                        
+//                                        targetNodeIds.retainAll(allUserNodes);
+//                                        System.out.println("All Target Nodes");
+//                                        System.out.println(targetNodeIds);
+//                                        
                                         for (Integer nodeId: targetNodeIds) {
                                                 recCandidates.add(getStorage().getURI(nodeId));
                                         }
