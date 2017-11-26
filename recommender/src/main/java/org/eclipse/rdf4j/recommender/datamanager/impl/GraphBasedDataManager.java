@@ -361,7 +361,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                 switch(getRecConfig().getRecParadigm()) {
                                 case CROSS_DOMAIN_K_STEP_MARKOV_CENTRALITY: case CROSS_DOMAIN_PAGERANK_WITH_PRIORS: case HYBRID:                                 
                                         Set<Integer> allUserNodes = graphStorage.getSubgraphVertices(indexOfUser);
-                                        targetNodeIds.retainAll(allUserNodes);
+//                                        targetNodeIds.retainAll(allUserNodes);
                                         for (Integer nodeId: targetNodeIds) {
                                                 recCandidates.add(getStorage().getURI(nodeId));
                                         }
