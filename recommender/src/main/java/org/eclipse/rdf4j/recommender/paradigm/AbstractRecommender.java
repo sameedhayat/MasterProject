@@ -105,7 +105,7 @@ public abstract class AbstractRecommender implements Recommender{
                 }                                
                 topK = topKQueue.toArray(new RatedResource[size]);
                 Arrays.sort(topK, comparatorOfRrBasedOnRating);
-                              
+                System.out.println("topK" + topK);
                 return topK;
         }
         
