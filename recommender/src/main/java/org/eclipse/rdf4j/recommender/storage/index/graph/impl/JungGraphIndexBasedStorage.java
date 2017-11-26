@@ -651,6 +651,35 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         @Override
+        public void createUserProfile() {
+        	List<Integer> userliked = new ArrayList<Integer>();
+        	
+        	userliked.add(getIndexOf("http://dbpedia.org/resource/Family_Tree_(TV_series)"));
+        	userliked.add(getIndexOf("http://dbpedia.org/resource/When_We_Are_Married"));
+        	userliked.add(getIndexOf("http://dbpedia.org/resource/The_Memory_of_Water"));
+    		
+        	
+        	addToUserEmbeddingsHashMap(userliked, "test_user1");
+        }
+        
+        public void addToUserEmbeddingsHashMap(List<Integer> userliked, String userId) {
+        	ArrayList<List<Double>> doc2vecSourceList = new ArrayList<List<Double>>();
+        	ArrayList<List<Double>> rdf2vecSourceList = new ArrayList<List<Double>>();
+        	
+        	for(int s: userliked) {
+    			if(getAbstract(s).isEmpty()) {
+    				continue;
+    			}
+    			doc2vecSourceList.add(doc2vecEmbeddingsHashMap.get(getURI(s)));
+    			rdf2vecSourceList.add(rdf2vecEmbeddingsHashMap.get(getURI(s)));
+    		}
+    		List<Double> tmp = new ArrayList<Double>();
+        	
+    		tmp.addAll(ListOperations.averageList(doc2vecSourceList));
+    		tmp.addAll(ListOperations.averageList(rdf2vecSourceList));
+    		usersEmbeddingsAverageHashMap.put(userId, tmp);
+        }
+        @Override
         public void mlTrainingDataCosine(String path) {
         	System.out.println("No of Users: " + getAllUserIndexes().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());

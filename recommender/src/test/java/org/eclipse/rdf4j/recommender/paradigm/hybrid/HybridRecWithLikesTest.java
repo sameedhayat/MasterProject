@@ -58,7 +58,9 @@ public class HybridRecWithLikesTest {
 //                	}
 //            }
 //            }
-            System.out.println(recRepository.predictRating(sourceUri, targetUri));
+            graphStorage.createUserProfile();
+            System.out.println("Creating user profile for testing");
+            System.out.println(recRepository.getTopRecommendations("test_user1", 15, false));
             System.out.println("Done");
 //            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
 //            	System.out.println("------Contains-------");

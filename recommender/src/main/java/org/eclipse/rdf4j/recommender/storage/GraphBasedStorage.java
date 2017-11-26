@@ -316,6 +316,14 @@ public interface GraphBasedStorage extends Storage {
          * @param path to csv file
          */
         public void mlTrainingDataCosine(String inputPath);
+        
+        
+        
+        /**
+         * training data with cosine
+         * @param path to csv file
+         */
+        public void createUserProfile();
          
         
         /**
