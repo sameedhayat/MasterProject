@@ -331,7 +331,9 @@ public interface GraphBasedStorage extends Storage {
          * @param path to csv file
          */
         public void trainTreeModel(String inputPath, String outputPath);
-            
+        
+        public void loadTrainedTreeModel(String inputPath);
+        
         
         /**
          * saves users embeddings average to the csv file.

@@ -652,15 +652,30 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         @Override
         public void createUserProfile() {
-        	List<Integer> userliked = new ArrayList<Integer>();
+        	List<List<Integer>> userliked = new ArrayList<List<Integer>>();
+        	List<Integer> u1 = new ArrayList<Integer>();
+        	List<Integer> u2 = new ArrayList<Integer>();
         	
-        	userliked.add(getIndexOf("http://dbpedia.org/resource/Family_Tree_(TV_series)"));
-        	userliked.add(getIndexOf("http://dbpedia.org/resource/When_We_Are_Married"));
-        	userliked.add(getIndexOf("http://dbpedia.org/resource/The_Memory_of_Water"));
+        	// comedy movies
+        	u1.add(getIndexOf("http://dbpedia.org/resource/Family_Tree_(TV_series)"));
+        	u1.add(getIndexOf("http://dbpedia.org/resource/When_We_Are_Married"));
+        	u1.add(getIndexOf("http://dbpedia.org/resource/The_Memory_of_Water"));
     		
+        	// mystery movies
+        	u2.add(getIndexOf("http://dbpedia.org/resource/Jesse_Stone:_No_Remorse"));
+        	u2.add(getIndexOf("http://dbpedia.org/resource/Case_Closed_(film)"));
+        	u2.add(getIndexOf("http://dbpedia.org/resource/Buried_Secrets_(film)"));
+        	u2.add(getIndexOf("http://dbpedia.org/resource/Get_a_Clue"));
         	
-        	addToUserEmbeddingsHashMap(userliked, "test_user1");
+        	userliked.add(u1);
+        	userliked.add(u2);
+        	
+        	for(int i=0; i< userliked.size(); i++) {
+        		addToUserEmbeddingsHashMap(userliked.get(i), "test_user" + i);
+        	}
+        	
         }
+        
         
         public void addToUserEmbeddingsHashMap(List<Integer> userliked, String userId) {
         	ArrayList<List<Double>> doc2vecSourceList = new ArrayList<List<Double>>();
@@ -708,6 +723,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
 		
+        @Override
+        public void loadTrainedTreeModel(String inputPath) {
+				treeModel.loadTrainedModel(inputPath);
+        }
         
         public void trainTreeModel(String inputPath, String outputPath) {
         	try {

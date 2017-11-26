@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import weka.filters.unsupervised.attribute.Add;
+import weka.classifiers.Classifier;
 import weka.classifiers.CostMatrix;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.CostSensitiveClassifier;
@@ -23,6 +24,7 @@ import weka.core.SerializationHelper;
 public class TreeModel {
 
 	private AdaBoostM1 model;
+	private Classifier trainedModel;
 //	private CostSensitiveClassifier model;
 	/**
      * Sets the size of the neighborhood (collaborative methods).
@@ -54,6 +56,15 @@ public class TreeModel {
 		saver.setFile(new File(outputPath));
 		saver.writeBatch();
 		System.out.println("Converted to " + outputPath);
+    }
+    
+    public void loadTrainedModel(String path) {
+    	try {
+			trainedModel = (Classifier) SerializationHelper.read(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void loadDataAndTrain(String inputPath) throws Exception {

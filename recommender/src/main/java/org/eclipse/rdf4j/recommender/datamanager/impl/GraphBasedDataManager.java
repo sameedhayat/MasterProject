@@ -321,6 +321,8 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                             	 ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
                              }
                              
+                             ((GraphBasedStorage)getStorage()).trainModel("trained.model");
+                             
                       }
                        
                 } catch (RepositoryException ex) {

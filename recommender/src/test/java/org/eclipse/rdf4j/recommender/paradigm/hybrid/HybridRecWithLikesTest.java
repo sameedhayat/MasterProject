@@ -49,8 +49,8 @@ public class HybridRecWithLikesTest {
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
             
-            String sourceUri = "http://example.org/data#u144199";
-            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
+//            String sourceUri = "http://example.org/data#u144199";
+//            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
 //            for(int user: graphStorage.getusersEmbeddingsAverageHashMap()) {
 //            	for(int t: graphStorage.getTargetNodes()) {
 //                	if(graphStorage.getLabel(user, t) == "Like") {
@@ -60,7 +60,10 @@ public class HybridRecWithLikesTest {
 //            }
             graphStorage.createUserProfile();
             System.out.println("Creating user profile for testing");
+            System.out.println("User1 comedy likes");
             System.out.println(recRepository.getTopRecommendations("test_user1", 15, false));
+            System.out.println("User1 mystery likes");
+            System.out.println(recRepository.getTopRecommendations("test_user2", 15, false));
             System.out.println("Done");
 //            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
 //            	System.out.println("------Contains-------");
