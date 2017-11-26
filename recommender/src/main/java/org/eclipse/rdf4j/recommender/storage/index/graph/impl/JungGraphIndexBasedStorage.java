@@ -655,20 +655,31 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	List<List<Integer>> userliked = new ArrayList<List<Integer>>();
         	List<Integer> u1 = new ArrayList<Integer>();
         	List<Integer> u2 = new ArrayList<Integer>();
+        	List<Integer> u3 = new ArrayList<Integer>();
         	
         	// comedy movies
-        	u1.add(getIndexOf("http://dbpedia.org/resource/Family_Tree_(TV_series)"));
-        	u1.add(getIndexOf("http://dbpedia.org/resource/When_We_Are_Married"));
-        	u1.add(getIndexOf("http://dbpedia.org/resource/The_Memory_of_Water"));
+        	u1.add(getIndexOf("http://dbpedia.org/resource/Planes,_Trains_and_Automobiles"));
+        	u1.add(getIndexOf("http://dbpedia.org/resource/Wedding_Crashers"));
+        	u1.add(getIndexOf("http://dbpedia.org/resource/Anchorman:_The_Legend_of_Ron_Burgundy"));
+        	u1.add(getIndexOf("http://dbpedia.org/resource/Groundhog_Day_(film)"));
+        	
+        	
     		
-        	// mystery movies
-        	u2.add(getIndexOf("http://dbpedia.org/resource/Jesse_Stone:_No_Remorse"));
-        	u2.add(getIndexOf("http://dbpedia.org/resource/Case_Closed_(film)"));
-        	u2.add(getIndexOf("http://dbpedia.org/resource/Buried_Secrets_(film)"));
-        	u2.add(getIndexOf("http://dbpedia.org/resource/Get_a_Clue"));
+        	// sci-fi movies
+        	u2.add(getIndexOf("http://dbpedia.org/resource/Blade_Runner"));
+        	u2.add(getIndexOf("http://dbpedia.org/resource/2001:_A_Space_Odyssey_(film)"));
+        	u2.add(getIndexOf("http://dbpedia.org/resource/Star_Wars_(film)"));
+        	u2.add(getIndexOf("http://dbpedia.org/resource/The_Matrix"));
+        	
+        	// horror movies
+        	u3.add(getIndexOf("http://dbpedia.org/resource/The_Shining_(film)"));
+        	u3.add(getIndexOf("http://dbpedia.org/resource/Saw_V"));
+        	u3.add(getIndexOf("http://dbpedia.org/resource/The_Exorcist_III"));
+        	u3.add(getIndexOf("http://dbpedia.org/resource/Paranormal_Activity_2"));
         	
         	userliked.add(u1);
         	userliked.add(u2);
+        	userliked.add(u3);
         	
         	for(int i=0; i< userliked.size(); i++) {
         		addToUserEmbeddingsHashMap(userliked.get(i), "test_user" + i);
