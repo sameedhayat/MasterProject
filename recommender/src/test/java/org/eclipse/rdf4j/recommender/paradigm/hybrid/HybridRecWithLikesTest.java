@@ -3,10 +3,11 @@ package org.eclipse.rdf4j.recommender.paradigm.hybrid;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-
+import org.eclipse.rdf4j.recommender.datamanager.model.RatedResource;
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.repository.SailRecommenderRepository;
 import org.eclipse.rdf4j.recommender.storage.index.graph.impl.JungGraphIndexBasedStorage;
@@ -61,11 +62,25 @@ public class HybridRecWithLikesTest {
             graphStorage.createUserProfile();
             System.out.println("Creating user profile for testing");
             System.out.println("User1 comedy likes");
-            System.out.println(recRepository.getTopRecommendations("http://example.org/data#ut1", 15, false));
+            
+            List<RatedResource> topk1 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut1", 15, false));
+            for(RatedResource r : topk1) {
+            	System.out.println(r.getResource());
+            }
+            
             System.out.println("User2 sci-fi likes");
-            System.out.println(recRepository.getTopRecommendations("http://example.org/data#ut2", 15, false));
-            System.out.println("User2 horror likes");
-            System.out.println(recRepository.getTopRecommendations("http://example.org/data#ut3", 15, false));
+            
+            List<RatedResource> topk2 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut2", 15, false));
+            for(RatedResource r : topk2) {
+            	System.out.println(r.getResource());
+            }
+            
+            System.out.println("User3 horror likes");
+            List<RatedResource> topk3 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut3", 15, false));
+            for(RatedResource r : topk3) {
+            	System.out.println(r.getResource());
+            }
+            
             System.out.println("Done");
 //            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
 //            	System.out.println("------Contains-------");

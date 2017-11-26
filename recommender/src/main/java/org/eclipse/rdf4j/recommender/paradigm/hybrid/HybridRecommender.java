@@ -31,7 +31,6 @@ public class HybridRecommender extends AbstractRecommender {
     public RatedResource[] getTopRecommendations(String userURI, int size, 
                     Set<String> candidatesURI) 
                     throws RecommenderException {
-			System.out.println(candidatesURI);
             RatedResource[] topK = super.getTopRecommendations(userURI, size, candidatesURI);                 
             RatedResource[] normalizedTopK = new RatedResource[topK.length];
             double maxScore = topK[0].getRating(); //Highest score

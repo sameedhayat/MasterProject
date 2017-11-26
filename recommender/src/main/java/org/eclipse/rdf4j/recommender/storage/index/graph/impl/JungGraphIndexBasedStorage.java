@@ -779,7 +779,6 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("Prediction: " + pred);
         	return pred;
         }
         
