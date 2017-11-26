@@ -678,6 +678,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         
         
         public void addToUserEmbeddingsHashMap(List<Integer> userliked, String userId) {
+        	System.out.println("UserLike id" + userliked);
         	ArrayList<List<Double>> doc2vecSourceList = new ArrayList<List<Double>>();
         	ArrayList<List<Double>> rdf2vecSourceList = new ArrayList<List<Double>>();
         	
