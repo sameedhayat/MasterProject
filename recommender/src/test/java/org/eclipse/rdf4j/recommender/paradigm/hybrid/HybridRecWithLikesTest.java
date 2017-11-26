@@ -61,11 +61,11 @@ public class HybridRecWithLikesTest {
             graphStorage.createUserProfile();
             System.out.println("Creating user profile for testing");
             System.out.println("User1 comedy likes");
-            System.out.println(recRepository.getTopRecommendations("test_user1", 15, false));
+            System.out.println(recRepository.getTopRecommendations("http://example.org/data#ut1", 15, false));
             System.out.println("User2 sci-fi likes");
-            System.out.println(recRepository.getTopRecommendations("test_user2", 15, false));
+            System.out.println(recRepository.getTopRecommendations("http://example.org/data#ut2", 15, false));
             System.out.println("User2 horror likes");
-            System.out.println(recRepository.getTopRecommendations("test_user3", 15, false));
+            System.out.println(recRepository.getTopRecommendations("http://example.org/data#ut3", 15, false));
             System.out.println("Done");
 //            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
 //            	System.out.println("------Contains-------");

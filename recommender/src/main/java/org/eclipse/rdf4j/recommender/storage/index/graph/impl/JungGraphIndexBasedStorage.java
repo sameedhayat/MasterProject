@@ -681,9 +681,12 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	userliked.add(u2);
         	userliked.add(u3);
         	
-        	for(int i=0; i< userliked.size(); i++) {
-        		addToUserEmbeddingsHashMap(userliked.get(i), "test_user" + i + 1);
-        	}
+        	addToUserEmbeddingsHashMap(userliked.get(0), "http://example.org/data#ut1");
+        	addToUserEmbeddingsHashMap(userliked.get(1), "http://example.org/data#ut2");
+        	addToUserEmbeddingsHashMap(userliked.get(2), "http://example.org/data#ut3");
+//        	for(int i=0; i< userliked.size(); i++) {
+//        		addToUserEmbeddingsHashMap(userliked.get(i), "test_user" + i + 1);
+//        	}
         	
         }
         
