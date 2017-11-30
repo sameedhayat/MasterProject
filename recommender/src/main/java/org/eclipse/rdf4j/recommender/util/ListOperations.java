@@ -8,6 +8,7 @@ package org.eclipse.rdf4j.recommender.util;
 import com.google.common.collect.MinMaxPriorityQueue;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -280,14 +281,21 @@ public class ListOperations {
         
         public static List<Double> averageList(ArrayList<List<Double>> l){
         	int size = l.size();
-        	List<Double> avg = l.get(0);
-        	for(int i=1; i< l.size(); i++) {
-        		for(int j=1; j< avg.size(); j++) {
+        	
+        	
+        	int colSize = l.get(0).size();
+        	ArrayList<Double> avg = new ArrayList<Double>(colSize);
+        	for(int i=0; i< colSize; i++) {
+        		avg.add(0.0);
+        	}
+
+        	for(int i=0; i< l.size(); i++) {
+        		for(int j=0; j< colSize; j++) {
         			avg.set(j, avg.get(j) + l.get(i).get(j));
         		}
         	}
         	
-        	for(int i=1; i< avg.size(); i++) {
+        	for(int i=0; i< avg.size(); i++) {
         		avg.set(i, avg.get(i)/ size);
         	}
         	return avg;
