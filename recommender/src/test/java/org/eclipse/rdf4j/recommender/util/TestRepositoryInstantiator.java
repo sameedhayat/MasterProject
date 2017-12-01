@@ -190,10 +190,10 @@ public final class TestRepositoryInstantiator {
                        
                        configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
                        configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
-                       configuration.computeUserEmbeddings("user_embeddings.csv");
-                       //configuration.loadUserEmbeddings("user_embeddings.csv");
+                       //configuration.computeUserEmbeddings("user_embeddings.csv");
+                       configuration.loadUserEmbeddings("user_embeddings.csv");
 //                       configuration.createMlInputFile("ml_training_data.csv");
-//                       configuration.trainTreeModel(String inputPath);
+                       configuration.trainTreeModel("ml_training_data.csv");
                        recRepository.loadRecConfiguration(configuration);
                } catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());
