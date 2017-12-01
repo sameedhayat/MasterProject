@@ -391,6 +391,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			System.out.println(cosineSimilarity(targetNodeVector, sourceNodeVector));
         	}
         }
+        
+        
         @Override
         public void computeUsersEmbeddingsAverage() {
         	Set<Integer> allUserIndexes = getAllUserIndexes();
@@ -421,6 +423,8 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        	}
         	}
         }
+        
+        
         public List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> getAllFeatures(int userId, Word2VecModel w2v,DocModel d2v) {
         	List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> ret = new ArrayList<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>>();
         	

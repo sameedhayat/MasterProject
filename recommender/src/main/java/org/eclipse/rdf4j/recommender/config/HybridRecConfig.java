@@ -89,12 +89,12 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        }
 	        
 	        //Path to doc2vec csv file
-	    	public void doc2VecOutputPath(String path) {
+	    	public void loadDoc2VecEmbeddings(String path) {
                 this.doc2VecOutputPath = path;
 	        }
 	        
 	        //Path to rdf2vec csv file
-	        public void rdf2VecOutputPath(String path) {
+	        public void loadRdf2VecEmbeddings(String path) {
                 this.rdf2VecOutputPath = path;
 	        }
 	        
@@ -110,17 +110,21 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        
 	        
 	        //Whether to compute Doc2Vec or its precomputed
-	        public void computeDoc2Vec() {
-                this.computeDoc2Vec = true;
+	        public void computeDoc2Vec(String inputPath, String outputPath) {
+	        	this.computeDoc2Vec = true;
+                this.doc2VecInputPath = inputPath;
+                this.doc2VecOutputPath = outputPath;
 	        }
 	        
 	       //Whether to compute Rdf2Vec or its precomputed
-	        public void computeRdf2Vec() {
+	        public void computeRdf2Vec(String inputPath, String outputPath) {
 	        	this.computeRdf2Vec = true;
+	        	this.rdf2VecInputPath = inputPath;
+	        	this.rdf2VecOutputPath = outputPath;
 	        }
 	        
 	        //Whether to compute Rdf2Vec or its precomputed
-	        public void readUserEmbeddings(String path) {
+	        public void loadUserEmbeddings(String path) {
 	        	this.userEmbeddingsPath = path;
 	        }
 	        
@@ -140,7 +144,7 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        	return userEmbeddingsPath;
 	        }
 	        
-	        public void mlInputFile(String path) {
+	        public void createMlInputFile(String path) {
 	        	this.mlInputFilePath = path;
 	        }
 	        
@@ -148,8 +152,9 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        	return mlInputFilePath;
 	        }
 	        
-	        public void trainTreeModel() {
+	        public void trainTreeModel(String inputPath) {
 	        	trainTreeModel = true;
+	        	this.mlInputFilePath = inputPath;
 	        }
 	        
 	        public Boolean getTrainTreeModel() {
