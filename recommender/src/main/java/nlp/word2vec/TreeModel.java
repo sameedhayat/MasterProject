@@ -122,7 +122,7 @@ public class TreeModel {
 //        model.setClassifier(classifier_ada);
 //        model.setCostMatrix(costMatrix);
         model.buildClassifier(train);
-        SerializationHelper.write("trained_full.model", model);
+//        SerializationHelper.write("trained_full.model", model);
         
 //		model.buildClassifier(train);
 //		tree.buildClassifier(train);

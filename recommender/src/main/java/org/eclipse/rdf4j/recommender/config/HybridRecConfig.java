@@ -153,7 +153,7 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        }
 	        
 	        public void trainTreeModel(String inputPath) {
-	        	trainTreeModel = true;
+	        	this.trainTreeModel = true;
 	        	this.mlInputFilePath = inputPath;
 	        }
 	        
