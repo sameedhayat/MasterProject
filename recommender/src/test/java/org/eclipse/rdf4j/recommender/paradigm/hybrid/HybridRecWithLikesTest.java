@@ -52,8 +52,8 @@ public class HybridRecWithLikesTest {
             JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
                     ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
             
-//            String sourceUri = "http://example.org/data#u144199";
-//            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
+            String sourceUri = "http://example.org/data#u144199";
+            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
 //            for(int user: graphStorage.getusersEmbeddingsAverageHashMap()) {
 //            	for(int t: graphStorage.getTargetNodes()) {
 //                	if(graphStorage.getLabel(user, t) == "Like") {
@@ -61,29 +61,29 @@ public class HybridRecWithLikesTest {
 //                	}
 //            }
 //            }
-//            graphStorage.createUserProfile();
-//            System.out.println("Creating user profile for testing");
-//            System.out.println("User1 comedy likes");
-//            
-//            List<RatedResource> topk1 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut1", 15, false));
-//            for(RatedResource r : topk1) {
-//            	System.out.println(r.getResource());
-//            }
-//            
-//            System.out.println("User2 sci-fi likes");
-//            
-//            List<RatedResource> topk2 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut2", 15, false));
-//            for(RatedResource r : topk2) {
-//            	System.out.println(r.getResource());
-//            }
-//            
-//            System.out.println("User3 horror likes");
-//            List<RatedResource> topk3 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut3", 15, false));
-//            for(RatedResource r : topk3) {
-//            	System.out.println(r.getResource());
-//            }
-//            
-//            System.out.println("Done");
+            graphStorage.createUserProfile();
+            System.out.println("Creating user profile for testing");
+            System.out.println("User1 comedy likes");
+            
+            List<RatedResource> topk1 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut1", 15, false));
+            for(RatedResource r : topk1) {
+            	System.out.println(r.getResource());
+            }
+            
+            System.out.println("User2 sci-fi likes");
+            
+            List<RatedResource> topk2 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut2", 15, false));
+            for(RatedResource r : topk2) {
+            	System.out.println(r.getResource());
+            }
+            
+            System.out.println("User3 horror likes");
+            List<RatedResource> topk3 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut3", 15, false));
+            for(RatedResource r : topk3) {
+            	System.out.println(r.getResource());
+            }
+            
+            System.out.println("Done");
 //            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
 //            	System.out.println("------Contains-------");
 //            }
