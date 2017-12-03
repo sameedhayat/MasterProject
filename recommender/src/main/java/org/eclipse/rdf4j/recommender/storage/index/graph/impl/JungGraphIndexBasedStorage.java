@@ -648,6 +648,9 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
 	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
 	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        		if(val.size() != 800) {
+	        			continue;
+	        		}
 	        		ret.add(p);
         			}
         	}
@@ -718,7 +721,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	System.out.println("No of Users: " + getAllUserIndexes().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());
         	File f = new File(path);
-        	if(f.exists() && !f.isDirectory()) { 
+        	if(f.exists()) { 
         	    f.delete();
         	}
         	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
