@@ -158,7 +158,7 @@ public class TreeModel {
 		Instance predicationDataSet = dataset.get(0);
 		
 		double[] predictionDistribution = 
-        		trainedModel.distributionForInstance(predicationDataSet);
+        		model.distributionForInstance(predicationDataSet);
 		
 		String predictedClassLabel =
         		predicationDataSet.classAttribute().value((int) 1);

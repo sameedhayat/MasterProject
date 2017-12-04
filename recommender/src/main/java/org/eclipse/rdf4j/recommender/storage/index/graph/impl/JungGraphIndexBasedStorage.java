@@ -605,11 +605,11 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         		List<Double> sourceRdf2Vector = vec.inferVector(tmpUri);
         		rdf2vecEmbeddingsHashMap.put(getURI(s), sourceRdf2Vector);
         	}
-        	for(Integer t :getTargetNodes()) {
-        		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
-        		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
-        		rdf2vecEmbeddingsHashMap.put(getURI(t), targetRdf2Vector);
-        	}
+//        	for(Integer t :getTargetNodes()) {
+//        		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
+//        		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
+//        		rdf2vecEmbeddingsHashMap.put(getURI(t), targetRdf2Vector);
+//        	}
         	System.out.println("Rdf2Vec Embeddings Computed");
         }
         
