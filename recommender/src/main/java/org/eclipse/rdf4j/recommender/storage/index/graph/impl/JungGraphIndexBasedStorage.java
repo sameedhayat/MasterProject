@@ -787,6 +787,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	double pred = -1.0;
         	try {
         		pred = treeModel.predict("tmp.csv");
+        		System.out.println(pred);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
