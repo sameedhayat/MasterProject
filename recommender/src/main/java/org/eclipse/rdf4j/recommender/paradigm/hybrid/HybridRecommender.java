@@ -34,9 +34,10 @@ public class HybridRecommender extends AbstractRecommender {
             RatedResource[] topK = super.getTopRecommendations(userURI, size, candidatesURI);                 
             RatedResource[] normalizedTopK = new RatedResource[topK.length];
             double maxScore = topK[0].getRating(); //Highest score
-            
+//            System.out.println("user id: " + userURI);
             //We normalize based on this max value                
             for (int i = 0; i < topK.length; i++) {
+//            	System.out.println(topK[i].getResource().toString());
                     if(topK[i] == null) {
                             normalizedTopK[i] = null;
                     } else {
