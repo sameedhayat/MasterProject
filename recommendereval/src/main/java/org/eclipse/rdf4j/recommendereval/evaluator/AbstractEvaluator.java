@@ -281,7 +281,12 @@ public abstract class AbstractEvaluator implements Evaluator {
             RatedResource[] recommendations = topRecommendations.get(i);
             
             totalSize++;
-            
+            System.out.println("---------------Evaluator Recommender---------------");
+            System.out.println("---------------user evaluator Recommender---------------" + dataManager.getUsers().get(i));
+            System.out.println("---------------topkRecommendation---------------");
+            for(RatedResource r: recommendations) {
+            	System.out.println(r.getResource().toString());
+            }
             double truePositive  = 0.0;
             double falsePositive = 0.0;                 
                     

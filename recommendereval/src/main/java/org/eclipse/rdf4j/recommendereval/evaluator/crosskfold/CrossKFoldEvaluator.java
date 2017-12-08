@@ -109,7 +109,7 @@ public class CrossKFoldEvaluator extends AbstractEvaluator {
                 SailRecommenderRepository sRecommender = createRecommender(testSet,recConfig);
                 
                 evalMetricsResults.add(evaluateMetrics(sRecommender, folds,
-                        testSet, i));             
+                        testSet, i));
                 
                 // shutdown recommender for file deletion (native store case)
                 if( getNativeStoreCounter() > 1 )
@@ -202,7 +202,7 @@ public class CrossKFoldEvaluator extends AbstractEvaluator {
         ArrayList<Boolean> ignoreUsers = getDataManager().getUsersToIgnore();
 
         long startTimeGetRating = System.currentTimeMillis();       
-     
+        
         // check if a prediction metric is in metrics list, if yes, predict ratings
         if( hasPredictionMetric(evalMetrics) ) {
             for ( int j = 0; j < testSet.size(); j++ ) {
@@ -248,7 +248,8 @@ public class CrossKFoldEvaluator extends AbstractEvaluator {
             ArrayList<String> users = getDataManager().getUsers();
 
             for( int userIndex = 0 ; userIndex < users.size() ; userIndex++ ) {
-
+            	System.out.println("----evaluator");
+            	
                 // if user has less ratings than number of k folds
                 // do not include that user to Precision, Recall, etc. calculations
                 if( ignoreUsers.get(userIndex) == true ) {          
@@ -285,7 +286,16 @@ public class CrossKFoldEvaluator extends AbstractEvaluator {
                                 candidatesSizeDivNov, candidatesDivNov);
                         topRecommendationsDivNov.add(tempRatedResourcesDivNov); 
                     }
-                }              
+                }
+                System.out.println("-----------Hybrid Recommender----------");
+                System.out.println("userid: " + users.get(userIndex));
+                System.out.println("-Hybrid Recommendations:");
+                for(RatedResource[] rms: topRecommendations) {
+                	for(RatedResource rm:rms) {
+                		System.out.println("recommendation: " + rm.getResource().toString());
+                	}
+                	
+                }
             }
 
             // true if error exist
