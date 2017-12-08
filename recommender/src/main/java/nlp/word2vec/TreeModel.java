@@ -20,7 +20,7 @@ import weka.filters.Filter;
 import weka.filters.supervised.instance.Resample;
 import weka.filters.supervised.instance.SpreadSubsample;
 import weka.core.SerializationHelper;
-//import weka.filters.supervised.instance.SMOTE;
+import weka.filters.supervised.instance.SMOTE;
 
 public class TreeModel {
 
@@ -93,19 +93,19 @@ public class TreeModel {
 //			Random rand = new Random(1);
 //			filteredIns.randomize(rand);
 		
-		SpreadSubsample ff = new SpreadSubsample();
-		ff.setInputFormat(dataset);
-		ff.setDistributionSpread(1);
-		Instances filteredIns = Filter.useFilter(dataset, ff);
+//		SpreadSubsample ff = new SpreadSubsample();
+//		ff.setInputFormat(dataset);
+//		ff.setDistributionSpread(1);
+//		Instances filteredIns = Filter.useFilter(dataset, ff);
 
 		
-//		double percentage = 1000;
-//		SMOTE smote = new SMOTE();
-//		smote.setClassValue("0");
-//		smote.setNearestNeighbors(5);
-//		smote.setPercentage(percentage);
-//		smote.setRandomSeed(1);
-//		Instances filteredIns = Filter.useFilter(dataset, smote);
+		double percentage = 1000;
+		SMOTE smote = new SMOTE();
+		smote.setClassValue("0");
+		smote.setNearestNeighbors(5);
+		smote.setPercentage(percentage);
+		smote.setRandomSeed(1);
+		Instances filteredIns = Filter.useFilter(dataset, smote);
 		
 		int trainSize = (int) Math.round(filteredIns.numInstances() * 1.0);
 		System.out.println("Train Size : " + trainSize);
