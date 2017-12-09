@@ -101,10 +101,11 @@ public class TreeModel {
 		
 		double percentage = 1000;
 		SMOTE smote = new SMOTE();
-		smote.setClassValue("0");
+		smote.setClassValue("1");
 		smote.setNearestNeighbors(5);
 		smote.setPercentage(percentage);
 		smote.setRandomSeed(1);
+		smote.setInputFormat(dataset);
 		Instances filteredIns = Filter.useFilter(dataset, smote);
 		
 		int trainSize = (int) Math.round(filteredIns.numInstances() * 1.0);
