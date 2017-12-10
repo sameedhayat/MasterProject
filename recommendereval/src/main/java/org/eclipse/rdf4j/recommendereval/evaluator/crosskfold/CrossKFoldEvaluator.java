@@ -287,15 +287,7 @@ public class CrossKFoldEvaluator extends AbstractEvaluator {
                         topRecommendationsDivNov.add(tempRatedResourcesDivNov); 
                     }
                 }
-                System.out.println("-----------Hybrid Recommender----------");
-                System.out.println("userid: " + users.get(userIndex));
-                System.out.println("-Hybrid Recommendations:");
-                for(RatedResource[] rms: topRecommendations) {
-                	for(RatedResource rm:rms) {
-                		System.out.println("recommendation: " + rm.getResource().toString());
-                	}
-                	
-                }
+               
             }
 
             // true if error exist
