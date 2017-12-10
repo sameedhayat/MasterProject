@@ -289,7 +289,7 @@ public abstract class AbstractEvaluator implements Evaluator {
 //            }
             double truePositive  = 0.0;
             double falsePositive = 0.0;                 
-                    
+            System.out.println("----------Average:" + avg); 
             for( int j = 0 ; j < topKSize ; j++ ) {
                 
                 if( j >= recommendations.length ) {
@@ -312,7 +312,7 @@ public abstract class AbstractEvaluator implements Evaluator {
                 }else {
                 	truePositive++;
                 }
-                
+                System.out.println("-----------Current Rating:" + currRating);
 //                // true positive
 //                if( currRating.getRatingValue() >= avg) {
 //                    truePositive++;
