@@ -49,7 +49,6 @@ public final class TestRepositoryInstantiator {
                     
                         String resource = "testcases/moviesLikes.ttl";
                         String baseURI = "http://example.org/movies#";
-                        System.out.println("IN Test Rep");
                         con.add(classLoader.getResource(resource), baseURI, RDFFormat.TURTLE);
                         
                         HybridRecConfig configuration = new HybridRecConfig("config1");
@@ -58,13 +57,7 @@ public final class TestRepositoryInstantiator {
                         );
                         configuration.setRecEntity(RecEntity.USER, "?user1");
                         configuration.setRecEntity(RecEntity.POS_ITEM, "?movie");
-
                         configuration.setRecParadigm(RecParadigm.HYBRID);
-//                        configuration.preprocessBeforeRecommending(true);
-//                        configuration.setSimMetric(RecSimMetric.COSINE);
-//                        configuration.setRecStorage(RecStorage.INVERTED_LISTS);
-//                        configuration.setDecimalPlaces(3);
-//                        configuration.setNeighborhoodSize(4);
 
                         recRepository.loadRecConfiguration(configuration);
                 } catch (RecommenderException ex) { 
@@ -195,6 +188,7 @@ public final class TestRepositoryInstantiator {
                        configuration.createMlInputFile("ml_training_data.csv");
                        configuration.trainTreeModel("ml_training_data.csv");
                        recRepository.loadRecConfiguration(configuration);
+               
                } catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());
                } catch (IOException ex) { 

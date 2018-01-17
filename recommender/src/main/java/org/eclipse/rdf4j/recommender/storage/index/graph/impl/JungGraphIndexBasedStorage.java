@@ -60,13 +60,35 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         /*--------*
 	 * Fields *
 	 *--------*/
+		
+		/**
+	     * All the source Resources
+	     */ 
 		private Set<Integer> sourceResources = new HashSet<Integer>();
+		
+		/**
+	     * All the target Resources
+	     */ 
         private Set<Integer> targetResources = new HashSet<Integer>();
         
+        /**
+	     * HashMap of Doc2Vec embeddings containing uri of the resource as a key and embedding as a value 
+	     */ 
         private HashMap<String,List<Double>> doc2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
+        
+        /**
+	     * HashMap of RDF2Vec embeddings containing uri of the resource as a key and embedding as a value 
+	     */
         private HashMap<String,List<Double>> rdf2vecEmbeddingsHashMap = new HashMap<String,List<Double>>();
         
+        /**
+	     * HashMap of user embeddings containing uri of the user as a key and embedding as a value 
+	     */
         private HashMap<String,List<Double>> usersEmbeddingsAverageHashMap = new HashMap<String,List<Double>>();
+        
+        /**
+	     * instance for the TreeModel which is for the machine learning task.
+	     */
         private TreeModel treeModel = new TreeModel();
     	
         /**
@@ -144,19 +166,15 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         public Set<Integer> getTargetNodes() {
                 return targetResources;
         }
-        //Get Doc2Vec embedding
+        
+        //Get Doc2Vec embedding given the index of the resource
         public List<Double> getDoc2VecEmbedding(int id) {
         	return doc2vecEmbeddingsHashMap.get(getURI(id));
         }
         
-        //Get Rdf2Vec embedding
+        //Get RDF2Vec embedding given the index of the resource
         public List<Double> getRdf2VecEmbedding(int id) {
         	return rdf2vecEmbeddingsHashMap.get(getURI(id));
-        }
-        
-        //Get user embedding
-        public Set<String> getusersEmbeddingsAverageHashMap() {
-        	return usersEmbeddingsAverageHashMap.keySet();
         }
         
         @Override
@@ -296,7 +314,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
                 return pathInf/(double)statementsPath.size();
         }
         
-        //get user subjects from graph
+        /**
+         * get user subjects from graph
+         * @param userId : user id
+         */
         public List<List<String>> getUserSubjects(int userId) {
         	
         	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
@@ -318,8 +339,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	
         }
        
-        
-      //get user subjects from graph
+        /**
+         * get user subjects from graph
+         * @param targetId : target id
+         */
         public List<String> getTargetSubjects(int targetId) {
         	
         	Collection<String> targetNeighbours = jungCompleteGraph.getOutEdges(targetId);
@@ -331,12 +354,16 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         			targetSubjects.addAll(tokens);
     			}
         	}
-        	
         	return targetSubjects;
         	
         }
         
-        //content based subject TFIDF
+        
+        /**
+         * content based subject TFIDF
+         * @param userId : user id
+         * @param targetId : target id
+         */
         @Override
         public double contentBasedSubject(int userId, int targetId) {
         	List<List<String>> userSubjects = getUserSubjects(userId);
@@ -370,8 +397,12 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
             return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
         }
         
-        
-        
+        /**
+         * get cosine similarity between RDF2Vec embedding of user and target item
+         * @param userId : user id
+         * @param targetId : target id
+         * @param vec : trained RDF2Vec model
+         */
         public void RDFToVecRating(int userId, int targetId, Word2Vec vec) {
         	
         	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
@@ -393,38 +424,59 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         
+        /**
+         * compute user embeddings for all the users by taking average of Doc2Vec and RDF2Vec Embedding
+         * @param userId : user id
+         * @param targetId : target id
+         */
         @Override
         public void computeUsersEmbeddingsAverage() {
+        	
+        	//get all users indexes
         	Set<Integer> allUserIndexes = getAllUserIndexes();
         	
         	for (Integer userId: allUserIndexes) {
         		
+        		//List for saving Doc2Vec embeddings of all the items liked by user in the source domain 
         		ArrayList<List<Double>> doc2vecSourceList = new ArrayList<List<Double>>();
+        		//List for saving RDF2Vec embeddings of all the items liked by user in the source domain 
             	ArrayList<List<Double>> rdf2vecSourceList = new ArrayList<List<Double>>();
             	
-        		//items liked by user in the source domain
+            	//all items liked by the user
 	        	Collection<Integer> userLikesSource = new HashSet(jungCompleteGraph.getNeighbors(userId));
+	        	
+	        	//filtering items liked by the user in the source domain
 	        	Set sourceNodes = new HashSet(getSourceNodes());
 	        	userLikesSource.retainAll(sourceNodes);
 	        	
 	        	if(!userLikesSource.isEmpty()) {
 	        		for(Integer s: userLikesSource) {
+	        			//if abstract is empty skip
 	        			if(getAbstract(s).isEmpty()) {
 	        				continue;
 	        			}
+	        			//retrieve Doc2Vec embedding of the source item
 	        			doc2vecSourceList.add(doc2vecEmbeddingsHashMap.get(getURI(s)));
+	        			//retrieve RDF2Vec embedding of the source item
 	        			rdf2vecSourceList.add(rdf2vecEmbeddingsHashMap.get(getURI(s)));
 	        		}
+	        		//List for holding Doc2Vec and RDF2Vec embeddings of one user
 	        		List<Double> tmp = new ArrayList<Double>();
 	            	
+	        		//add averaged of all the Doc2Vec embeddings
 	        		tmp.addAll(ListOperations.averageList(doc2vecSourceList));
+	        		//add averaged of all the RDF2Vec embeddings
 	        		tmp.addAll(ListOperations.averageList(rdf2vecSourceList));
+	        		
+	        		//save the embedding for each user
 	        		usersEmbeddingsAverageHashMap.put(getURI(userId), tmp);
 	        	}
         	}
         }
         
-        
+        /**
+         * get the the embeddings. Old implementation didn't include saving embeddings, high computation cost. Not used anymore 
+         */
         public List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> getAllFeatures(int userId, Word2VecModel w2v,DocModel d2v) {
         	List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> ret = new ArrayList<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>>();
         	
@@ -485,34 +537,13 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         
-        public List<Pair<Double, Double>> Word2VecRating(int userId, Word2VecModel w2v) {
-        	List<Pair<Double, Double>> ret = new ArrayList<Pair<Double,Double>>();
-        	
-        	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
-        	userLikesSource.containsAll(getSourceNodes());
-        	List<Double> cosineList = new ArrayList<Double>();
-        	List<Double> w2vCosineList = new ArrayList<Double>();
-        	Set<Integer> targetUris = getTargetNodes();
-        	
-        	for(Integer targetUri: targetUris){
-        		for(Integer userUri: userLikesSource){
-        			String userUri_1 = getURI(userUri).replace("http://dbpedia.org/resource/", "dbr:");
-        			String targetUri_1 = getURI(targetUri).replace("http://dbpedia.org/resource/", "dbr:");
-        			System.out.println(getURI(targetUri));
-//        			w2vCosineList.add(w2v.cosineSimilarity(userUri_1, targetUri_1));
-        		}
-        		Pair<Double, Double> p = new Pair<Double, Double>(ListOperations.getAverage(w2vCosineList), 
-						  ListOperations.getMax(w2vCosineList));
-        		ret.add(p);
-        		
-        	}
-        	return ret;
-        }
-        
+        /**
+         * get label "Like" if user liked the item
+         * @param userId : user id
+         * @param targetId : target id
+         */
         public String getLabel(Integer userId, Integer targetId) {
         	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
-//        	System.out.println("user like sources:" + userLikesSource);
-//        	System.out.println("Target item:" + targetId);
         	if(userLikesSource.contains(targetId)) {
         		return "Like";
         	}else {
@@ -520,14 +551,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	}
         }
         
-        public void printSource() {
-        	System.out.println("--------Target nodes--------");
-        	System.out.println(getTargetNodes());
-        	System.out.println("--------Source nodes--------");
-        	System.out.println(getSourceNodes());
-        }
-            
-        
+        /**
+         * compute Doc2Vec embeddings for all the items in the source and target domain
+         * @param vec : Trained Doc2Vec model
+         */
         @Override
         public void computeDoc2VecEmbeddings(DocModel vec) {
         	System.out.println("Computing Rdf2Vec Embeddings");
@@ -552,6 +579,36 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	System.out.println("Doc2Vec Embeddings Computed");
         }
         
+        /**
+         * compute RDF2Vec embeddings for all the items in the source and target domain
+         * @param vec : Trained RDF2Vec model
+         */
+        @Override
+        public void computeRdf2VecEmbeddings(Word2VecModel vec) {
+        	System.out.println("Computing Rdf2Vec Embeddings");
+        	
+        	//compute RDF2Vec embeddings of all the items in the source domain
+        	for(Integer s :getSourceNodes()) {
+        		String tmpUri = getURI(s).replace("http://dbpedia.org/resource/", "dbr:");
+        		//infer embedding from the trained RDF2Vec model
+        		List<Double> sourceRdf2Vector = vec.inferVector(tmpUri);
+        		rdf2vecEmbeddingsHashMap.put(getURI(s), sourceRdf2Vector);
+        	}
+        	
+        	//compute RDF2Vec embeddings of all the items in the targets domain
+        	for(Integer t :getTargetNodes()) {
+        		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
+        		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
+        		//infer embedding from the trained RDF2Vec model
+        		rdf2vecEmbeddingsHashMap.put(getURI(t), targetRdf2Vector);
+        	}
+        	System.out.println("Rdf2Vec Embeddings Computed");
+        }
+        
+        /**
+         * read Doc2Vec embeddings from the csv file
+         * @param path : path to the csv file 
+         */
         @Override
         public void readDoc2VecEmbeddings(String path) {
         	
@@ -567,6 +624,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			}
         }
         
+        /**
+         * read RDF2Vec embeddings from the csv file
+         * @param path : path to the csv file 
+         */
         @Override
         public void readRdf2VecEmbeddings(String path) {
         	try {
@@ -581,71 +642,56 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			}
         }
         
-        public void printEmbeddings() {
-        	System.out.println("Printing Doc2Vec Embeddings from CSV");
-        	for (String name: doc2vecEmbeddingsHashMap.keySet()){
-        		String key =name.toString();
-                String value = doc2vecEmbeddingsHashMap.get(name).toString();  
-                System.out.println(key + ":" + value);  
-        	}
-        	
-        	System.out.println("Printing Rdf2Vec Embeddings from CSV");
-        	for (String name: rdf2vecEmbeddingsHashMap.keySet()){
-                String key =name.toString();
-                String value = doc2vecEmbeddingsHashMap.get(name).toString();  
-                System.out.println(key + ":" + value);  
-        	}
-        }
         
-        @Override
-        public void computeRdf2VecEmbeddings(Word2VecModel vec) {
-        	System.out.println("Computing Rdf2Vec Embeddings");
-        	for(Integer s :getSourceNodes()) {
-        		String tmpUri = getURI(s).replace("http://dbpedia.org/resource/", "dbr:");
-        		List<Double> sourceRdf2Vector = vec.inferVector(tmpUri);
-        		rdf2vecEmbeddingsHashMap.put(getURI(s), sourceRdf2Vector);
-        	}
-//        	for(Integer t :getTargetNodes()) {
-//        		String tmpUri = getURI(t).replace("http://dbpedia.org/resource/", "dbr:");
-//        		List<Double> targetRdf2Vector = vec.inferVector(tmpUri);
-//        		rdf2vecEmbeddingsHashMap.put(getURI(t), targetRdf2Vector);
-//        	}
-        	System.out.println("Rdf2Vec Embeddings Computed");
-        }
-        
+        /**
+         * write already computed RDF2Vec embeddings to the csv file
+         * @param path : path to the csv file
+         */
         @Override
         public void writeRdf2VecEmbeddings(String path) {
         	System.out.println("Writing Rdf2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path,rdf2vecEmbeddingsHashMap);
         }
         
+        /**
+         * write already computed Doc2Vec embeddings to the csv file
+         * @param path : path to the csv file
+         */
         @Override
         public void writeDoc2VecEmbeddings(String path) {
         	System.out.println("Writing Doc2Vec Embeddings");
         	CsvWriterAppend.writeCsvHashMap(path, doc2vecEmbeddingsHashMap);
         }
         
-        
+        /**
+         * write already computed user embeddings to the csv file
+         * @param path : path to the csv file
+         */
         @Override
         public void writeUsersEmbeddingsAverage(String path) {
         	System.out.println("Writing User embeddings average");
         	CsvWriterAppend.writeCsvHashMap(path, usersEmbeddingsAverageHashMap);
         }
         
+        /**
+         * create training data for ml model by combining the embeddings
+         * @param path : path to save the data file
+         */
         @Override
         public void mlTrainingData(String path) {
         	System.out.println("No of Users: " + getAllUserIndexes().size());
         	System.out.println("No of Target Items: " + getTargetNodes().size());
+        	
         	File f = new File(path);
         	if(f.exists() && !f.isDirectory()) { 
         	    f.delete();
         	}
+        	
         	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
+        	
         	for(Integer u: getAllUserIndexes()) {
         		for(Integer t: getTargetNodes()) {
-        			List<Double> val = new ArrayList<Double>();
-        			System.out.println("------Error------");
-        			System.out.println(getURI(t));
+        			List<Double> val = new ArrayList<Double>(); 
         			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
 	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
 	        		List<Double> value = usersEmbeddingsAverageHashMap.get(getURI(u));
@@ -664,6 +710,9 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	CsvWriterAppend.writeMlData(path,ret);
         }
         
+        /**
+         * create user profiles for testing
+         */
         @Override
         public void createUserProfile() {
         	List<List<Integer>> userliked = new ArrayList<List<Integer>>();
@@ -677,8 +726,6 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	u1.add(getIndexOf("http://dbpedia.org/resource/Anchorman:_The_Legend_of_Ron_Burgundy"));
         	u1.add(getIndexOf("http://dbpedia.org/resource/Groundhog_Day_(film)"));
         	
-        	
-    		
         	// sci-fi movies
         	u2.add(getIndexOf("http://dbpedia.org/resource/Blade_Runner"));
         	u2.add(getIndexOf("http://dbpedia.org/resource/2001:_A_Space_Odyssey_(film)"));
@@ -698,13 +745,14 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	addToUserEmbeddingsHashMap(userliked.get(0), "http://example.org/data#ut1");
         	addToUserEmbeddingsHashMap(userliked.get(1), "http://example.org/data#ut2");
         	addToUserEmbeddingsHashMap(userliked.get(2), "http://example.org/data#ut3");
-//        	for(int i=0; i< userliked.size(); i++) {
-//        		addToUserEmbeddingsHashMap(userliked.get(i), "test_user" + i + 1);
-//        	}
         	
         }
         
-        
+        /**
+         * add to user embeddings hashmap embeddings computed for user for testing
+         * @param userliked : all the items liked by the user
+         * @param userId : user id
+         */
         public void addToUserEmbeddingsHashMap(List<Integer> userliked, String userId) {
         	System.out.println("UserLike id" + userliked);
         	ArrayList<List<Double>> doc2vecSourceList = new ArrayList<List<Double>>();
@@ -723,6 +771,11 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
     		tmp.addAll(ListOperations.averageList(rdf2vecSourceList));
     		usersEmbeddingsAverageHashMap.put(userId, tmp);
         }
+        
+        /**
+         * create training data for ml model using the cosine similarity between the embeddings
+         * @param path : path to the data file
+         */
         @Override
         public void mlTrainingDataCosine(String path) {
         	System.out.println("No of Users: " + getAllUserIndexes().size());
@@ -735,15 +788,12 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	for(Integer u: getAllUserIndexes()) {
         		for(Integer t: getTargetNodes()) {
         			List<Double> val = new ArrayList<Double>(); 
-//        			val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
-//	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
 	        		List<Double> uE = usersEmbeddingsAverageHashMap.get(getURI(u));
 	        		List<Double> doc2vecUser = uE.subList(0, 200);
 	        		List<Double> rdf2vecUser = uE.subList(200, 400);
 	        		val.add(ListOperations.cosineSimilarity(doc2vecUser, doc2vecEmbeddingsHashMap.get(getURI(t))));
 	        		val.add(ListOperations.cosineSimilarity(rdf2vecUser, rdf2vecEmbeddingsHashMap.get(getURI(t))));
 	        		
-//	        		val.addAll(usersEmbeddingsAverageHashMap.get(getURI(u)));
 	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
 	        		ret.add(p);
         			}
@@ -751,16 +801,24 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	CsvWriterAppend.writeMlData(path,ret);
         }
         
-		
+        /**
+         * load trained model
+         * @param path : path to the trained model
+         */
         @Override
         public void loadTrainedTreeModel(String inputPath) {
 				treeModel.loadTrainedModel(inputPath);
         }
         
-        public void trainTreeModel(String inputPath, String outputPath) {
+        /**
+         * train tree model
+         * @param csvPath : path to the input data file(csv)
+         * @param arffPath : path to the input data file((arff))
+         */
+        public void trainTreeModel(String csvPath, String arffPath) {
         	try {
-				treeModel.readData(inputPath, outputPath);
-				treeModel.loadDataAndTrain(outputPath);
+				treeModel.readData(csvPath, arffPath);
+				treeModel.loadDataAndTrain(arffPath);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -770,26 +828,36 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			}
         }
         
+        /**
+         * predict rating for one user and target item
+         * @param userId :user id
+         * @param targetId : target id
+         */
         @Override
         public double predictRating(Integer userId, Integer targetId) {
         	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
         	List<Double> val = new ArrayList<Double>();
 			
+        	//retrieve Doc2Vec embedding of the target item
         	val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
+        	//retrieve RDF2Vec embedding of the target item
 			val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
+			//retrieve user embedding
 			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)));
+			
 			List<Double> p = new ArrayList<Double>(val);
 			ret.put(userId,p);
         	try {
-				CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
+        		//put embeddings in tmp file
+        		CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         	double pred = -1.0;
         	try {
+        		//predict the probability of like
         		pred = treeModel.predict("tmp.csv");
-        		System.out.println(pred);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -797,6 +865,11 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return pred;
         }
         
+        /**
+         * predict rating for one user and target item using the cosine similarity instead of embeddings
+         * @param userId :user id
+         * @param targetId : target id
+         */
         @Override
         public double predictRatingCosine(Integer userId, Integer targetId) {
         	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
@@ -807,9 +880,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
     		List<Double> rdf2vecUser = uE.subList(200, 400);
     		val.add(ListOperations.cosineSimilarity(doc2vecUser, doc2vecEmbeddingsHashMap.get(getURI(targetId))));
     		val.add(ListOperations.cosineSimilarity(rdf2vecUser, rdf2vecEmbeddingsHashMap.get(getURI(targetId))));
-        	
-//			val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
-//			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)));
+
 			List<Double> p = new ArrayList<Double>(val);
 			ret.put(userId,p);
         	try {
@@ -829,9 +900,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return pred;
         }
         
-        
-        
-        
+        /**
+         * read user embeddings from the csv file
+         * @param path :path to the csv file
+         */
         @Override
         public void readUsersEmbeddingsAverage(String path) {
         	System.out.println("Reading User embeddings average");
@@ -846,7 +918,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			}
         }
         
-        
+        /**
+         * Train tree 
+         * @param path :path to the csv file
+         */
         @Override
         public void trainModel(String path) {
         	System.out.println("Training ML Model");
@@ -861,31 +936,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			}
         }
         
-        
-        public List<Pair<Double, Double>> Doc2VecRating(int userId, DocModel vec) {
-        	List<Pair<Double, Double>> ret = new ArrayList<Pair<Double,Double>>();
-        	
-        	Collection<Integer> userLikesSource = jungCompleteGraph.getNeighbors(userId);
-        	userLikesSource.containsAll(getSourceNodes());
-        	List<Double> cosineList = new ArrayList<Double>();
-        	
-        	Set<Integer> targetUris = getTargetNodes();
-        	
-        	for(Integer targetUri: targetUris){
-        		for(Integer userUri: userLikesSource){
-        			if(getAbstract(userUri).isEmpty() || getAbstract(targetUri).isEmpty()) {
-        				continue;
-        			}
-        			cosineList.add(vec.cosineSimilarityDoc2Vec(getAbstract(userUri), getAbstract(targetUri)));
-        		}
-        		Pair<Double, Double> p = new Pair<Double, Double>(ListOperations.getAverage(cosineList), 
-        														  ListOperations.getMax(cosineList));
-        		ret.add(p);
-        	}
-        	return ret;
-        }
-        
-        //get user abstract from graph
+        /**
+         * get user abstract from graph
+         * @param userSource : source item liked by user
+         */
         public String getAbstract(int userSource) {
         	String abs = "";
         	for (String edge :jungCompleteGraph.getOutEdges(userSource)){
@@ -896,7 +950,10 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         	return abs;
         }
         
-      //get user abstract from graph
+        /**
+         * get target abstract from graph
+         * @param targetId : target id
+         */
         public String getAbstractTarget(int targetId) {
         	String abs = "";
         	for (String edge :jungCompleteGraph.getOutEdges(targetId)){
