@@ -24,21 +24,6 @@ import nlp.word2vec.Word2VecModel;
 public class HybridRecWithLikesTest {
 	
 	private static final double DELTA = 1e-3;
-//	@Test
-//    public void testContent() throws RecommenderException {
-////    	SailRecommenderRepository recRepository = 
-////                TestRepositoryInstantiator.createHybridRecommenderDataset();
-////        JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
-////                ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
-////        
-////        int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
-////        int targetId = graphStorage.getIndexOf("http://dbpedia.org/resource/Burned_(Hopkins_novel)");
-////        
-////        System.out.println(graphStorage.contentBasedSubject(sourceId, targetId));
-////        Assert.assertEquals(2.772588722239781, graphStorage.contentBasedSubject(sourceId, targetId), DELTA); 
-////        
-//	}
-	
 	
 	@Test
     public void loadModelAndCalculateSimilarity() throws RecommenderException, IOException {
@@ -54,13 +39,7 @@ public class HybridRecWithLikesTest {
             
             String sourceUri = "http://example.org/data#u144199";
             String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
-//            for(int user: graphStorage.getusersEmbeddingsAverageHashMap()) {
-//            	for(int t: graphStorage.getTargetNodes()) {
-//                	if(graphStorage.getLabel(user, t) == "Like") {
-//                		System.out.println("Like Found:" + user + " " +  t);
-//                	}
-//            }
-//            }
+
             graphStorage.createUserProfile();
             System.out.println("Creating user profile for testing");
             System.out.println("User1 comedy likes");
@@ -154,39 +133,6 @@ public class HybridRecWithLikesTest {
 //           graphStorage.RDFToVecRating(sourceId, targetId, vec);                           
     */}  
 	
-	
-//	@Test
-//    public void testTopKRecommendationsBasedOnTFIDF() throws RecommenderException {
-//            
-//            SailRecommenderRepository recRepository = 
-//                    TestRepositoryInstantiator.createHybridRecommenderDataset();
-//
-//            //We rank the objects according to the predictions (we assume 
-//            //these are correct.
-//            RatedResource[] expectedTopK = new RatedResource[3];
-//            expectedTopK[0] = new RatedResource("http://dbpedia.org/resource/The_Lorax", 1.0);
-//            expectedTopK[1] = new RatedResource("http://dbpedia.org/resource/Agnes_Grey", 0.8281444907572746);
-//            expectedTopK[2] = new RatedResource("http://dbpedia.org/resource/Green_Eggs_and_Ham", 0.8281444907572746);
-//            
-//            //First we test the method that returns a top-5 list of recommendations
-//            //In the data set there are only five items.
-//            RatedResource[] actualtopK 
-//                    = recRepository.getTopRecommendations("http://example.org/data#u39040", 3, true);
-//            
-//            for (int i = 0; i < actualtopK.length; i++) {
-//                    if (actualtopK[i] != null) {
-//                            Assert.assertEquals(expectedTopK[i].getResource(), 
-//                                    actualtopK[i].getResource());
-//                            Assert.assertEquals(expectedTopK[i].getRating(), 
-//                                    actualtopK[i].getRating(), DELTA);                                                
-//                    } else {
-//                            Assert.assertNull(expectedTopK[i]);
-//                            Assert.assertNull(actualtopK[i]);
-//                    }                        
-//            }
-//            Assert.assertEquals(expectedTopK.length, actualtopK.length);                              
-//    }   
-
 
 }
 	
