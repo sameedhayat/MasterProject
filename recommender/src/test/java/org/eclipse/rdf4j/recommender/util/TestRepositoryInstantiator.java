@@ -189,7 +189,7 @@ public final class TestRepositoryInstantiator {
                        configuration.trainTreeModel("ml_training_data.csv");
                        recRepository.loadRecConfiguration(configuration);
                
-               } catch (RecommenderException ex) { 
+               		} catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());
                } catch (IOException ex) { 
                    System.out.println(ex.getMessage());

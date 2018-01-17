@@ -67,16 +67,30 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	                this.graphOrientation = graphOrientation;
 	        }    
 	        
+	        /**
+	         * get doc2vec output csv file path
+	         */
 	    	public String getDoc2VecOutputPath() {
                 return doc2VecOutputPath;
 	        }
+	    	
+	    	/**
+	         * get rdf2vec output csv file path
+	         */
 	    	public String getRdf2VecOutputPath() {
                 return rdf2VecOutputPath;
 	        }
 	    	
+	    	/**
+	         * get doc2vec input file for training
+	         */
 	    	public String getDoc2VecInputPath() {
                 return doc2VecInputPath;
 	        }
+	    	
+	    	/**
+	         * get rdf2vec trained model path
+	         */
 	    	public String getRdf2VecInputPath() {
                 return rdf2VecInputPath;
 	        }
@@ -88,58 +102,78 @@ public class HybridRecConfig extends CrossDomainRecConfig {
                 return computeRdf2Vec;
 	        }
 	        
-	        //Path to doc2vec csv file
+	    	/**
+	         * load Doc2Vec embeddings from csv file 
+	         * @param path : Path to Doc2Vec csv file
+	         */
 	    	public void loadDoc2VecEmbeddings(String path) {
                 this.doc2VecOutputPath = path;
 	        }
 	        
-	        //Path to rdf2vec csv file
+	    	/**
+	         * load Rdf2Vec embeddings from csv file 
+	         * @param path : Path to Rdf2Vec csv file
+	         */
 	        public void loadRdf2VecEmbeddings(String path) {
                 this.rdf2VecOutputPath = path;
 	        }
 	        
-	        //Path to doc2vec model file
+	        /**
+	         * load Doc2Vec training file 
+	         * @param path : Path to Doc2Vec input file
+	         */
 	    	public void doc2VecInputPath(String path) {
                 this.doc2VecInputPath = path;
 	        }
 	        
-	        //Path to rdf2vec model file
+	    	/**
+	         * load Rdf2Vec model file 
+	         * @param path : Path to Rdf2Vec model file
+	         */
 	        public void rdf2VecInputPath(String path) {
                 this.rdf2VecInputPath = path;
 	        }
 	        
 	        
-	        //Whether to compute Doc2Vec or its precomputed
+	        /**
+	         * Whether to compute Doc2Vec or its precomputed
+	         * @param inputPath : Path to Doc2Vec training file
+	         * @param outputPath : Path to Doc2Vec embedding file
+	         */
 	        public void computeDoc2Vec(String inputPath, String outputPath) {
 	        	this.computeDoc2Vec = true;
                 this.doc2VecInputPath = inputPath;
                 this.doc2VecOutputPath = outputPath;
 	        }
 	        
-	       //Whether to compute Rdf2Vec or its precomputed
+	        /**
+	         * Whether to compute Rdf2Vec or its precomputed
+	         * @param inputPath : Path to Rdf2Vec model file
+	         * @param outputPath : Path to Rdf2Vec embedding file
+	         */
 	        public void computeRdf2Vec(String inputPath, String outputPath) {
 	        	this.computeRdf2Vec = true;
 	        	this.rdf2VecInputPath = inputPath;
 	        	this.rdf2VecOutputPath = outputPath;
 	        }
 	        
-	        //Whether to compute Rdf2Vec or its precomputed
 	        public void loadUserEmbeddings(String path) {
 	        	this.userEmbeddingsPath = path;
 	        }
 	        
-	        //Whether to compute user embeddings or its precomputed
+	        /**
+	         * Whether to compute user embeddings or its precomputed
+	         * @param path : Path to user embedding
+	         */
 	        public void computeUserEmbeddings(String path) {
 	        	this.computerUserEmbeddings = true;
 	        	this.userEmbeddingsPath = path;
 	        }
 	        
-	      //Whether to compute user embeddings or its precomputed
 	        public Boolean getComputeUserEmbeddings() {
 	        	return computerUserEmbeddings;
 	        }
 	        
-	      //Whether to compute Rdf2Vec or its precomputed
 	        public String getUserEmbeddingsPath() {
 	        	return userEmbeddingsPath;
 	        }
@@ -152,6 +186,10 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        	return mlInputFilePath;
 	        }
 	        
+	        /**
+	         * Train ML model
+	         * @param inputPath : path to input file
+	         */
 	        public void trainTreeModel(String inputPath) {
 	        	this.trainTreeModel = true;
 	        	this.mlInputFilePath = inputPath;
@@ -160,7 +198,6 @@ public class HybridRecConfig extends CrossDomainRecConfig {
 	        public Boolean getTrainTreeModel() {
 	        	return trainTreeModel;
 	        }
-	        
 	        
 	        @Override
 	        public DataManager validateConfiguration() throws RecommenderException{

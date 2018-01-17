@@ -301,6 +301,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                              	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
                              }
                              
+                             //Compute user embeddings or read precomputed user embeddings from the csv file
                              if (((HybridRecConfig)getRecConfig()).getComputeUserEmbeddings() == true) {
                             	 String userEmbeddingPath = ((HybridRecConfig)getRecConfig()).getUserEmbeddingsPath();
                             	 ((GraphBasedStorage)getStorage()).computeUsersEmbeddingsAverage();
@@ -310,8 +311,7 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
 	                             ((GraphBasedStorage)getStorage()).readUsersEmbeddingsAverage(userEmbeddingPath);
 	                         }
                              
-                             
-                             
+                           //generate machine learning file and train machine learning model
                              if(((HybridRecConfig)getRecConfig()).getTrainTreeModel() == true) {
                             	 System.out.println("In machine learning part");
                             	 String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
@@ -361,19 +361,11 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                 switch(getRecConfig().getRecParadigm()) {
                                 case CROSS_DOMAIN_K_STEP_MARKOV_CENTRALITY: case CROSS_DOMAIN_PAGERANK_WITH_PRIORS: case HYBRID:                                 
                                         Set<Integer> allUserNodes = graphStorage.getSubgraphVertices(indexOfUser);
-                                        System.out.println("All User Nodes");
-                                        System.out.println(allUserNodes);
-//                                        targetNodeIds.retainAll(allUserNodes);
-//                                        System.out.println("All Target Nodes");
-//                                        System.out.println(targetNodeIds);
-//                                        
+                                        
                                         for (Integer nodeId: targetNodeIds) {
                                                 recCandidates.add(getStorage().getURI(nodeId));
                                         }
                                    
-//                                        for (Integer nodeId: allUserNodes) {
-//                                          recCandidates.add(getStorage().getURI(nodeId));
-//                                  }
                                 break;
                                 case CROSS_DOMAIN_REWORD:
                                         if (hasPreprocessed()) {
