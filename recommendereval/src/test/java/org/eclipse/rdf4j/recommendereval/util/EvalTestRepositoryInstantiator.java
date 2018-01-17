@@ -612,7 +612,7 @@ public final class EvalTestRepositoryInstantiator {
      * 
      * Dataset: Cross Domain - Likes 
      *
-     * @return
+     * @returna recommender configuration list
      */
     public static ArrayList<RecConfig> getRecConfigListHybrid() {
 
@@ -631,8 +631,6 @@ public final class EvalTestRepositoryInstantiator {
 	        configuration.setRecEntity(RecEntity.USER, "?u");
 	        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
 	        configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
-	        //TODO
-	        //Modify this later
 	        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
 	                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Movie>");                        
 	        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
@@ -643,7 +641,6 @@ public final class EvalTestRepositoryInstantiator {
 	        //configuration.computeRdf2Vec();
 	        //configuration.doc2VecInputPath("input_abstract.csv");
 	        //configuration.rdf2VecInputPath("rdf2vec_model");
-	        System.out.println("Creating Configuration");
 	        //configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
             //configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
             //configuration.doc2VecInputPath("input_abstract.csv");
@@ -769,15 +766,6 @@ public final class EvalTestRepositoryInstantiator {
             configuration.setRecEntity(RecEntity.RAT_ITEM, "?item");
             configuration.setRecEntity(RecEntity.RATING, "?rating");
 
-            //This part is not relevant at all. The configuration won't be validated.
-            /*
-            configuration.setRecParadigm(RecParadigm.USER_COLLABORATIVE_FILTERING);
-            configuration.preprocessBeforeRecommending(true);
-            configuration.setSimMetric(RecSimMetric.COSINE);
-            configuration.setRecStorage(RecStorage.INVERTED_LISTS);
-            configuration.setDecimalPlaces(3);
-            configuration.setNeighborhoodSize(4);
-            */
             recConfigList.add(configuration);
 
         } catch (RecommenderException ex) {
@@ -808,15 +796,6 @@ public final class EvalTestRepositoryInstantiator {
             configuration.setRecEntity(RecEntity.USER, "?user");
             configuration.setRecEntity(RecEntity.POS_ITEM, "?item");
 
-            //This part is not relevant at all. The configuration won't be validated.
-            /*
-            configuration.setRecParadigm(RecParadigm.USER_COLLABORATIVE_FILTERING);
-            configuration.preprocessBeforeRecommending(true);
-            configuration.setSimMetric(RecSimMetric.COSINE);
-            configuration.setRecStorage(RecStorage.INVERTED_LISTS);
-            configuration.setDecimalPlaces(3);
-            configuration.setNeighborhoodSize(4);
-            */
             recConfigList.add(configuration);
 
         } catch (RecommenderException ex) {
@@ -859,46 +838,6 @@ public final class EvalTestRepositoryInstantiator {
         return recConfigList;
     }
     
-    /**
-     * Returns a single recommender configuration list with 1 item: 
-     * VsmCfRecConfig.
-     * 
-     * 
-     * @return
-     */
-    /*
-    public static ArrayList<RecConfig> getRecConfigListForFixedSingleDomainSRRWithLikes() {
-
-        ArrayList<RecConfig> recConfigList = new ArrayList();
-
-        try {
-            VsmCfRecConfig configuration = new VsmCfRecConfig("Configuration for "
-                    + "FixedSRRWithLikes and FixedSRRWithLikesAndNulls");
-
-            configuration.setRatGraphPattern(
-                    "?user <http://example.org/movies#likes> ?movie"
-            );
-            configuration.setRecEntity(RecEntity.USER, "?user");
-            configuration.setRecEntity(RecEntity.RAT_ITEM, "?movie");
-
-            //This part is not relevant at all. The configuration won't be validated.
-            /*
-            configuration.setRecParadigm(RecParadigm.USER_COLLABORATIVE_FILTERING);
-            configuration.preprocessBeforeRecommending(true);
-            configuration.setSimMetric(RecSimMetric.COSINE);
-            configuration.setRecStorage(RecStorage.INVERTED_LISTS);
-            configuration.setDecimalPlaces(3);
-            configuration.setNeighborhoodSize(4);
-            */
-        /*
-            recConfigList.add(configuration);
-
-        } catch (RecommenderException ex) {
-            Logger.getLogger(EvalTestRepositoryInstantiator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return recConfigList;
-    }
-    */        
     
     /**
      * Creates an Evaluator that is going to be used when testing.
