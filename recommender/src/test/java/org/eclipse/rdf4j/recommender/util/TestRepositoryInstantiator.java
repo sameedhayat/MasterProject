@@ -160,8 +160,10 @@ public final class TestRepositoryInstantiator {
                        //Set a recommendation configuration. Right now only one configuration is
                        //possible. In the future more configurations should be possible.
                        configuration.setPosGraphPattern(
-                                   "?u <http://example.org/data#likes> ?o"
-                       );
+                               "?u <http://example.org/data#likes> ?o ."
+                                       + "?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?t ."
+                                       + "FILTER (?t=<http://schema.org/Movie> || ?t=<http://dbpedia.org/ontology/Single>) "
+                               		);
 
                        configuration.setRecEntity(RecEntity.USER, "?u");
                        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
@@ -169,24 +171,24 @@ public final class TestRepositoryInstantiator {
                        //TODO
                        //Modify this later
                        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
-                               "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
+                               "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Single>");                        
                        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
-                               "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book>");
+                               "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Single>");
 
                        configuration.setRecParadigm(RecParadigm.HYBRID);
                        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
                        
-                       //configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
-                       //configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
+                       configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
+                       configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
                        //configuration.doc2VecInputPath("input_abstract.csv");
                        //configuration.rdf2VecInputPath("rdf2vec_model");
                        
-                       configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
-                       configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
-                       configuration.computeUserEmbeddings("user_embeddings.csv");
-                       configuration.loadUserEmbeddings("user_embeddings.csv");
-                       configuration.createMlInputFile("ml_training_data.csv");
-                       configuration.trainTreeModel("ml_training_data.csv");
+//                       configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+//                       configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//                       configuration.computeUserEmbeddings("user_embeddings.csv");
+//                       configuration.loadUserEmbeddings("user_embeddings.csv");
+//                       configuration.createMlInputFile("ml_training_data.csv");
+//                       configuration.trainTreeModel("ml_training_data.csv");
                        recRepository.loadRecConfiguration(configuration);
                
                		} catch (RecommenderException ex) { 
