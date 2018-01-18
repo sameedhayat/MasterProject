@@ -637,22 +637,19 @@ public final class EvalTestRepositoryInstantiator {
 	                "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Book>");
 	        configuration.setRecParadigm(RecParadigm.HYBRID);
 	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH); 
-	        //configuration.computeDoc2Vec();
-	        //configuration.computeRdf2Vec();
-	        //configuration.doc2VecInputPath("input_abstract.csv");
-	        //configuration.rdf2VecInputPath("rdf2vec_model");
-	        //configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
-            //configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
-            //configuration.doc2VecInputPath("input_abstract.csv");
-            //configuration.rdf2VecInputPath("rdf2vec_model");
+	        
+	        configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
+            configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
+          //configuration.doc2VecInputPath("input_abstract.csv");
+          //configuration.rdf2VecInputPath("rdf2vec_model");
             
             configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
             configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
-//            configuration.computeUserEmbeddings("user_embeddings.csv");
+            configuration.computeUserEmbeddings("user_embeddings.csv");
             configuration.loadUserEmbeddings("user_embeddings.csv");
-//            configuration.createMlInputFile("ml_training_data.csv");
+            configuration.createMlInputFile("ml_training_data.csv");
             configuration.trainTreeModel("ml_training_data.csv");
-	        System.out.println("Done Configuration");
+            
 	        recConfigList.add(configuration);
 
         } catch (RecommenderException ex) {
