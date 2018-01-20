@@ -283,9 +283,11 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                  ((GraphBasedStorage)getStorage()).computeRdf2VecEmbeddings(vec);
                                  String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
                                  ((GraphBasedStorage)getStorage()).writeRdf2VecEmbeddings(rdf2VecOutputPath);
-                             } else {
+                             } else if(((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath() != ""){
                              	String rdf2VecOutputPath = ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath();
                              	((GraphBasedStorage)getStorage()).readRdf2VecEmbeddings(rdf2VecOutputPath);
+                             } else {
+                            	 System.out.println("Rdf2Vec Embeddings not used");
                              }
                              
                              //Compute Doc2Vec or read precomputed embeddings from the csv file
@@ -296,9 +298,11 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                  ((GraphBasedStorage)getStorage()).computeDoc2VecEmbeddings(vec);
                                  String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();
                                  ((GraphBasedStorage)getStorage()).writeDoc2VecEmbeddings(doc2VecOutputPath);
-                             } else {
+                             } else if(((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath() != ""){
                              	String doc2VecOutputPath = ((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath();
                              	((GraphBasedStorage)getStorage()).readDoc2VecEmbeddings(doc2VecOutputPath);
+                             } else {
+                            	 System.out.println("Doc2Vec Embeddings not used");
                              }
                              
                              //Compute user embeddings or read precomputed user embeddings from the csv file
