@@ -744,7 +744,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        		ret.add(p);
         			}
         	}
-        	CsvWriterAppend.writeMlData(path,ret);
+        	CsvWriterAppend.writeMlDataOneEmbedding(path,ret);
         }
         
         
@@ -782,7 +782,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 	        		ret.add(p);
         			}
         	}
-        	CsvWriterAppend.writeMlData(path,ret);
+        	CsvWriterAppend.writeMlDataOneEmbedding(path,ret);
         }
         
         /**
