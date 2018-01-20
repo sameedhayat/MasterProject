@@ -643,8 +643,8 @@ public final class EvalTestRepositoryInstantiator {
           //configuration.doc2VecInputPath("input_abstract.csv");
           //configuration.rdf2VecInputPath("rdf2vec_model");
             
-            configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
-//            configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//            configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+            configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
 //            configuration.computeUserEmbeddings("user_embeddings.csv");
             configuration.loadUserEmbeddings("user_embeddings.csv");
             configuration.createMlInputFile("ml_training_data.csv");
