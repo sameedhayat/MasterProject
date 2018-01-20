@@ -711,6 +711,81 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         }
         
         /**
+         * create training data for ml model by using only Rdf2Vec Embedding
+         * @param path : path to save the data file
+         */
+        @Override
+        public void mlTrainingDataRdfEmbedding(String path) {
+        	System.out.println("No of Users: " + getAllUserIndexes().size());
+        	System.out.println("No of Target Items: " + getTargetNodes().size());
+        	
+        	File f = new File(path);
+        	if(f.exists() && !f.isDirectory()) { 
+        	    f.delete();
+        	}
+        	
+        	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
+        	
+        	for(Integer u: getAllUserIndexes()) {
+        		for(Integer t: getTargetNodes()) {
+        			List<Double> val = new ArrayList<Double>(); 
+	        		val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(t)));
+	        		List<Double> value = usersEmbeddingsAverageHashMap.get(getURI(u));
+	        		value = value.subList(200, 400);
+	        		if (value == null) {
+	        		    continue;
+	        		}
+	        		
+	        		val.addAll(value);
+	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        		if(val.size() != 400) {
+	        			continue;
+	        		}
+	        		ret.add(p);
+        			}
+        	}
+        	CsvWriterAppend.writeMlData(path,ret);
+        }
+        
+        
+        /**
+         * create training data for ml model by using only Doc2Vec Embedding
+         * @param path : path to save the data file
+         */
+        @Override
+        public void mlTrainingDataDocEmbedding(String path) {
+        	System.out.println("No of Users: " + getAllUserIndexes().size());
+        	System.out.println("No of Target Items: " + getTargetNodes().size());
+        	
+        	File f = new File(path);
+        	if(f.exists() && !f.isDirectory()) { 
+        	    f.delete();
+        	}
+        	
+        	List<Pair<List<Double>,String>> ret = new ArrayList<Pair<List<Double>,String>>();
+        	
+        	for(Integer u: getAllUserIndexes()) {
+        		for(Integer t: getTargetNodes()) {
+        			List<Double> val = new ArrayList<Double>(); 
+	        		val.addAll(doc2vecEmbeddingsHashMap.get(getURI(t)));
+	        		List<Double> value = usersEmbeddingsAverageHashMap.get(getURI(u));
+	        		value = value.subList(0, 200);
+	        		if (value == null) {
+	        		    continue;
+	        		}
+	        		
+	        		val.addAll(value);
+	        		Pair<List<Double>,String> p = new Pair<List<Double>,String>(val,getLabel(u, t));
+	        		if(val.size() != 400) {
+	        			continue;
+	        		}
+	        		ret.add(p);
+        			}
+        	}
+        	CsvWriterAppend.writeMlData(path,ret);
+        }
+        
+        /**
          * create user profiles for testing
          */
         @Override
@@ -844,6 +919,78 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
 			val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
 			//retrieve user embedding
 			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)));
+			
+			List<Double> p = new ArrayList<Double>(val);
+			ret.put(userId,p);
+        	try {
+        		//put embeddings in tmp file
+        		CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	double pred = -1.0;
+        	try {
+        		//predict the probability of like
+        		pred = treeModel.predict("tmp.csv");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	return pred;
+        }
+        
+        
+        /**
+         * predict rating for one user and target item only Doc2VecEmbedding
+         * @param userId :user id
+         * @param targetId : target id
+         */
+        @Override
+        public double predictRatingDoc2Vec(Integer userId, Integer targetId) {
+        	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
+        	List<Double> val = new ArrayList<Double>();
+			
+        	//retrieve Doc2Vec embedding of the target item
+        	val.addAll(doc2vecEmbeddingsHashMap.get(getURI(targetId)));
+			//retrieve user embedding
+			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)).subList(0, 200));
+			
+			List<Double> p = new ArrayList<Double>(val);
+			ret.put(userId,p);
+        	try {
+        		//put embeddings in tmp file
+        		CsvWriterAppend.writeMlDataOneInstance("tmp.csv",ret);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	double pred = -1.0;
+        	try {
+        		//predict the probability of like
+        		pred = treeModel.predict("tmp.csv");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	return pred;
+        }
+        
+        
+        /**
+         * predict rating for one user and target item only Rdf2VecEmbedding
+         * @param userId :user id
+         * @param targetId : target id
+         */
+        @Override
+        public double predictRatingRdf2Vec(Integer userId, Integer targetId) {
+        	HashMap<Integer,List<Double>> ret = new HashMap<Integer,List<Double>>();
+        	List<Double> val = new ArrayList<Double>();
+			
+        	//retrieve Rdf2Vec embedding of the target item
+        	val.addAll(rdf2vecEmbeddingsHashMap.get(getURI(targetId)));
+			//retrieve user embedding
+			val.addAll(usersEmbeddingsAverageHashMap.get(getURI(userId)).subList(200, 400));
 			
 			List<Double> p = new ArrayList<Double>(val);
 			ret.put(userId,p);

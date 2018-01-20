@@ -638,14 +638,14 @@ public final class EvalTestRepositoryInstantiator {
 	        configuration.setRecParadigm(RecParadigm.HYBRID);
 	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH); 
 	        
-	        configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
-            configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
+//	        configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
+//            configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
           //configuration.doc2VecInputPath("input_abstract.csv");
           //configuration.rdf2VecInputPath("rdf2vec_model");
             
             configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
-            configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
-            configuration.computeUserEmbeddings("user_embeddings.csv");
+//            configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//            configuration.computeUserEmbeddings("user_embeddings.csv");
             configuration.loadUserEmbeddings("user_embeddings.csv");
             configuration.createMlInputFile("ml_training_data.csv");
             configuration.trainTreeModel("ml_training_data.csv");

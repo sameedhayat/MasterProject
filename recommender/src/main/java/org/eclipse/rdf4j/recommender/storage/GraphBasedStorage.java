@@ -303,6 +303,20 @@ public interface GraphBasedStorage extends Storage {
         public double predictRating(Integer userId, Integer targetId);
         
         
+        /**
+         * predict rating for one instance only Rdf2Vec
+         * @param path to csv file
+         */
+        public double predictRatingRdf2Vec(Integer userId, Integer targetId);
+        
+        
+        
+        /**
+         * predict rating for one instance only Doc2Vec
+         * @param path to csv file
+         */
+        public double predictRatingDoc2Vec(Integer userId, Integer targetId);
+        
         
         /**
          * training data with cosine
@@ -318,6 +332,18 @@ public interface GraphBasedStorage extends Storage {
         public void mlTrainingDataCosine(String inputPath);
         
         
+        /**
+         * training data with only RdfEmbedding
+         * @param path to csv file
+         */
+        public void mlTrainingDataRdfEmbedding(String inputPath);
+        
+        
+        /**
+         * training data with only DocEmbedding
+         * @param path to csv file
+         */
+        public void mlTrainingDataDocEmbedding(String inputPath);
         
         /**
          * training data with cosine

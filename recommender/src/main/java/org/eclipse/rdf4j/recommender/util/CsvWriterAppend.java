@@ -19,6 +19,11 @@ import org.javatuples.Quintet;
 
 public class CsvWriterAppend {
 	
+	/**
+     * Write hashmap to csv (Doc2Vec or Rdf2Vec embeddings)
+     * @param path : path to save the data file
+     * @param hm : hashmap containing resource URI as key and embedding as value
+     */
 	public static void writeCsvHashMap(String path,HashMap<String,List<Double>> hm) {
 		String eol = System.getProperty("line.separator");
 		try (Writer writer = new FileWriter(path)) {
@@ -33,6 +38,11 @@ public class CsvWriterAppend {
           }
 	}
 	
+	/**
+     * Write user hashmap to csv (user embeddings)
+     * @param path : path to save the data file
+     * @param hm : hashmap containing user URI as key and embedding as value
+     */
 	public static void writeCsvHashMapUser(String path,HashMap<Integer,List<Double>> hm) {
 		String eol = System.getProperty("line.separator");
 		try (Writer writer = new FileWriter(path)) {
@@ -46,6 +56,12 @@ public class CsvWriterAppend {
             ex.printStackTrace(System.err);
           }
 	}
+	
+	/**
+     * Read hashmap to csv (Doc2Vec or Rdf2Vec embeddings)
+     * @param path : path to save the data file
+     * @param hm : hashmap containing resource URI as key and embedding as value
+     */
 	public static HashMap<String,List<Double>> readCsvHashMap(String path) throws NumberFormatException, IOException {
 		HashMap<String,List<Double>> hm = new HashMap<String,List<Double>>();
 		BufferedReader br = null;
@@ -65,6 +81,11 @@ public class CsvWriterAppend {
         return hm;
 	}
 	
+	/**
+     * Read user hashmap to csv (user embeddings)
+     * @param path : path to save the data file
+     * @param hm : hashmap containing user URI as key and embedding as value
+     */
 	public static HashMap<Integer,List<Double>> readCsvHashMapUser(String path) throws NumberFormatException, IOException {
 		HashMap<Integer,List<Double>> hm = new HashMap<Integer,List<Double>>();
 		BufferedReader br = null;
@@ -84,35 +105,10 @@ public class CsvWriterAppend {
         return hm;
 	}
 	
-	
-	public static void appendCsv(String path, List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> data) {
-				
-				File f = new File(path);
-	            if(!f.exists()){
-	            	  try{ 
-	            	    f.createNewFile();
-	            	  }catch(Exception e){
-	            	    e.printStackTrace();
-	            	  }
-	            }
-	            try {
-	            	
-	                PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
-	                
-	                for(Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer> q : data) {
-	                	String result = convertListToString(q.getValue0());
-	                	result += "," + convertListToString(q.getValue1());
-	                	result += "," + convertListToString(q.getValue2());
-	                	result += "," + convertListToString(q.getValue3());
-	                	result += "," + Integer.toString(q.getValue4());
-	                	
-	                	out.println(result);
-					}
-	                out.close();
-		        }catch (IOException e){
-	            	e.printStackTrace();
-	            }
-         }
+	/**
+     * Convert list to string seperated by space
+     * @param l : list to be converted
+     */
 	public static String convertListToString(List<Double> l) {
 		String res = "";
 		int check = 0;
@@ -127,6 +123,10 @@ public class CsvWriterAppend {
 		return res;
 	}
 	
+	/**
+     * Convert list to string seperated by comma
+     * @param l : list to be converted
+     */
 	public static String convertListToString1(List<Double> l) {
 		String res = "";
 		int check = 0;
@@ -141,6 +141,11 @@ public class CsvWriterAppend {
 		return res;
 	}
 	
+	/**
+     * Write ml file and append
+     * @param path : path where file should be written
+     * @param hm : list containing embedding
+     */
 	public static void writeMlData(String path, List<Pair<List<Double>,String>> hm) {
 		File f = new File(path);
         if(!f.exists()){
@@ -169,6 +174,45 @@ public class CsvWriterAppend {
         }
 	}
 	
+	/**
+     * Write ml file using only one embedding and append
+     * @param path : path where file should be written
+     * @param hm : list containing embedding
+     */
+	public static void writeMlDataOneEmbedding(String path, List<Pair<List<Double>,String>> hm) {
+		File f = new File(path);
+        if(!f.exists()){
+        	  try{ 
+        	    f.createNewFile();
+        	  }catch(Exception e){
+        	    e.printStackTrace();
+        	  }
+        }
+        try {
+        	
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)));
+            
+            for(Pair<List<Double>,String> userId : hm) {
+//            	Pair<List<Double>,String> l = hm.get(userId);
+            	if(userId.getValue0().size() < 400){
+            		continue;
+            	}
+            	String result = convertListToString1(userId.getValue0());
+            	String wr = result + "," + userId.getValue1();
+            	out.println(wr);
+			}
+            out.close();
+        }catch (IOException e){
+        	e.printStackTrace();
+        }
+	}
+	
+	
+	/**
+     * Write one instance used for prediction
+     * @param path : path where file should be written
+     * @param hm : list containing embedding
+     */
 	public static void writeMlDataOneInstance(String path, HashMap<Integer,List<Double>> hm) throws IOException {
 		File f = new File(path);
 		f.delete();

@@ -311,14 +311,33 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
 	                             ((GraphBasedStorage)getStorage()).readUsersEmbeddingsAverage(userEmbeddingPath);
 	                         }
                              
+                             
+                             
                            //generate machine learning file and train machine learning model
                              if(((HybridRecConfig)getRecConfig()).getTrainTreeModel() == true) {
+                            	 
                             	 System.out.println("In machine learning part");
                             	 String mlTrainingInput = ((HybridRecConfig)getRecConfig()).getMlInputFile();
-                            	 System.out.println("ML path :-----" + mlTrainingInput + "-------");
-                            	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
-                            	 System.out.println("After calling mlTrainingData");
-                            	 ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));
+                            	 if(((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath() == "" && ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath() == "") {
+                            		 return;
+                            	 }
+                                 	
+                            	 if(((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath() != "" && ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath() != "") {
+                            		 System.out.println("ML path :-----" + mlTrainingInput + "-------");
+                                	 ((GraphBasedStorage)getStorage()).mlTrainingData(mlTrainingInput);
+                                	 System.out.println("After calling mlTrainingData");
+                                	 ((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff")); 
+                            	 }else if(((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath() != ""){
+                            		 System.out.println("Only Doc2Vec, ML path :-----" + mlTrainingInput + "-------");
+                                	 ((GraphBasedStorage)getStorage()).mlTrainingDataDocEmbedding(mlTrainingInput);
+                                }else if(((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath() != ""){
+                           		 	System.out.println("Only Rdf2Vec, ML path :-----" + mlTrainingInput + "-------");
+                           		 	((GraphBasedStorage)getStorage()).mlTrainingDataRdfEmbedding(mlTrainingInput);
+                                }else {
+                                	System.out.println("No Embedding selected");
+                                }
+                            	System.out.println("After calling mlTrainingData");
+                            	((GraphBasedStorage)getStorage()).trainTreeModel(mlTrainingInput, mlTrainingInput.substring(0, mlTrainingInput.length()-3).concat("arff"));  
                              }
                              
                              //((GraphBasedStorage)getStorage()).loadTrainedTreeModel("trained_full.model");
@@ -479,7 +498,20 @@ public final class GraphBasedDataManager extends AbstractIndexBasedDataManager{
                                 return score;
                         
                         case HYBRID:
-                            return ((GraphBasedStorage)getStorage()).predictRating(indexOfNode1, indexOfNode2);
+                        	if(((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath() != "" && ((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath() != "") {
+                        		return ((GraphBasedStorage)getStorage()).predictRating(indexOfNode1, indexOfNode2);
+                        	}
+                        	else if(((HybridRecConfig)getRecConfig()).getDoc2VecOutputPath() != "") {
+                        		return ((GraphBasedStorage)getStorage()).predictRatingDoc2Vec(indexOfNode1, indexOfNode2);
+                        	}
+                        	else if(((HybridRecConfig)getRecConfig()).getRdf2VecOutputPath() != "") {
+                        		return ((GraphBasedStorage)getStorage()).predictRatingRdf2Vec(indexOfNode1, indexOfNode2);
+                        	}else {
+                        		return -1.0;
+                        	}
+                            
+                        		
+                            
                 }
                 return -1.0;
         }
