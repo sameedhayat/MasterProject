@@ -19,6 +19,8 @@ import weka.filters.supervised.instance.SpreadSubsample;
 public class MLTrainAndPredict {
 	private MLModel mlModel;
 	private Classifier trainedModel;
+	public static final String ADABOOST = "adaboost";
+	public static final String MLP = "mlp";
 
 	public abstract class MLModel {
 		/**
@@ -58,6 +60,22 @@ public class MLTrainAndPredict {
 			adaBoostM1.setNumIterations(100);
 			adaBoostM1.setClassifier(rf);
 			adaBoostM1.buildClassifier(trainingInstances);
+		}
+	}
+	
+	/**
+	 * Machine Learning model Factory class responsible for model object creation
+	 */
+	public class MLModelFactory {
+		public MLModel getMLModel(String mlModelType) {
+			if ("mlp".equalsIgnoreCase(mlModelType)) {
+				return new MultiLayerPerceptronModel();
+			} 
+			else if("adaboost".equalsIgnoreCase(mlModelType)) {
+				return new AdaBoostModel();
+			}
+			else 
+				return new AdaBoostModel();
 		}
 	}
 
@@ -120,7 +138,8 @@ public class MLTrainAndPredict {
 		Instances train = new Instances(filteredIns, 0, trainSize);
 		// set class index to the last attribute
 		train.setClassIndex(train.numAttributes() - 1);
-		mlModel = new AdaBoostModel();
+		MLModelFactory mlFactory = new MLModelFactory();
+		mlModel = mlFactory.getMLModel(ADABOOST);
 		mlModel.setMLModel(train);
 	}
 
