@@ -84,7 +84,7 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.addRankingMetricTopKSize(20);
             evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
             evalConfig.setIsReproducible(true);
-            evalConfig.setNumberOfFolds(6);
+            evalConfig.setNumberOfFolds(3);
             evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
             evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
 
