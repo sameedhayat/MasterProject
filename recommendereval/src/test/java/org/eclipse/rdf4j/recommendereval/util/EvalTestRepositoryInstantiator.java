@@ -708,6 +708,115 @@ public final class EvalTestRepositoryInstantiator {
         return recConfigList;
     }
     
+    
+    /**
+     * Creates a list of Recommender Configurations, only use Rdf2VecEmbedding
+     * 
+     * Dataset: Cross Domain - Likes 
+     *
+     * @return recommender configuration list
+     */
+    public static ArrayList<RecConfig> getRecConfigListHybridOnlyRdf2Vec() {
+
+        ArrayList<RecConfig> recConfigList = new ArrayList();
+
+        try {
+            
+            HybridRecConfig configuration = new HybridRecConfig("config1");
+
+            configuration.setPosGraphPattern(
+                    "?u <http://example.org/data#likes> ?o ."
+                    + "?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?t ."
+                    + "FILTER (?t=<http://schema.org/Movie> || ?t=<http://schema.org/Book>) "
+            		);
+
+	        configuration.setRecEntity(RecEntity.USER, "?u");
+	        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
+	        configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
+	        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
+	                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Movie>");                        
+	        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
+	                "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Book>");
+	        configuration.setRecParadigm(RecParadigm.HYBRID);
+	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH); 
+	        
+//	        configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
+//	        configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
+//	        configuration.doc2VecInputPath("input_abstract.csv");
+//	        configuration.rdf2VecInputPath("rdf2vec_model");
+            
+//            configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+            configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//            configuration.computeUserEmbeddings("user_embeddings.csv");
+            configuration.loadUserEmbeddings("user_embeddings.csv");
+            configuration.createMlInputFile("ml_training_data.csv");
+            configuration.trainTreeModel("ml_training_data.csv");
+            
+	        recConfigList.add(configuration);
+
+        } catch (RecommenderException ex) {
+            Logger.getLogger(EvalTestRepositoryInstantiator.class.getName()).log(Level.SEVERE, null, ex);
+            Assert.fail();
+        }
+
+        return recConfigList;
+    }
+    
+    
+    
+    /**
+     * Creates a list of Recommender Configurations, only using Doc2Vec embedding
+     * 
+     * Dataset: Cross Domain - Likes 
+     *
+     * @return recommender configuration list
+     */
+    public static ArrayList<RecConfig> getRecConfigListHybridOnlyDoc2Vec() {
+
+        ArrayList<RecConfig> recConfigList = new ArrayList();
+
+        try {
+            
+            HybridRecConfig configuration = new HybridRecConfig("config1");
+
+            configuration.setPosGraphPattern(
+                    "?u <http://example.org/data#likes> ?o ."
+                    + "?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?t ."
+                    + "FILTER (?t=<http://schema.org/Movie> || ?t=<http://schema.org/Book>) "
+            		);
+
+	        configuration.setRecEntity(RecEntity.USER, "?u");
+	        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
+	        configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
+	        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
+	                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Movie>");                        
+	        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
+	                "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Book>");
+	        configuration.setRecParadigm(RecParadigm.HYBRID);
+	        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH); 
+	        
+//	        configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
+//	        configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
+//	        configuration.doc2VecInputPath("input_abstract.csv");
+//	        configuration.rdf2VecInputPath("rdf2vec_model");
+            
+            configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+//            configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//            configuration.computeUserEmbeddings("user_embeddings.csv");
+            configuration.loadUserEmbeddings("user_embeddings.csv");
+            configuration.createMlInputFile("ml_training_data.csv");
+            configuration.trainTreeModel("ml_training_data.csv");
+            
+	        recConfigList.add(configuration);
+
+        } catch (RecommenderException ex) {
+            Logger.getLogger(EvalTestRepositoryInstantiator.class.getName()).log(Level.SEVERE, null, ex);
+            Assert.fail();
+        }
+
+        return recConfigList;
+    }
+    
     /**
      * Creates a list of Recommender Configurations with incorrect graph pattern.
      *

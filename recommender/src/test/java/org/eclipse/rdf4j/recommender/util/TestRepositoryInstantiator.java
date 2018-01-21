@@ -32,54 +32,15 @@ public final class TestRepositoryInstantiator {
         
         private static final ClassLoader classLoader = Thread.currentThread()
                 .getContextClassLoader();
-        
-        /**
-         * This dataset was making some trouble in the test suite of the evaluation
-         * module, in the sense that results of the recommender changed every 
-         * time the test case was executed
-         */      
-        public static SailRecommenderRepository createHybridRecommenderDataset1() {
-                RepositoryConnection con = null;
-                SailRecommenderRepository recRepository = null;
-                try {
-                        recRepository = new SailRecommenderRepository(
-                            new MemoryStore());
-                        recRepository.initialize();    
-                        con = recRepository.getConnection();
-                    
-                        String resource = "testcases/moviesLikes.ttl";
-                        String baseURI = "http://example.org/movies#";
-                        con.add(classLoader.getResource(resource), baseURI, RDFFormat.TURTLE);
-                        
-                        HybridRecConfig configuration = new HybridRecConfig("config1");
-                        configuration.setPosGraphPattern(
-                                "?user <http://example.org/movies#hasLiked> ?movie "
-                        );
-                        configuration.setRecEntity(RecEntity.USER, "?user1");
-                        configuration.setRecEntity(RecEntity.POS_ITEM, "?movie");
-                        configuration.setRecParadigm(RecParadigm.HYBRID);
-
-                        recRepository.loadRecConfiguration(configuration);
-                } catch (RecommenderException ex) { 
-                    System.out.println(ex.getMessage());
-                } catch (IOException ex) { 
-                    System.out.println(ex.getMessage());
-                } catch (RDFParseException ex) {
-                    System.out.println(ex.getMessage());
-                } catch (RepositoryException ex) {
-                    System.out.println(ex.getMessage());
-                } 
-                return recRepository;
-        }
-
-        
-        
-        /** Creates a repository with a Hybrid cross-domain based approach.
-        * Dataset: Books and movies data
+   
+       
+       /** Creates a repository with a Hybrid cross-domain based approach by computing Doc2Vec and Rdf2Vec.
+        * Dataset: Books and movies data, precomputed Doc2Vec and Rdf2Vec
         * @return 
         */      
        public static SailRecommenderRepository createHybridRecommenderDataset() {
-               RepositoryConnection con = null;
+               
+    	   	   RepositoryConnection con = null;
                SailRecommenderRepository recRepository = null;
                int numberOfDecimalPlaces = 3;
                try {
@@ -108,8 +69,6 @@ public final class TestRepositoryInstantiator {
                        configuration.setRecEntity(RecEntity.USER, "?u");
                        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
                        configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
-                       //TODO
-                       //Modify this later
                        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
                                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
                        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
@@ -117,9 +76,21 @@ public final class TestRepositoryInstantiator {
 
                        configuration.setRecParadigm(RecParadigm.HYBRID);
                        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
-
+                       
+                       configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
+                       configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
+                       configuration.doc2VecInputPath("input_abstract.csv");
+                       configuration.rdf2VecInputPath("rdf2vec_model");
+                       
+                       configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+                       configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+                       configuration.computeUserEmbeddings("user_embeddings.csv");
+                       configuration.loadUserEmbeddings("user_embeddings.csv");
+                       configuration.createMlInputFile("ml_training_data.csv");
+                       configuration.trainTreeModel("ml_training_data.csv");
                        recRepository.loadRecConfiguration(configuration);
-               } catch (RecommenderException ex) { 
+               
+               		} catch (RecommenderException ex) { 
                    System.out.println(ex.getMessage());
                } catch (IOException ex) { 
                    System.out.println(ex.getMessage());
@@ -130,6 +101,137 @@ public final class TestRepositoryInstantiator {
                } 
                return recRepository;
        }
+       
+       
+       /** Creates a repository with a Hybrid cross-domain based approach with only Doc2Vec embeddings
+        * Dataset: Books and movies data, precomputed Doc2Vec and Rdf2Vec
+        * @return 
+        */      
+       public static SailRecommenderRepository createHybridRecommenderOnlyDoc2Vec() {
+               
+    	   	   RepositoryConnection con = null;
+               SailRecommenderRepository recRepository = null;
+               int numberOfDecimalPlaces = 3;
+               try {
+                       recRepository = new SailRecommenderRepository(
+                           new MemoryStore());
+                       recRepository.initialize();    
+                       con = recRepository.getConnection();
+                   
+                       String resource = "testcases/merge_complete_level1.ttl";
+//                       String baseURI = "http://example.org/data#";
+                       String baseURI = "";
+                        
+                       con.add(classLoader.getResource(resource), baseURI, RDFFormat.TURTLE);
+                
+                       //RECOMMENDATION                        
+                       //One needs first to create a configuration for the recommender.
+                       HybridRecConfig configuration = new HybridRecConfig("config1");
+
+                       //NEW thing: 
+                       //Set a recommendation configuration. Right now only one configuration is
+                       //possible. In the future more configurations should be possible.
+                       configuration.setPosGraphPattern(
+                                   "?u <http://example.org/data#likes> ?o"
+                       );
+
+                       configuration.setRecEntity(RecEntity.USER, "?u");
+                       configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
+                       configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
+
+                       configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
+                               "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
+                       configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
+                               "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book>");
+
+                       configuration.setRecParadigm(RecParadigm.HYBRID);
+                       configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
+                       
+                       configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+//                       configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//                       configuration.computeUserEmbeddings("user_embeddings.csv");
+                       configuration.loadUserEmbeddings("user_embeddings.csv");
+                       configuration.createMlInputFile("ml_training_data.csv");
+                       configuration.trainTreeModel("ml_training_data.csv");
+                       recRepository.loadRecConfiguration(configuration);
+               
+               		} catch (RecommenderException ex) { 
+                   System.out.println(ex.getMessage());
+               } catch (IOException ex) { 
+                   System.out.println(ex.getMessage());
+               } catch (RDFParseException ex) {
+                   System.out.println(ex.getMessage());
+               } catch (RepositoryException ex) {
+                   System.out.println(ex.getMessage());
+               } 
+               return recRepository;
+       }
+       
+       
+       /** Creates a repository with a Hybrid cross-domain based approach with precomputed Doc2Vec and Rdf2Vec.
+        * Dataset: Books and movies data, precomputed Doc2Vec and Rdf2Vec
+        * @return 
+        */      
+       public static SailRecommenderRepository createHybridRecommenderOnlyRdf2Vec() {
+               
+    	   	   RepositoryConnection con = null;
+               SailRecommenderRepository recRepository = null;
+               int numberOfDecimalPlaces = 3;
+               try {
+                       recRepository = new SailRecommenderRepository(
+                           new MemoryStore());
+                       recRepository.initialize();    
+                       con = recRepository.getConnection();
+                   
+                       String resource = "testcases/merge_complete_level1.ttl";
+//                       String baseURI = "http://example.org/data#";
+                       String baseURI = "";
+                        
+                       con.add(classLoader.getResource(resource), baseURI, RDFFormat.TURTLE);
+                
+                       //RECOMMENDATION                        
+                       //One needs first to create a configuration for the recommender.
+                       HybridRecConfig configuration = new HybridRecConfig("config1");
+
+                       //NEW thing: 
+                       //Set a recommendation configuration. Right now only one configuration is
+                       //possible. In the future more configurations should be possible.
+                       configuration.setPosGraphPattern(
+                                   "?u <http://example.org/data#likes> ?o"
+                       );
+
+                       configuration.setRecEntity(RecEntity.USER, "?u");
+                       configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
+                       configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
+
+                       configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
+                               "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
+                       configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
+                               "?t <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book>");
+
+                       configuration.setRecParadigm(RecParadigm.HYBRID);
+                       configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
+                       
+//                       configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
+                       configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
+//                       configuration.computeUserEmbeddings("user_embeddings.csv");
+                       configuration.loadUserEmbeddings("user_embeddings.csv");
+                       configuration.createMlInputFile("ml_training_data.csv");
+                       configuration.trainTreeModel("ml_training_data.csv");
+                       recRepository.loadRecConfiguration(configuration);
+               
+               		} catch (RecommenderException ex) { 
+                   System.out.println(ex.getMessage());
+               } catch (IOException ex) { 
+                   System.out.println(ex.getMessage());
+               } catch (RDFParseException ex) {
+                   System.out.println(ex.getMessage());
+               } catch (RepositoryException ex) {
+                   System.out.println(ex.getMessage());
+               } 
+               return recRepository;
+       }
+       
        
        /** Creates a repository with a Hybrid cross-domain based approach with precomputed Doc2Vec and Rdf2Vec.
         * Dataset: Books and movies data, precomputed Doc2Vec and Rdf2Vec
@@ -166,8 +268,7 @@ public final class TestRepositoryInstantiator {
                        configuration.setRecEntity(RecEntity.USER, "?u");
                        configuration.setRecEntity(RecEntity.POS_ITEM, "?o");
                        configuration.setGraphOrientation(RecGraphOrientation.DIRECTED);
-                       //TODO
-                       //Modify this later
+
                        configuration.setRecEntity(RecEntity.SOURCE_DOMAIN, 
                                "?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>");                        
                        configuration.setRecEntity(RecEntity.TARGET_DOMAIN,
@@ -176,15 +277,9 @@ public final class TestRepositoryInstantiator {
                        configuration.setRecParadigm(RecParadigm.HYBRID);
                        configuration.setRecStorage(RecStorage.EXTERNAL_GRAPH);
                        
-                       //configuration.computeDoc2Vec("input_abstract.csv", "doc2vec_embeddings.csv");
-                       //configuration.computeRdf2Vec("rdf2vec_model", "rdf2vec_embeddings.csv");
-                       //configuration.doc2VecInputPath("input_abstract.csv");
-                       //configuration.rdf2VecInputPath("rdf2vec_model");
-                       
                        configuration.loadDoc2VecEmbeddings("doc2vec_embeddings.csv");
                        configuration.loadRdf2VecEmbeddings("rdf2vec_embeddings.csv");
                        configuration.computeUserEmbeddings("user_embeddings.csv");
-                       configuration.loadUserEmbeddings("user_embeddings.csv");
                        configuration.createMlInputFile("ml_training_data.csv");
                        configuration.trainTreeModel("ml_training_data.csv");
                        recRepository.loadRecConfiguration(configuration);
@@ -200,6 +295,5 @@ public final class TestRepositoryInstantiator {
                } 
                return recRepository;
        }
-       
         
 }

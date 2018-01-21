@@ -84,7 +84,7 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.addRankingMetricTopKSize(20);
             evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
             evalConfig.setIsReproducible(true);
-            evalConfig.setNumberOfFolds(3);
+            evalConfig.setNumberOfFolds(6);
             evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
             evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
 
@@ -136,7 +136,113 @@ public class CrossKFoldEvaluatorTest {
             evalConfig.addRankingMetricTopKSize(20);
             evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
             evalConfig.setIsReproducible(true);
-            evalConfig.setNumberOfFolds(3);
+            evalConfig.setNumberOfFolds(6);
+            evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
+            evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
+
+            recEvalRepository.loadEvalConfiguration(evalConfig);
+            recEvalRepository.evaluate();
+
+            EvaluationResult result = recEvalRepository.getEvaluator().getEvalResultByName("config1");
+
+        } catch (EvaluatorException ex) {
+            Logger.getLogger(CrossKFoldEvaluatorTest.class.getName()).log(Level.SEVERE, null, ex);
+            Assert.fail();
+        }
+
+        System.out.println("testRecKFold1 COMPLETED");
+    }
+    
+    
+    /**
+     * Tests results for each metric.(Dataset from the book).using only Rdf2Vec embeddings
+     *
+     * Dataset: Cross Domain - Likes 
+     */
+    @Test
+    public void testRecKFoldHybridOnlyRdf2Vec() {
+
+        System.out.println("");
+        System.out.println("testRecKFoldHybrid starting...");
+
+        SailRecEvaluatorRepository recEvalRepository
+                = EvalTestRepositoryInstantiator.createTestRepositoryHybrid(
+                        EvalTestRepositoryInstantiator.getRecConfigListHybridOnlyRdf2Vec());
+
+        CrossKFoldEvalConfig evalConfig = new CrossKFoldEvalConfig();
+
+        try {
+            evalConfig.setOutputMethod(EvalOutput.EXTERNAL_FILE, "evaluationOutput.csv");
+            evalConfig.setStorage(EvalStorage.MEMORY);
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.PRE));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.REC));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.F_MEASURE));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.MRR));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.DIVERSITY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NOVELTY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NDCG));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.ACC));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.MAE));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.RMSE));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.AUC));
+            evalConfig.addEvalMetric(new GlobalEvalMetric(EvalMetric.COVERAGE));
+            evalConfig.addRankingMetricTopKSize(20);
+            evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
+            evalConfig.setIsReproducible(true);
+            evalConfig.setNumberOfFolds(6);
+            evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
+            evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
+
+            recEvalRepository.loadEvalConfiguration(evalConfig);
+            recEvalRepository.evaluate();
+
+            EvaluationResult result = recEvalRepository.getEvaluator().getEvalResultByName("config1");
+
+        } catch (EvaluatorException ex) {
+            Logger.getLogger(CrossKFoldEvaluatorTest.class.getName()).log(Level.SEVERE, null, ex);
+            Assert.fail();
+        }
+
+        System.out.println("testRecKFold1 COMPLETED");
+    }
+    
+    
+    /**
+     * Tests results for each metric.(Dataset from the book).using only Doc2Vec embeddings
+     *
+     * Dataset: Cross Domain - Likes 
+     */
+    @Test
+    public void testRecKFoldHybridOnlyDoc2Vec() {
+
+        System.out.println("");
+        System.out.println("testRecKFoldHybrid starting...");
+
+        SailRecEvaluatorRepository recEvalRepository
+                = EvalTestRepositoryInstantiator.createTestRepositoryHybrid(
+                        EvalTestRepositoryInstantiator.getRecConfigListHybridOnlyDoc2Vec());
+
+        CrossKFoldEvalConfig evalConfig = new CrossKFoldEvalConfig();
+
+        try {
+            evalConfig.setOutputMethod(EvalOutput.EXTERNAL_FILE, "evaluationOutput.csv");
+            evalConfig.setStorage(EvalStorage.MEMORY);
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.PRE));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.REC));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.F_MEASURE));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.MRR));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.DIVERSITY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NOVELTY));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.NDCG));
+            evalConfig.addEvalMetric(new RankingEvalMetric(EvalMetric.ACC));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.MAE));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.RMSE));
+            evalConfig.addEvalMetric(new PredictionEvalMetric(EvalMetric.AUC));
+            evalConfig.addEvalMetric(new GlobalEvalMetric(EvalMetric.COVERAGE));
+            evalConfig.addRankingMetricTopKSize(20);
+            evalConfig.selectSpecificUsersForEvaluation(new EvalUserSelectionWrapper(RANDOM, 5, 0));
+            evalConfig.setIsReproducible(true);
+            evalConfig.setNumberOfFolds(6);
             evalConfig.addEvalEntity(EvalEntity.FEATURE, "?subject");
             evalConfig.setFeatureGraphPattern("?o <http://purl.org/dc/terms/subject> ?subject ");
 

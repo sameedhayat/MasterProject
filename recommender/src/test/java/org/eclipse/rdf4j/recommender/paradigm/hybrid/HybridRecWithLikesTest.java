@@ -1,32 +1,29 @@
 package org.eclipse.rdf4j.recommender.paradigm.hybrid;
 
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.rdf4j.recommender.datamanager.model.RatedResource;
 import org.eclipse.rdf4j.recommender.exception.RecommenderException;
 import org.eclipse.rdf4j.recommender.repository.SailRecommenderRepository;
 import org.eclipse.rdf4j.recommender.storage.index.graph.impl.JungGraphIndexBasedStorage;
-import org.eclipse.rdf4j.recommender.util.CsvWriterAppend;
-import org.eclipse.rdf4j.recommender.util.ListOperations;
 import org.eclipse.rdf4j.recommender.util.TestRepositoryInstantiator;
 import org.junit.Test;
-
-import nlp.word2vec.DocModel;
-import nlp.word2vec.TreeModel;
-import nlp.word2vec.Word2VecModel;
 
 public class HybridRecWithLikesTest {
 	
 	private static final double DELTA = 1e-3;
 	
+
+    /**
+     * HybridRecommender implementation using precomputed embeddings
+     * 
+     * Dataset: cross domain data
+     */
 	@Test
-    public void loadModelAndCalculateSimilarity() throws RecommenderException, IOException {
+    public void HybridRecommenderPreComputed() throws RecommenderException, IOException {
             System.out.println("Loading rep");
             
             SailRecommenderRepository recRepository = 
@@ -39,99 +36,85 @@ public class HybridRecWithLikesTest {
             
             String sourceUri = "http://example.org/data#u144199";
             String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
+            
+            Double prediction = graphStorage.predictRating(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri));
+            System.out.println(prediction);
+	}
+	
+	/**
+     * HybridRecommender implementation by computing embeddings
+     * 
+     * Dataset: cross domain data
+     */
+	@Test
+    public void HybridRecommender() throws RecommenderException, IOException {
+            System.out.println("Loading rep");
+            
+            SailRecommenderRepository recRepository = 
+                    TestRepositoryInstantiator.createHybridRecommenderDataset();
 
-            graphStorage.createUserProfile();
-            System.out.println("Creating user profile for testing");
-            System.out.println("User1 comedy likes");
+            //We rank the objects according to the predictions (we assume 
+            //these are correct.
+            JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
+                    ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
             
-            List<RatedResource> topk1 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut1", 15, false));
-            for(RatedResource r : topk1) {
-            	System.out.println(r.getResource());
-            }
+            String sourceUri = "http://example.org/data#u144199";
+            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
             
-            System.out.println("User2 sci-fi likes");
-            
-            List<RatedResource> topk2 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut2", 15, false));
-            for(RatedResource r : topk2) {
-            	System.out.println(r.getResource());
-            }
-            
-            System.out.println("User3 horror likes");
-            List<RatedResource> topk3 = Arrays.asList(recRepository.getTopRecommendations("http://example.org/data#ut3", 15, false));
-            for(RatedResource r : topk3) {
-            	System.out.println(r.getResource());
-            }
-            
-            System.out.println("Done");
-//            if(graphStorage.getAllUserIndexes().contains(graphStorage.getIndexOf(sourceUri))) {
-//            	System.out.println("------Contains-------");
-//            }
-//            for(int t: graphStorage.getTargetNodes()) {
-//            	if(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), t) == "Like") {
-//            		System.out.println("Like Found:" + sourceUri + " " +  graphStorage.getIndexOf(targetUri));
-//            	}
-//            System.out.println(graphStorage.getLabel(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri)));
-//            }
-            //graphStorage.computeUsersEmbeddingsAverage();
-            //graphStorage.writeUsersEmbeddingsAverage("user_embeddings.csv");
-            
-            //graphStorage.printEmbeddings();
-            //Use Doc2Vec Model and save the embeddings for source and targer in csv file
-            /*            
-            String inputPath = "input_abstract.csv";
-            DocModel docModel = new DocModel();
-            docModel.trainDoc2VecModel(inputPath);
-            // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
-            
-            
-            HashMap<String,List<Double>> hm = graphStorage.sourceDoc2Vec(docModel);
-            CsvWriterAppend.csvHashMap("doc2vec_source.csv",hm);
-            
-            hm = graphStorage.targetDoc2Vec(docModel);
-            CsvWriterAppend.csvHashMap("doc2vec_target.csv",hm);
-            
-            Word2VecModel w2v = new Word2VecModel();
-            String modelPath = "rdf2vec_model";
-            w2v.readWord2VecModel(modelPath);
-            
-            HashMap<String,List<Double>> hm = graphStorage.sourceRdf2Vec(w2v);
-            CsvWriterAppend.csvHashMap("rdf2vec_source.csv",hm);
-            
-            hm = graphStorage.targetRdf2Vec(w2v);
-            CsvWriterAppend.csvHashMap("rdf2vec_target.csv",hm);
-            */            
-            
-            
-            /*
-            //get all the users indexes
-            Set<Integer> allUserIndexes = graphStorage.getAllUserIndexes();
-//            int sourceId = graphStorage.getIndexOf("http://example.org/data#u96328");
-//            int targetId = graphStorage.getIndexOf("http://dbpedia.org/resource/Burned_(Hopkins_novel)");
-            String inputPath = "input_abstract.csv";
-            DocModel docModel = new DocModel();
-            docModel.trainDoc2VecModel(inputPath);
-           // int sourceId = graphStorage.getIndexOf("http://example.org/data#u39040");
-//            List<Pair<Double, Double>> pList = graphStorage.Doc2VecRating(sourceId, docModel);
-            
-             
-	    for(Integer u: allUserIndexes){            
-            List<Quintet<List<Double>, List<Double>, List<Double>, List<Double>, Integer>> pList = graphStorage.getAllFeatures(u, w2v, docModel);
-            CsvWriterAppend.appendCsv("ml_training_data.csv", pList);
+            Double prediction = graphStorage.predictRating(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri));
+            System.out.println(prediction);
 
-}
-//            for(Quintet<Double, Double, Double, Double, Integer> p: pList) {
-//            	String s = p.getValue0() + "," + p.getValue1() + p.getValue3() + "," + p.getValue4();
-//                
-//            }
-//            List<Pair<Double, Double>> pList = graphStorage.Word2VecRating(sourceId, w2v);
-//            CsvWriterAppend.appendCsv("ml_training_data_w2v.csv", pList);
-//            for(Pair<Double, Double> p: pList) {
-////            	String s = p.getValue0() + "," + p.getValue1();
-//            	
-//          }
+      }  
+	
+	/**
+     * HybridRecommender implementation by only using Doc2Vec embeddings
+     * 
+     * Dataset: cross domain data
+     */
+	@Test
+    public void HybridRecommenderOnlyDoc2Vec() throws RecommenderException, IOException {
+            System.out.println("Loading rep");
             
-//           graphStorage.RDFToVecRating(sourceId, targetId, vec);                           
-    */}  
+            SailRecommenderRepository recRepository = 
+                    TestRepositoryInstantiator.createHybridRecommenderOnlyDoc2Vec();
+
+            //We rank the objects according to the predictions (we assume 
+            //these are correct.
+            JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
+                    ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
+            
+            String sourceUri = "http://example.org/data#u144199";
+            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
+            
+            Double prediction = graphStorage.predictRating(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri));
+            System.out.println(prediction);
+
+      }  
+	
+	/**
+     * HybridRecommender implementation by using only Rdf2Vec embeddings
+     * 
+     * Dataset: cross domain data
+     */
+	@Test
+    public void HybridRecommenderOnlyRdf2Vec() throws RecommenderException, IOException {
+            System.out.println("Loading rep");
+            
+            SailRecommenderRepository recRepository = 
+                    TestRepositoryInstantiator.createHybridRecommenderOnlyRdf2Vec();
+
+            //We rank the objects according to the predictions (we assume 
+            //these are correct.
+            JungGraphIndexBasedStorage graphStorage = (JungGraphIndexBasedStorage)
+                    ((HybridRecommender)recRepository.getRecommender()).getDataManager().getStorage();
+            
+            String sourceUri = "http://example.org/data#u144199";
+            String targetUri = "http://dbpedia.org/resource/Homecoming_(novel)";
+            
+            Double prediction = graphStorage.predictRating(graphStorage.getIndexOf(sourceUri), graphStorage.getIndexOf(targetUri));
+            System.out.println(prediction);
+
+      }  
 	
 
 }
