@@ -120,7 +120,7 @@ public class MLTrainAndPredict {
 		Instances train = new Instances(filteredIns, 0, trainSize);
 		// set class index to the last attribute
 		train.setClassIndex(train.numAttributes() - 1);
-		mlModel = new MultiLayerPerceptronModel();
+		mlModel = new AdaBoostModel();
 		mlModel.setMLModel(train);
 	}
 
