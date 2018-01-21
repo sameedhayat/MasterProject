@@ -132,7 +132,7 @@ public class MLTrainAndPredict {
 		dataset.setClassIndex(dataset.numAttributes() - 1);
 		SpreadSubsample ff = new SpreadSubsample();
 		ff.setInputFormat(dataset);
-		ff.setDistributionSpread(1);
+		ff.setDistributionSpread(100);
 		Instances filteredIns = Filter.useFilter(dataset, ff);
 		int trainSize = (int) Math.round(filteredIns.numInstances() * 1.0);
 		Instances train = new Instances(filteredIns, 0, trainSize);
