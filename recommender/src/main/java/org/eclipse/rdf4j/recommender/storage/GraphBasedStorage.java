@@ -7,7 +7,7 @@ package org.eclipse.rdf4j.recommender.storage;
 
 import edu.uci.ics.jung.graph.Graph;
 import nlp.word2vec.DocModel;
-import nlp.word2vec.TreeModel;
+import nlp.word2vec.MLTrainAndPredict;
 import nlp.word2vec.Word2VecModel;
 
 import java.util.List;

@@ -48,7 +48,7 @@ import edu.uci.ics.jung.visualization.control.ModalGraphMouse;
 import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
 import edu.uci.ics.jung.visualization.renderers.Renderer.VertexLabel.Position;
 import nlp.word2vec.DocModel;
-import nlp.word2vec.TreeModel;
+import nlp.word2vec.MLTrainAndPredict;
 import nlp.word2vec.Word2VecModel;
 
 /**
@@ -89,7 +89,7 @@ public class JungGraphIndexBasedStorage extends AbstractIndexBasedStorage
         /**
 	     * instance for the TreeModel which is for the machine learning task.
 	     */
-        private TreeModel treeModel = new TreeModel();
+        private MLTrainAndPredict treeModel = new MLTrainAndPredict();
     	
         /**
          * The complete graph (the RDF graph translated to this specific model)

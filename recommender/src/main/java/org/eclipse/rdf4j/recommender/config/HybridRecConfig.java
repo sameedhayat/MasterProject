@@ -9,7 +9,7 @@ import org.eclipse.rdf4j.recommender.parameter.RecGraphOrientation;
 import org.eclipse.rdf4j.recommender.parameter.RecParadigm;
 import org.eclipse.rdf4j.recommender.parameter.RecStorage;
 
-import nlp.word2vec.TreeModel;
+import nlp.word2vec.MLTrainAndPredict;
 
 public class HybridRecConfig extends CrossDomainRecConfig {
 	 /*--------------*
